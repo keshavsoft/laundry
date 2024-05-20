@@ -1,0 +1,11 @@
+  {
+    "AddOnService": {
+      "type": "STRING",
+      "allowNull": false,
+      "unique": true
+    },
+    "AddOnRate": {
+      "type": "NUMBER",
+      "allowNull": false
+    }
+  }
