@@ -226,7 +226,13 @@
                     <span>Qr-Print</span>
                 </a>
             </li>
-            <!-- End Dashboard Nav -->
+
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#">
+                    <i class="bi bi-box-arrow-in-left"></i></i>
+                    <span>Bill</span>
+                </a>
+            </li>
 
 
         </ul>
@@ -445,7 +451,7 @@
                 ].join('')
             }
         };
-      
+
         function jFLocalPrintColumn1(value, row, index) {
             if (row.IsQrCodesRaised) {
                 return [
@@ -478,7 +484,7 @@
                 ].join('')
             }
         };
-      
+
         function jFLocalPrintColumn2(value, row, index) {
             if (row.IsQrCodesRaised) {
                 return [
@@ -511,7 +517,7 @@
                 ].join('')
             }
         };
-      
+
         function jFLocalPrintColumn3(value, row, index) {
             if (row.IsQrCodesRaised) {
                 return [
@@ -545,9 +551,9 @@
             }
         };
 
-      
 
-      
+
+
         function priceFormatter(data) {
             var field = this.field
             return '₹ ' + data.map(function (row) {

@@ -1,11 +1,12 @@
 const StartFunc = () => {
     let jVarLocalCustomersFromLocslstroge = localStorage.getItem("CustomerNames");
-    //console.log(jVarLocalCustomersFromLocslstroge);
-    if(jVarLocalCustomersFromLocslstroge === null) {
+
+    if (jVarLocalCustomersFromLocslstroge === null) {
         let jVarLocalMasterButtonId = document.getElementById("MasterButtonId");
         jVarLocalMasterButtonId.click();
         return;
     };
+
     let LocaCustomerData = JSON.parse(jVarLocalCustomersFromLocslstroge);
     let jVatLocalCustomersDataListId = document.getElementById("CustomersDataListId")
 
