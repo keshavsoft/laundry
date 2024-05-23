@@ -1,8 +1,8 @@
-const StartFunc = async (row) => {
+const StartFunc = async ({inRowpk, inItemSerial}) => {
     let jVarLocalBranchName = localStorage.getItem("BranchName");
 
     let jVarLocalOrderNo = jFLocalOrderNumberId();
-    let LocalUrl = `/bin/Transactions/${jVarLocalBranchName}/FromKey/${jVarLocalOrderNo}/ItemsInOrder/${row.AddOnPK}`
+    let LocalUrl = `/bin/Transactions/${jVarLocalBranchName}/FromKey/${inRowpk}/ItemsInOrder/${inItemSerial}`
     let LocalFetchObj = {
         method: "DELETE",
         headers: {

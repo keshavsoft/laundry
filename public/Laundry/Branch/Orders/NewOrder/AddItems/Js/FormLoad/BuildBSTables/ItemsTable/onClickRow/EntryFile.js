@@ -8,7 +8,9 @@ const StartFunc = (row, $element, field) => {
     };
 
     if (field === 9) {
-        StartFuncDeleteButton({ inRow: row.ItemSerial });
+        StartFuncDeleteButton({inItemSerial:row.ItemSerial });
     };
 };
+
+
 export { StartFunc };
