@@ -3,6 +3,7 @@ const StartFunc = () => {
     let jVarLocalItemName = LocalFuncForjVarLocalTableFooterItemNameId();
     let jVarLocalItemRate = jFLocalTableFooterRateInputId();
     let jVarLocalPcs = jFLocalTableFooterPcsInputId();
+    let jVarLocalTotal = jFLocalTableFooterTotalId();
     let jVarLocallocation = jFLocalTableFooterFactoryInputId();
     let jVarLocalDeliveryDateTime = jFLocalTableFooterdateInputId();
 
@@ -11,6 +12,7 @@ const StartFunc = () => {
     LocalLocalObj.ItemName = jVarLocalItemName
     LocalLocalObj.Rate = jVarLocalItemRate
     LocalLocalObj.Pcs = jVarLocalPcs
+    LocalLocalObj.Total = jVarLocalTotal
     LocalLocalObj.location = jVarLocallocation
     LocalLocalObj.DeliveryDateTime = jVarLocalDeliveryDateTime
 
@@ -71,4 +73,12 @@ let jFLocalTableFooterdateInputId = () => {
     };
 };
 
+let jFLocalTableFooterTotalId = () => {
+    let jVarLocalTableFooterRateInputId = 'TableFooterRateInputId'
+    let jVarLocalHtmlId1 = document.getElementById(jVarLocalTableFooterRateInputId);
+    let jVarLocalTableFooterPcsInputId = 'TableFooterPcsInputId'
+    let jVarLocalHtmlId2 = document.getElementById(jVarLocalTableFooterPcsInputId);
+    console.log("Total:",jVarLocalHtmlId1.value * jVarLocalHtmlId2.value);
+    return jVarLocalHtmlId1.value * jVarLocalHtmlId2.value;
+};
 export { StartFunc }
