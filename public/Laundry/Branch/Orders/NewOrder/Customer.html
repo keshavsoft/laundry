@@ -93,7 +93,7 @@
                         <thead>
                             <tr class="table-primary">
                                 <th data-field="pk">Order#</th>
-                                <th data-field="OrderData.Currentdateandtime">Date</th>
+                                <th data-field="OrderData.Currentdateandtime" data-formatter="TimeDiff">Date</th>
                                 <th data-field="AggValues.ItemDetails">Items</th>
                                 <th data-field="AggValues.SettlementAmount">Settlement</th>
                                 <th data-field="IsSettled">IsSettled</th>
@@ -115,10 +115,10 @@
     <script src="https://unpkg.com/bootstrap-table@1.22.1/dist/bootstrap-table.min.js"></script>
 
     <template id="TemplateForItemNames">
-        <table>
+        <table class="table-sm table-success">
             <thead>
-                <tr class="table-success">
-                    <th>#</th>
+                <tr>
+                    <th data-formatter="jFLocalSerialColumn">S.No</th>
                     <th data-field="ItemName">ItemName</th>
                     <th data-field="Rate">Rate</th>
                     <th data-field="Pcs">Pcs</th>
@@ -128,10 +128,10 @@
     </template>
 
     <template id="TemplateForAddOns">
-        <table>
+        <table class="table-warning table-sm">
             <thead>
-                <tr class="table-warning">
-                    <th data-formatter="jFLocalSerialColumn">#</th>
+                <tr>
+                    <th data-formatter="jFLocalSerialColumn">S.No</th>
                     <th data-field="AddOnService">AddOnService</th>
                     <th data-field="AddOnRate">AddOnRate</th>
                 </tr>
@@ -155,5 +155,38 @@
 
     <script type="module" src="./Customer/Js/EntryFile.js"></script>
 </body>
+
+<script>
+    function TimeDiff(value){
+    let currentTime = new Date().getTime();
+    let time = new Date(value).getTime();
+    // console.log("currr",currentTime);
+    // console.log("you order now ",time);
+    let diff =currentTime - time;
+    console.log(diff);
+        // console.log(diffTime);
+    const hours = Math.floor(diff / (1000 * 60 * 60));
+    const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+    const remainingSeconds = seconds % 60;
+    const remainingMinutes = minutes % 60;
+    let string = ""
+    if(hours > 0){
+        string += hours + " hours ";
+    }
+    if( remainingMinutes> 0){
+        string += remainingMinutes + " minutes ";
+    }
+    if(remainingSeconds > 0){
+        string += remainingSeconds + " seconds ago";
+    }
+    if(remainingSeconds ===0 && remainingMinutes===0 && hours ===0){
+        string = "Just now";
+    }
+    return string;
+    }
+
+</script>
 
 </html>
