@@ -81,7 +81,8 @@
                         </a>
                     </div>
                     <div class="col-1">
-                        <a class="btn btn-large btn-info" id="MasterButtonId" href="../../Today/Print/QrPrint/QrPrint.html">Today</a></button>
+                        <a class="btn btn-large btn-info" id="MasterButtonId"
+                            href="../../Today/Print/QrPrint/QrPrint.html">Today</a></button>
                     </div>
                 </div>
             </div>
@@ -93,7 +94,7 @@
                         <thead>
                             <tr class="table-primary">
                                 <th data-field="pk">Order#</th>
-                                <th data-field="OrderData.Currentdateandtime" data-formatter="TimeDiff">Date</th>
+                                <th data-field="DateTime" data-formatter="TimeDiff">Date</th>
                                 <th data-field="AggValues.ItemDetails">Items</th>
                                 <th data-field="AggValues.SettlementAmount">Settlement</th>
                                 <th data-field="IsSettled">IsSettled</th>
@@ -157,34 +158,34 @@
 </body>
 
 <script>
-    function TimeDiff(value){
-    let currentTime = new Date().getTime();
-    let time = new Date(value).getTime();
-    // console.log("currr",currentTime);
-    // console.log("you order now ",time);
-    let diff =currentTime - time;
-    console.log(diff);
+    function TimeDiff(value) {
+        let currentTime = new Date().getTime();
+        let time = new Date(value).getTime();
+        // console.log("currr",currentTime);
+        // console.log("you order now ",time);
+        let diff = currentTime - time;
+        console.log(diff);
         // console.log(diffTime);
-    const hours = Math.floor(diff / (1000 * 60 * 60));
-    const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+        const hours = Math.floor(diff / (1000 * 60 * 60));
+        const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((diff % (1000 * 60)) / 1000);
 
-    const remainingSeconds = seconds % 60;
-    const remainingMinutes = minutes % 60;
-    let string = ""
-    if(hours > 0){
-        string += hours + " hours ";
-    }
-    if( remainingMinutes> 0){
-        string += remainingMinutes + " minutes ";
-    }
-    if(remainingSeconds > 0){
-        string += remainingSeconds + " seconds ago";
-    }
-    if(remainingSeconds ===0 && remainingMinutes===0 && hours ===0){
-        string = "Just now";
-    }
-    return string;
+        const remainingSeconds = seconds % 60;
+        const remainingMinutes = minutes % 60;
+        let string = ""
+        if (hours > 0) {
+            string += hours + " hours ";
+        }
+        if (remainingMinutes > 0) {
+            string += remainingMinutes + " minutes ";
+        }
+        if (remainingSeconds > 0) {
+            string += remainingSeconds + " seconds ago";
+        }
+        if (remainingSeconds === 0 && remainingMinutes === 0 && hours === 0) {
+            string = "Just now";
+        }
+        return string;
     }
 
 </script>
