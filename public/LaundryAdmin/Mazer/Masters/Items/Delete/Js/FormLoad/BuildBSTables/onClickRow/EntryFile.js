@@ -1,7 +1,7 @@
 import { StartFunc as StartFuncDeleteButton } from "./DeleteButton.js";
 
 const StartFunc = (row, $element, field) => {
-    if (field === 4) {
+    if (field === 6) {
         StartFuncDeleteButton({ inRow: row });
     };
 };

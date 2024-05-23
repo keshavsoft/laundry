@@ -29,7 +29,7 @@ let jFLocalShowAlert = ({ inDataToShow }) => {
 let jFLocalClickRowForDelete = async ({ inPk }) => {
     let LocalPk = inPk;
 
-    let jVarLocalFetchUrl = `/bin/Masters/CustomerNames/${LocalPk}`;
+    let jVarLocalFetchUrl = `/bin/Masters/Items/${LocalPk}`;
     let LocalBodyData = {
         method: "DELETE"
     };
