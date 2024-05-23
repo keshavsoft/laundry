@@ -16,7 +16,7 @@ let StartFunc = ({ inDataToInsert, inFileName }) => {
 
     let MaxPk = LocalFuncMaxOrder({ inData: db.data });
 
-    LocalinDataToInsert.OrderData.Currentdateandtime = LocalFuncCurrentDateAndTime();
+    // LocalinDataToInsert.OrderData.Currentdateandtime = LocalFuncCurrentDateAndTime();
     LocalinDataToInsert.pk = MaxPk + 1;
     LocalinDataToInsert.UuId = MaxPk + 1;
     LocalinDataToInsert.DateTime = LocalFuncCurrentDateAndTime();
