@@ -292,7 +292,20 @@
         
                                     <form href="#" class="form-horizontal needs-validation" id="FormId">
                                         <div class="row">
+
+                                            <div class="col-md-12">
+                                                <label class="col-md-4 col-form-label">Category</label>
                 
+                                                <div class="col-md-8">
+                                                    <input kvs1="" id="Category" name="Category" data-clienteval=""
+                                                        type="text" class="form-control" placeholder="Enter Category"
+                                                        autocomplete="off" required autofocus>
+                                                    <div class="invalid-feedback">
+                                                        Should not be Empty!!
+                                                    </div>
+                                                </div>
+                                            </div>
+        
                                             <div class="col-md-12">
                                                 <label class="col-md-4 col-form-label">ItemName</label>
                 
@@ -308,7 +321,7 @@
                                             <div class="col-md-12">
                                                 <label class="col-md-4 col-form-label">Pieces</label>
                                                 <div class="col-md-8">
-                                                    <input kvs1="" id="pieces" name="pieces"
+                                                    <input kvs1="" id="pieces" name="Pcs"
                                                         data-dataattribute="Description" value="" data-clienteval="" type="Number"
                                                         class="form-control" placeholder="Enter no.of pieces" autocomplete="off"
                                                         required>
@@ -332,7 +345,7 @@
                                             <div class="col-md-12">
                                                 <label class="col-md-4 col-form-label">WashRate</label>
                                                 <div class="col-md-8">
-                                                    <input kvs1="" id="WashRate" name="WashRate" data-dataattribute="WashRate" value=""
+                                                    <input kvs1="" id="WashRate" name="DryWashRate" data-dataattribute="WashRate" value=""
                                                         data-clienteval="" type="number"
                                                         class="form-control KeshavSoftHtmlAttributes" min="" max="" step=""
                                                         placeholder="Enter WashRate" autocomplete="off" list="FactoryId">
@@ -343,7 +356,7 @@
                                             </div>
                                             <div class="col-md-12">
                                                 <div class="col-md-8 m-3">
-                                                    <button type="button" id="CreateCustomerButtonId" class="btn btn-primary">
+                                                    <button type="button" id="CreateItemButtonId" class="btn btn-primary">
                                                         Save New
                                                     </button>
                                                 </div>
