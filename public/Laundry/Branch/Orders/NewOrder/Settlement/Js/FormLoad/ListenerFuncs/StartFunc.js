@@ -6,7 +6,6 @@ import { StartFunc as StartFuncCardAmountButton } from "./CardAmountButtonId/Cli
 import { StartFunc as StartFuncUPIAmountButton } from "./UPIAmountButtonId/ClickFunc.js";
 
 let StartFunc = () => {
-    console.log("wkddshclicked");
     StartFuncSaveButton();
    //  StartFuncKeyPress();
     StartFunconkeyupAssign();

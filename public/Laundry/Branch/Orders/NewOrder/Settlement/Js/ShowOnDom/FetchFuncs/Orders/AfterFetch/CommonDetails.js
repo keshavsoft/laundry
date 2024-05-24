@@ -1,5 +1,6 @@
 const StartFunc = ({ inData, }) => {
     let jVarLocalData = inData;
+    console.log("data: ", jVarLocalData);
     jFLocalCustomerName({ inOrderInfoCustomerNameId: jVarLocalData.CustomerData.CustomerName });
     jFLocalOrderInfoCustomerMobileId({ inOrderInfoCustomerMobileId: jVarLocalData.CustomerData.CustomerMobile });
 
@@ -30,7 +31,8 @@ let jFLocalBranchNameId = ({ inOrderInfoCustomerBranchId }) => {
 let jFLocalToInputOrderDate = ({ inOrderDate }) => {
     let jVarLocalHtmlId = 'OrderDate';
     let jVarLocalOrderDate = document.getElementById(jVarLocalHtmlId);
-    jVarLocalOrderDate.value = inOrderDate;
+    let datePart = inOrderDate.split(' ')[0];
+    jVarLocalOrderDate.value = datePart;
 };
 
 let jFLocalOrderInfoCustomerMobileId = ({ inOrderInfoCustomerMobileId }) => {
