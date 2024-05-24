@@ -9,6 +9,7 @@ let StartFunc = ({ inFromFetch }) => {
     let CustomerMobile = data.CustomerData.CustomerMobile;
     let BookingDate = data.OrderData.Currentdateandtime;
     let ItemData = data.ItemsInOrder;
+    let AddOnsData=data.AddOnData;
     let DiscountAmount = Object.values(data.CheckOutData)[0].GstData.DiscountAmount;
     let CGST = Object.values(data.CheckOutData)[0].GstData.CGST;
     let SGST = Object.values(data.CheckOutData)[0].GstData.SGST;
@@ -31,7 +32,7 @@ let StartFunc = ({ inFromFetch }) => {
         inMobileNumberid: CustomerMobile,
         inBookingDateid: BookingDate,
     });
-    StartFuncBody({ inItemData: ItemData });
+    StartFuncBody({ inItemData: ItemData,inAddOnsData:Object.values(AddOnsData) });
     StartFuncFooter({
         inTotalPiecesid:TotalPieces,
         inTotalPriceid: TotalPrice,
