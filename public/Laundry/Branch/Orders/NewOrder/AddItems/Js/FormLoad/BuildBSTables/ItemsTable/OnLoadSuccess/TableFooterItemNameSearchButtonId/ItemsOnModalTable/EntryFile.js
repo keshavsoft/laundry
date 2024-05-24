@@ -1,13 +1,25 @@
 import { StartFunc as StartFuncOnClickRow } from "./onClickRow.js";
 
-const StartFunc = () => {
+const StartFunc = (jFLocalFilter) => {
     let jVarLocalModalId = "ItemsOnModal";
-        var $table = $(document.getElementById(jVarLocalModalId).querySelector("table"));
+    var $table = $(document.getElementById(jVarLocalModalId).querySelector("table"));
+
+    if(jFLocalFilter){
+        $table.bootstrapTable({
+            data: jFLocalFromLocalStorageWithFilter(jFLocalFilter),
+            onClickRow: StartFuncOnClickRow
+        });
+        document.getElementById("SearchString").innerHTML = `Search Results for - ${jFLocalFilter}`;
+    }
+    else{
         $table.bootstrapTable({
             data: jFLocalFromLocalStorage(),
             onClickRow: StartFuncOnClickRow
         });
-        $(`#${jVarLocalModalId}`).modal("show");
+        document.getElementById("SearchString").innerHTML = "All Items";
+    }
+     
+    $(`#${jVarLocalModalId}`).modal("show");
 };
 
 const jFLocalFromLocalStorage = () => {
@@ -17,11 +29,11 @@ const jFLocalFromLocalStorage = () => {
     return jVarLocalDataFromLocalStorageJson;
 };
 
-/* const jFLocalFromLocalStorageWithFilter = (jFLocalFilter) => {
+const jFLocalFromLocalStorageWithFilter = (jFLocalFilter) => {
     let jVarLocalDataFromLocalStorage = localStorage.getItem("ItemNames");
     let jVarLocalDataFromLocalStorageJson = JSON.parse(jVarLocalDataFromLocalStorage);
     
     return jVarLocalDataFromLocalStorageJson.filter(obj => obj.ItemName.toLowerCase().includes(jFLocalFilter.toLowerCase()));
-}; */
+};
 
 export { StartFunc };
