@@ -16,16 +16,26 @@ let StartFunc = ({ inFromFetch }) => {
     let CashAmount = Object.values(data.CheckOutData)[0].CashAmount;
     let CardAmount = Object.values(data.CheckOutData)[0].CardAmount;
     let UPIAmount = Object.values(data.CheckOutData)[0].UPIAmount;
-    
+    let TotalPrice = 0;
+    let TotalPieces=0;
+    Object.values(data.ItemsInOrder).forEach(item => {
+        TotalPrice += item.Total;
+        TotalPieces += parseInt(item.Pcs);
+    });
+    let NetPrice=TotalPrice-DiscountAmount;
+
     StartFuncHeading({
         inBillNumberid: BillNumber,
         inCustomerNameid: CustomerName,
         inMobileNumberid: CustomerMobile,
         inBookingDateid: BookingDate,
     });
-    StartFuncBody({inItemData: ItemData});
+    StartFuncBody({ inItemData: ItemData });
     StartFuncFooter({
+        inTotalPiecesid:TotalPieces,
+        inTotalPriceid: TotalPrice,
         inDiscountAmountid: DiscountAmount,
+        inNetPriceid: NetPrice,
         inCGSTid: CGST,
         inSGSTid: SGST,
         inRoundOffid: RoundOff,
@@ -33,10 +43,10 @@ let StartFunc = ({ inFromFetch }) => {
         inCardAmount: CardAmount,
         inUPIAmount: UPIAmount
     });
-    jFLocalDuplicateBillOnDom();
+    // jFLocalDuplicateBillOnDom();
 };
 
-let jFLocalDuplicateBillOnDom = () =>{
+let jFLocalDuplicateBillOnDom = () => {
     let OriginalColId = document.getElementById("KCont1ColId");
     let OriginalInner = OriginalColId.innerHTML;
     let DupplicateColId = document.createElement("div");
@@ -45,5 +55,5 @@ let jFLocalDuplicateBillOnDom = () =>{
     DupplicateColId.innerHTML = OriginalInner;
     let MainRowId = document.getElementById("KCont1RowId");
     MainRowId.appendChild(DupplicateColId);
-    };
+};
 export { StartFunc };

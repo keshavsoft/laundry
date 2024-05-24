@@ -1,7 +1,10 @@
-let StartFunc = ({ inDiscountAmountid, inRoundOffid, inCGSTid, inSGSTid, inCashAmount, inCardAmount, inUPIAmount }) => {
+let StartFunc = ({ inTotalPiecesid, inTotalPriceid, inDiscountAmountid, inNetPriceid, inRoundOffid, inCGSTid, inSGSTid, inCashAmount, inCardAmount, inUPIAmount }) => {
     let inGrandTotalid = inCashAmount + inCardAmount + inUPIAmount;
 
+    jFLocalToInnerHtmlTotalPiecesid({ inTotalPiecesid });
+    jFLocalToInnerHtmlTotalPriceId({ inTotalPriceid });
     jFLocalToInnerHtmlDiscountAmountId({ inDiscountAmountid });
+    jFLocalToInnerHtmlNetPriceid({ inNetPriceid });
     jFLocalToInnerHtmlRoundOffid({ inRoundOffid });
     jFLocalToInnerHtmlCGSTid({ inCGSTid });
     jFLocalToInnerHtmlSGSTid({ inSGSTid });
@@ -9,10 +12,28 @@ let StartFunc = ({ inDiscountAmountid, inRoundOffid, inCGSTid, inSGSTid, inCashA
 
 }
 
+let jFLocalToInnerHtmlTotalPiecesid = ({ inTotalPiecesid }) => {
+    let jVarLocalHtmlId = 'TotalPiecesid';
+    let jVarLocalTotalPiecesid = document.getElementById(jVarLocalHtmlId);
+    jVarLocalTotalPiecesid.innerHTML = inTotalPiecesid;
+};
+
+let jFLocalToInnerHtmlTotalPriceId = ({ inTotalPriceid }) => {
+    let jVarLocalHtmlId = 'TotalPriceid';
+    let jVarLocalTotalPriceid = document.getElementById(jVarLocalHtmlId);
+    jVarLocalTotalPriceid.innerHTML = inTotalPriceid;
+};
+
 let jFLocalToInnerHtmlDiscountAmountId = ({ inDiscountAmountid }) => {
     let jVarLocalHtmlId = 'DiscountAmountId';
     let jVarLocalDiscountAmountId = document.getElementById(jVarLocalHtmlId);
     jVarLocalDiscountAmountId.innerHTML = inDiscountAmountid;
+};
+
+let jFLocalToInnerHtmlNetPriceid = ({ inNetPriceid }) => {
+    let jVarLocalHtmlId = 'NetPriceid';
+    let jVarLocalNetPriceid = document.getElementById(jVarLocalHtmlId);
+    jVarLocalNetPriceid.innerHTML = inNetPriceid;
 };
 
 let jFLocalToInnerHtmlRoundOffid = ({ inRoundOffid }) => {
