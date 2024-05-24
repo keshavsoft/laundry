@@ -10,8 +10,8 @@
     <meta content="" name="keywords">
 
     <!-- Favicons -->
-    <link href="./assets/img/favicon.png" rel="icon">
-    <link href="./assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+    <link href="../assets/img/favicon.png" rel="icon">
+    <link href="../assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
     <!-- Google Fonts -->
     <link href="https://fonts.gstatic.com" rel="preconnect">
@@ -23,7 +23,7 @@
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
     <!-- Template Main CSS File -->
-    <link href="./assets/css/style.css" rel="stylesheet">
+    <link href="../assets/css/style.css" rel="stylesheet">
 
     <link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.22.1/dist/bootstrap-table.min.css">
 
@@ -42,8 +42,8 @@
     <header id="header" class="header fixed-top d-flex align-items-center">
 
         <div class="d-flex align-items-center justify-content-between">
-            <a href="../../NewOrder/Customer.html" class="logo d-flex align-items-center">
-                <img src="./assets/img/logo.png" alt="">
+            <a href="../../../NewOrder/Customer.html" class="logo d-flex align-items-center">
+                <img src="../assets/img/logo.png" alt="">
                 <span class="d-none d-lg-block" id="BranchNameId">Masters</span>
             </a>
             <i class="bi bi-list toggle-sidebar-btn"></i>
@@ -165,7 +165,7 @@
 
                         <li class="message-item">
                             <a href="#">
-                                <img src="./assets/img/messages-1.jpg" alt="" class="rounded-circle">
+                                <img src="../assets/img/messages-1.jpg" alt="" class="rounded-circle">
                                 <div>
                                     <h4>Maria Hudson</h4>
                                     <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
@@ -179,7 +179,7 @@
 
                         <li class="message-item">
                             <a href="#">
-                                <img src="./assets/img/messages-2.jpg" alt="" class="rounded-circle">
+                                <img src="../assets/img/messages-2.jpg" alt="" class="rounded-circle">
                                 <div>
                                     <h4>Anna Nelson</h4>
                                     <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
@@ -193,7 +193,7 @@
 
                         <li class="message-item">
                             <a href="#">
-                                <img src="./assets/img/messages-3.jpg" alt="" class="rounded-circle">
+                                <img src="../assets/img/messages-3.jpg" alt="" class="rounded-circle">
                                 <div>
                                     <h4>David Muldon</h4>
                                     <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
@@ -218,7 +218,7 @@
                 <li class="nav-item dropdown pe-3">
 
                     <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
-                        <img src="./assets/img/profile-img.jpg" alt="Profile" class="rounded-circle">
+                        <img src="../assets/img/profile-img.jpg" alt="Profile" class="rounded-circle">
                         <span class="d-none d-md-block dropdown-toggle ps-2">N.Keshav</span>
                     </a>
                     <!-- End Profile Iamge Icon -->
@@ -300,9 +300,9 @@
                     <i class="bi bi-chevron-down ms-auto"></i>
                 </a>
     
-                <ul id="create-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+                <ul id="create-nav" class="nav-content" data-bs-parent="#sidebar-nav">
                     <li>
-                        <a href="../Customers/Create/Create.html">
+                        <a href="../Create/Create.html">
                             <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14"
                                 fill="currentColor" class="bi bi-plus-square" viewBox="0 0 19 19">
                                 <path
@@ -313,27 +313,27 @@
                             <span class="m-1">Create</span></a>
                     </li>
                     <li>
-                        <a href="../Customers/ShowAll/ShowAll.html">
+                        <a class="active" href="./ShowAll.html">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                 fill="currentColor" class="bi bi-table" viewBox="0 0 19 19">
                                 <path
                                     d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm15 2h-4v3h4zm0 4h-4v3h4zm0 4h-4v3h3a1 1 0 0 0 1-1zm-5 3v-3H6v3zm-5 0v-3H1v2a1 1 0 0 0 1 1zm-4-4h4V8H1zm0-4h4V4H1zm5-3v3h4V4zm4 4H6v3h4z" />
                             </svg>
-                            </i><span m-1>ShowAll</span>
+                            </i><span class="m-1">ShowAll</span>
                     </li>
                 </ul>
   
             </li>
 
             <li class="nav-item">
-                <a class="nav-link collapsed" href="../Items/ShowAll.html">
+                <a class="nav-link collapsed" href="../../Items/ShowAll.html">
                     <i class="bi bi-x-diamond-fill"></i>
                     <span>Items</span>
                 </a>
             </li>
 
             <li class="nav-item">
-                <a class="nav-link " href="#">
+                <a class="nav-link collapsed" href="../../AddOns/ShowAll.html">
                     <i class="bi bi-list"></i>
                     <span>Add Ons</span>
                 </a>
@@ -358,7 +358,7 @@
             <nav>
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="#">Masters</a></li>
-                    <li class="breadcrumb-item"><a id="RefreshBSTableId" href="#">AddOns</a></li>
+                    <li class="breadcrumb-item"><a id="RefreshBSTableId" href="#">Customers</a></li>
 
 
                 </ol>
@@ -374,22 +374,21 @@
                         <div class="card-body">
                             <div class="row">
                                 <div class="col">
-                                    <div class="table-responsive">
-
-                                        <table id="table" data-toolbar="#toolbar"
-                                            data-detail-formatter="detailFormatter">
-                                            <thead>
-                                                <tr id="tableHeadRow">
-                                                    <th data-formatter="jFLocalSerialColumn"
-                                                        class="d-none d-md-table-cell">#</th>
-                                                    <th id="AddOnService">AddOnService
-                                                    </th>
-                                                    <th id="AddOnRate">AddOnRate
-                                                    </th>
-                                                </tr>
-                                            </thead>
-                                        </table>
-                                    </div>
+                                    <table id="table" data-toolbar="#toolbar">
+                                        <thead>
+                                            <tr id="tableHeadRow">
+                                                <th data-formatter="jFLocalSerialColumn" class="d-none d-md-table-cell">
+                                                    #</th>
+                                                <th id="MobileId">
+                                                    Mobile
+                                                </th>
+                                                <th id="CustomerNameId">
+                                                    CustomerName</th>
+                                                <th id="CityId">
+                                                    City</th>
+                                            </tr>
+                                        </thead>
+                                    </table>
                                 </div>
 
                             </div>
