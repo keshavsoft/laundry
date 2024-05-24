@@ -61,7 +61,7 @@
                         <th data-field="Rate" data-width="100" class="text-end">Rate</th>
                         <th data-field="Pcs" data-width="75" class="text-end">Pcs</th>
                         <th data-field="Total" data-width="100" class="text-end">Amount</th>
-                        <th data-field="location" data-width="100">Factory</th>
+                        <th data-field="location" data-width="100" class="text-center">Factory</th>
                         <th data-field="DeliveryDateTime" data-width="100">Delivery</th>
                         <th data-formatter="jFLocalOptsFormater" data-width="50">Opts.</th>
                     </thead>
@@ -218,17 +218,18 @@
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h1>This is ItemsOnModal</h1>
+                   <!--  <h1>This is ItemsOnModal</h1> -->
                 </div>
                 <div class="modal-body">
-                    <table data-search="true">
+                    <table data-search="true" data-search-align="left" data-sort-name="ItemName"
+                    data-sort-order="asc">
                         <thead>
                             <tr>
                                 <th data-formatter="jFLocalSerialColumn" data-width="75">#</th>
                                 <!-- <th data-field="AddOnItemSerial">AddOnItem #</th> -->
-                                <th data-field="Category" data-width="200">Category</th>
-                                <th data-field="ItemName" data-width="400">Item Name</th>
-                                <th data-field="DryWashRate" data-width="100" data-sortable="true">Rate</th>
+                                <th data-field="Category" data-width="200" data-sortable="true">Category</th>
+                                <th data-field="ItemName" data-width="400" data-sortable="true">Item Name</th>
+                                <th data-field="DryWashRate" data-width="100" data-sortable="true" class="text-end">Rate</th>
                             </tr>
                         </thead>
                     </table>
@@ -247,7 +248,7 @@
                     <h1>Search results for - <span id="SearchString"></span></h1>
                 </div>
                 <div class="modal-body">
-                    <table data-searchable="true">
+                    <table data-searchable="true" id="myTable">
                         <thead>
                             <tr>
                                 <th data-formatter="jFLocalSerialColumn" data-width="75">#</th>
