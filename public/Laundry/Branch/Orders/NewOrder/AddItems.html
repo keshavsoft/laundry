@@ -81,7 +81,7 @@
                             <th>
                                 <div class="input-group">
                                     <input type="text" class="form-control" id="TableFooterItemNameId"
-                                        list="ItemsDataListId" autocomplete="off">
+                                        list="ItemsDataListId" autocomplete="off" autofocus>
 
                                     <button class="btn btn-outline-secondary" type="button"
                                         id="TableFooterItemNameSearchButtonId"><svg xmlns="http://www.w3.org/2000/svg"
@@ -218,7 +218,7 @@
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header">
-                   <!--  <h1>This is ItemsOnModal</h1> -->
+                    <h1 id="SearchString"></h1>
                 </div>
                 <div class="modal-body">
                     <table data-search="true" data-search-align="left" data-sort-name="ItemName"
@@ -245,7 +245,7 @@
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h1>Search results for - <span id="SearchString"></span></h1>
+                    <!-- <h1>Search results for - <span id="SearchString"></span></h1> -->
                 </div>
                 <div class="modal-body">
                     <table data-searchable="true" id="myTable">
@@ -327,6 +327,7 @@
 
             jVarLocalTableFooterAddOnSelectId.focus();
         });
+        
     </script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap-table@1.22.6/dist/bootstrap-table.min.js"></script>
