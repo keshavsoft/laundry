@@ -95,69 +95,7 @@
         integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
         </script>
 
-    <script>
-        let jFLocalBranchAssignListeners = () => {
-            let jVarLocalBruchSelectButtonId = document.getElementById('BruchSelectButtonId');
-
-            if (jVarLocalBruchSelectButtonId === null === false) {
-                jVarLocalBruchSelectButtonId.addEventListener("click", jFLocalToLaundryPos)
-            };
-            
-            let jVarLocalBranchOrderId = document.getElementById('BranchOrderId');
-
-            if (jVarLocalBranchOrderId === null === false) {
-                jVarLocalBranchOrderId.addEventListener("click", jFLocalToNewOrder)
-            };
-        };
-
-        let jFLocalToNewOrder = () => {
-            let jVarLocalBranchSelectId = document.getElementById('BranchSelectId');
-
-            if (jVarLocalBranchSelectId === null === false) {
-                let jVarLocalBruchSelectInputValue = jVarLocalBranchSelectId.value;
-                localStorage.setItem("BranchName", jVarLocalBruchSelectInputValue);
-
-                // window.location.href = `/LaundryPos/Dashboard/Dashboard.html?BranchName=${jVarLocalBruchSelectInputValue}`;
-                window.location.href = `/Laundry/Branch/Orders/NewOrder/Customer.html`;
-            };
-        };
-      
-        let jFLocalToLaundryPos = () => {
-            let jVarLocalBranchSelectId = document.getElementById('BranchSelectId');
-
-            if (jVarLocalBranchSelectId === null === false) {
-                let jVarLocalBruchSelectInputValue = jVarLocalBranchSelectId.value;
-                localStorage.setItem("BranchName", jVarLocalBruchSelectInputValue);
-
-                // window.location.href = `/LaundryPos/Dashboard/Dashboard.html?BranchName=${jVarLocalBruchSelectInputValue}`;
-                window.location.href = `/LaundryPos/Dashboard/Dashboard.html`;
-            };
-        };
-     
-        jFLocalBranchAssignListeners();
-    </script>
-
-    <script>
-        let jFLocalFactorySelectButtonId = () => {
-            let jVarLocalFactorySelectButtonId = document.getElementById('FactorySelectButtonId');
-
-            if (jVarLocalFactorySelectButtonId === null === false) {
-                jVarLocalFactorySelectButtonId.addEventListener("click", jFLocalFactorySelectInputId)
-            };
-        };
-
-        let jFLocalFactorySelectInputId = () => {
-            let jVarLocalBranchSelectId = document.getElementById('FactorySelectInputId');
-
-            if (jVarLocalBranchSelectId === null === false) {
-                let jVarLocalBruchSelectInputValue = jVarLocalBranchSelectId.value;
-                localStorage.setItem("FactoryName", jVarLocalBruchSelectInputValue);
-
-                window.location.href = `/Factory/Dashboard/Dashboard.html?BranchName=${jVarLocalBruchSelectInputValue}`
-            };
-        };
-        jFLocalFactorySelectButtonId();
-    </script>
+    <script type="module" src="./Js/EntryFile.js"></script>
 </body>
 
 </html>
