@@ -1,4 +1,5 @@
 import { StartFunc as StartFuncOnClickRow } from "./onClickRow.js";
+import { StartFunc as StartFuncAddListener } from "./AddListener/EntryFile.js";
 
 const StartFunc = (jFLocalFilter) => {
     let jVarLocalModalId = "ItemsWithSearchOnModal";
@@ -7,6 +8,7 @@ const StartFunc = (jFLocalFilter) => {
         data: jFLocalFromLocalStorageWithFilter(jFLocalFilter),
         onClickRow: StartFuncOnClickRow
     });
+    StartFuncAddListener();
     document.getElementById("SearchString").innerHTML = jFLocalFilter;
     $(`#${jVarLocalModalId}`).modal("show");
 };

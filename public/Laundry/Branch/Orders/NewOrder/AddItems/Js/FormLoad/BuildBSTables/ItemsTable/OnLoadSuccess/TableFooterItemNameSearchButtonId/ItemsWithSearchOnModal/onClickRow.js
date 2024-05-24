@@ -13,6 +13,7 @@ const StartFunc = (row, $element, field) => {
 
     jVarLocalTableFooterItemNameId.click();
     // LocalFuncForTableFooterItemNameIdFocus();
+    console.log("row : ", row);
 };
 
 let LocalFuncForTableFooterItemNameIdFocus = () => {
