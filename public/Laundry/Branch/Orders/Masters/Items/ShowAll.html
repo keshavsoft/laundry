@@ -294,10 +294,35 @@
             
 
             <li class="nav-item">
-                <a  class="nav-link collapsed" href="../Customers/ShowAll.html">
+                <a class="nav-link collapsed" data-bs-target="#create-nav" data-bs-toggle="collapse" href="#">
                     <i class="bi bi-people"></i>
                     <span>Customers</span>
+                    <i class="bi bi-chevron-down ms-auto"></i>
                 </a>
+    
+                <ul id="create-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+                    <li>
+                        <a href="../Customers/Create/Create.html">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14"
+                                fill="currentColor" class="bi bi-plus-square" viewBox="0 0 19 19">
+                                <path
+                                    d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z" />
+                                <path
+                                    d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4" />
+                            </svg>
+                            <span class="m-1">Create</span></a>
+                    </li>
+                    <li>
+                        <a href="../Customers/ShowAll/ShowAll.html">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                fill="currentColor" class="bi bi-table" viewBox="0 0 19 19">
+                                <path
+                                    d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm15 2h-4v3h4zm0 4h-4v3h4zm0 4h-4v3h3a1 1 0 0 0 1-1zm-5 3v-3H6v3zm-5 0v-3H1v2a1 1 0 0 0 1 1zm-4-4h4V8H1zm0-4h4V4H1zm5-3v3h4V4zm4 4H6v3h4z" />
+                            </svg>
+                            </i><span class="m-1">ShowAll</span>
+                    </li>
+                </ul>
+  
             </li>
 
             <li class="nav-item">
@@ -411,7 +436,7 @@
 
     <!-- Template Main JS File -->
     <script src="./assets/js/main.js"></script>
-    <script type="module" src="./Js/StartFunc.js"></script>
+    <script type="module" src="js/StartFunc.js"></script>
 </body>
 
 </html>
