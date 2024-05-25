@@ -9,12 +9,12 @@ let StartFunc = () => {
 
     });
 
-    if (jVarLocalBranchName === "" || jVarLocalBranchName === null) Swal.fire({
-        icon: "error",
-        title: "Error",
-        text: "BranchName Not Found in Params"
+    // if (jVarLocalBranchName === "" || jVarLocalBranchName === null) Swal.fire({
+    //     icon: "error",
+    //     title: "Error",
+    //     text: "BranchName Not Found in Params"
 
-    });
+    // });
 };
 
 let getUrlQueryParams = ({ inGetKey }) => {
