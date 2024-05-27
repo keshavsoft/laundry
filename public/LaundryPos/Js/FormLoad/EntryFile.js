@@ -1,4 +1,4 @@
-import { StartFunc as StartFuncFetch} from "../FormLoad/FetchFuncs/EntryFile.js"
+import { StartFunc as StartFuncFetch} from "./FetchFuncs/EntryFile.js"
 let StartFunc = () => {
     StartFuncFetch();
 }
