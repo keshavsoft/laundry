@@ -19,13 +19,18 @@ let jFLocalAddOnData = ({ inQrCodeData }) => {
     let jFLocalTotalQrCodes = inQrCodeData.length;
 
     let jFLocalData = inQrCodeData.map(element => {
-        element.AddOnDataAsString = Object.values(element.BookingData.AddOnData).map(LoopAddOn => {
-            console.log("element:",element);
-            console.log("LoopAddOn::",LoopAddOn);
-            if (element.ItemSerial === LoopAddOn.AddOnItemSerial) {
-                return LoopAddOn.AddOnRate > 0 ? `${LoopAddOn.AddOnService}` : LoopAddOn.AddOnService;
-            };
-        }).join(", ");
+        // let JVarLoopInsideAddOnArray = Object.values(element.BookingData.AddOnData).map(LoopAddOn => {
+        //     // console.log("element:",element);
+        //     // console.log("LoopAddOn::",LoopAddOn);
+        //     if (element.ItemSerial === LoopAddOn.AddOnItemSerial) {
+        //         return LoopAddOn.AddOnRate > 0 ? `${LoopAddOn.AddOnService}` : LoopAddOn.AddOnService;
+        //     };
+        // });
+
+        let JVarLoopInsideFiltered = Object.values(element.BookingData.AddOnData).filter(LoopAddOn => element.ItemSerial === LoopAddOn.AddOnItemSerial );
+        let JVarLoopInsideAddOnArray = JVarLoopInsideFiltered.map(LoopAddOn => LoopAddOn.AddOnRate > 0 ? `${LoopAddOn.AddOnService}` : LoopAddOn.AddOnService);
+
+        element.AddOnDataAsString = JVarLoopInsideAddOnArray.join(", ");
 
         element.TotalQrCodes = jFLocalTotalQrCodes;
 
