@@ -1,13 +1,5 @@
-import { GetIdFunc as GetIdFuncRepo } from '../../repos/getFuncs/EntryFile.js';
+// import { GetIdFunc as GetIdFuncRepo } from '../../repos/getFuncs/EntryFile.js';
 import { GetIdWithTableFunc as GetIdWithTableFuncRepo } from '../../repos/getFuncs/EntryFile.js';
-
-let GetIdFunc = async (req, res) => {
-    let LocalParams = req.params;
-    let LocalIfFromParam = LocalParams.id;
-
-    let LocalFromRepo = await GetIdFuncRepo({ inId: LocalIfFromParam });
-    res.json(LocalFromRepo);
-};
 
 let GetIdWithTableFunc = async (req, res) => {
     let LocalParams = req.params;
@@ -18,4 +10,4 @@ let GetIdWithTableFunc = async (req, res) => {
     res.json(LocalFromRepo);
 };
 
-export { GetIdFunc, GetIdWithTableFunc };
+export { GetIdWithTableFunc };
