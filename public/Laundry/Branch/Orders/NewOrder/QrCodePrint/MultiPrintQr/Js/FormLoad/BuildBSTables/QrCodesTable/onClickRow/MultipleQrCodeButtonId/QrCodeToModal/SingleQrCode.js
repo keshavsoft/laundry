@@ -1,6 +1,6 @@
 let StartFunc = ({ inData }) => {
     let jVarLocalDataNeeded = inData;
-    console.log("jVarLocalDataNeeded:",jVarLocalDataNeeded);
+    // console.log("jVarLocalDataNeeded:",jVarLocalDataNeeded);
 
     let jVarLocalTemplate = document.getElementById("TemplateForQrCodePrint");
     let clone = jVarLocalTemplate.content.cloneNode("true");
@@ -59,7 +59,7 @@ let StartFunc = ({ inData }) => {
     jVarLocalHtmlQrId.dataset.qrcode += `${jVarLocalDataNeeded.AddOnDataAsString}~`
     jVarLocalHtmlQrId.dataset.qrcode += `${jVarLocalDataNeeded.BookingData.OrderData.Currentdateandtime}~`
     jVarLocalHtmlQrId.dataset.qrcode += `${jVarLocalDataNeeded.DeliveryDateTime}`;
-    console.log("jVarLocalHtmlQrId::", jVarLocalHtmlQrId);
+    // console.log("jVarLocalHtmlQrId::", jVarLocalHtmlQrId);
     // GenerateQrCodeOnModal({ inQrData: jVarLocalDataNeeded, inCanvasId: jVarLocalHtmlQrId })
     const s = new XMLSerializer();
     const str = s.serializeToString(clone);
