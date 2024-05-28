@@ -1,5 +1,6 @@
 import { StartFunc as StartFetchFunc } from "./FetchFunc/EntryFile.js";
 import { StartFunc as StartFunPostFetch } from "./PostFetch.js";
+
 let jFLocalStartFunc = (inDataAsArray, inHtmlSelectId) => {
     let LocalinHtmlSelectId = inHtmlSelectId;
     let LocalDataAsArray = inDataAsArray;
@@ -13,12 +14,11 @@ let jFLocalStartFunc = (inDataAsArray, inHtmlSelectId) => {
         selectElement.appendChild(option);
     };
 };
-z
+
 let StartFunc = async () => {
     let Data = await StartFetchFunc();
     let BranchNames = await StartFunPostFetch(Data.JsonData);
     jFLocalStartFunc(BranchNames, "BranchSelectId");
 };
-
 
 export { StartFunc };
