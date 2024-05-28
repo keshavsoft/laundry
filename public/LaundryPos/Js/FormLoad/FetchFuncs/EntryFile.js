@@ -1,18 +1,23 @@
-import { StartFunc as StartFuncBeforeFetch } from "./BeforeFetch/EntryFile.js";
-import { StartFunc as StartFunPostFetch } from "./PostFetch/EntryFile.js";
+import { StartFunc as StartFetchFunc } from "./FetchFunc/EntryFile.js";
+import { StartFunc as StartFunPostFetch } from "./PostFetch.js";
+let jFLocalStartFunc = (inDataAsArray, inHtmlSelectId) => {
+    let LocalinHtmlSelectId = inHtmlSelectId;
+    let LocalDataAsArray = inDataAsArray;
 
+    var selectElement = document.getElementById(LocalinHtmlSelectId);
 
-let StartFunc = async () => {
-    let Data = await StartFuncBeforeFetch();
-    let BranchNames = await StartFunPostFetch(Data.JsonData);
-    console.log("bhhh",BranchNames);
-    var selectElement = document.getElementById("BranchSelectId");
-    for (var i = 0; i < BranchNames.length; i++) {
-        var option = document.createElement("option");
-        option.value = BranchNames[i];
-        option.textContent = BranchNames[i];
+    for (var i = 0; i < LocalDataAsArray.length; i++) {
+        var option = document.createElement('option');
+        option.value = LocalDataAsArray[i];
+        option.textContent = LocalDataAsArray[i];
         selectElement.appendChild(option);
-    }
+    };
+};
+z
+let StartFunc = async () => {
+    let Data = await StartFetchFunc();
+    let BranchNames = await StartFunPostFetch(Data.JsonData);
+    jFLocalStartFunc(BranchNames, "BranchSelectId");
 };
 
 
