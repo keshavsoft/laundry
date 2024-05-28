@@ -7,12 +7,12 @@ let StartFunc = ({ inQrCodeData, inRowPk }) => {
     let jVarLocalBranchName = localStorage.getItem("BranchName");
 
     let localFilterQrcodeData = localQrodeData.filter(element => element.OrderNumber == inRowPk && element.BookingData.OrderData.BranchName == jVarLocalBranchName);
-    console.log("llll---",localFilterQrcodeData);
+    // console.log("llll---",localFilterQrcodeData);
 
 
     let jFLocalData = jFLocalAddOnData({ inQrCodeData: localFilterQrcodeData });
 
-    StartFuncQrCodeToModal({ inData: jFLocalData }).then();
+    StartFuncQrCodeToModal({ inData: jFLocalData });
 };
 
 let jFLocalAddOnData = ({ inQrCodeData }) => {
