@@ -1,6 +1,6 @@
 {
   "name": "laundry",
-  "version": "1.0.0",
+  "version": "2024.05.28",
   "description": "laundry automation by qrcode",
   "main": "app.js",
   "type": "module",
