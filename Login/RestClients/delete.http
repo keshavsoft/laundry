@@ -1,1 +1,1 @@
-DELETE http://localhost:7016/Login/bin/CreateToken/UsingJwt/1
+DELETE http://localhost:7016/Login/bin/Users/170c9d41-c8be-4b98-b706-11ea8bd7dba3
