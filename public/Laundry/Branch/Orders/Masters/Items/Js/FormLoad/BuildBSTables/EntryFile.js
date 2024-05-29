@@ -1,3 +1,5 @@
+import Attributes from './Attributes.json' with {type: 'json'};
+
 const StartFunc = () => {
     jFLocalToTableTag();
     jFPrepareColumns();
@@ -7,27 +9,23 @@ const StartFunc = () => {
 const jFLocalInitialize = () => {
     var $table = $('#table');
 
-    $table.bootstrapTable({
-        data: [],
-        sortName:"ItemName",
-        sortOrder: "asc"
-    });
+    $table.bootstrapTable(Attributes.loadObject);
 };
 
 const jFLocalToTableTag = () => {
     var $table = $('#table');
 
-    const tableAttributes = {
-        "data-show-columns": "true",
-        "data-search": "true",
-        "data-search-highlight": "true",
-        "data-searchable": "true",
-        "data-show-columns-toggle-all": "true",
-        "data-minimum-count-columns": "3",
-        "data-id-field": "pk"
-    };
+    // const tableAttributes = {
+    //     "data-show-columns": "true",
+    //     "data-search": "true",
+    //     "data-search-highlight": "true",
+    //     "data-searchable": "true",
+    //     "data-show-columns-toggle-all": "true",
+    //     "data-minimum-count-columns": "3",
+    //     "data-id-field": "pk"
+    // };
 
-    $table.attr(tableAttributes);
+    $table.attr(Attributes.tableAttributes);
 };
 
 const jFPrepareColumns = () => {
