@@ -2,7 +2,7 @@ import { StartFunc as StartFuncCheckFunc } from "./CheckFunc.js";
 import { StartFunc as StartFuncFetchFromFuncs } from "./FetchFromFuncs/Entry.js";
 
 let StartFunc = () => {
-    let LocalCreateCustomerButtonId = document.getElementById("CreateCustomerButtonId");
+    let LocalCreateCustomerButtonId = document.getElementById("CreateAddOnButtonId");
     LocalCreateCustomerButtonId.addEventListener("click", LocalClickFunc)
 };
 
