@@ -1,0 +1,6 @@
+PUT http://localhost:7016/Login/bin/Users/d70dd222-2ab3-463a-85aa-d0be190909ae
+content-type: application/json
+
+{
+"UserName":"Mahith"
+}
