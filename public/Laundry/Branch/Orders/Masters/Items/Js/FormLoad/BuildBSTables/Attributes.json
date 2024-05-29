@@ -1,0 +1,11 @@
+{
+    "tableAttributes": {
+        "data-show-columns": "true",
+        "data-search": "true"
+    },
+    "loadObject": {
+        "data" : [],
+        "sortName" : "ItemName",
+        "sortOrder" : "asc"
+    }
+}
