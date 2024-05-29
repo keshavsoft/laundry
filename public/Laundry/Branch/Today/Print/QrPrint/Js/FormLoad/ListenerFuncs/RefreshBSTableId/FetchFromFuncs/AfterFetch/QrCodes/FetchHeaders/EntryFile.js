@@ -4,7 +4,7 @@ let StartFunc = () => {
     let LocalTodayDate = jFLocalGetCurrentDate();
 
     let jVarLocalBodyKeysJson = {};
-    jVarLocalBodyKeysJson.FindKey = "e.DateTime.split('T')[0]";
+    jVarLocalBodyKeysJson.FindKey = "new Date(e.DateTime).toISOString().split('T')[0]";
     jVarLocalBodyKeysJson.FindValue = LocalTodayDate;
     KeysJson.body = JSON.stringify(jVarLocalBodyKeysJson);
 
