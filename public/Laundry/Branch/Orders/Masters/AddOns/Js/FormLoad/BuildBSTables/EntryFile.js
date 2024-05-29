@@ -8,7 +8,9 @@ const jFLocalInitialize = () => {
     var $table = $('#table');
 
     $table.bootstrapTable({
-        data: []
+        data: [],
+        sortName:"AddOnService",
+        sortOrder: "asc"
     });
 };
 

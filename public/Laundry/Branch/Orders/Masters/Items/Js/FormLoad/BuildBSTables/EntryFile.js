@@ -8,7 +8,9 @@ const jFLocalInitialize = () => {
     var $table = $('#table');
 
     $table.bootstrapTable({
-        data: []
+        data: [],
+        sortName:"ItemName",
+        sortOrder: "asc"
     });
 };
 
@@ -21,8 +23,8 @@ const jFLocalToTableTag = () => {
     $table.attr("data-searchable", "true");
     $table.attr("data-show-columns-toggle-all", "true");
     $table.attr("data-minimum-count-columns", "3");
-    $table.attr("data-show-pagination-switch", "true");
-    $table.attr("data-pagination", "true");
+    // $table.attr("data-show-pagination-switch", "true");
+    // $table.attr("data-pagination", "true");
     // $table.attr("data-toggle","table");
     $table.attr("data-id-field","pk");
 };

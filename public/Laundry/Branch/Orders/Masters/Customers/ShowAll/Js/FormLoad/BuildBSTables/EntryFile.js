@@ -23,8 +23,8 @@ const jFLocalToTableTag = () => {
     $table.attr("data-searchable", "true");
     $table.attr("data-show-columns-toggle-all", "true");
     $table.attr("data-minimum-count-columns", "2");
-    $table.attr("data-show-pagination-switch", "true");
-    $table.attr("data-pagination", "true");
+    // $table.attr("data-show-pagination-switch", "true");
+    // $table.attr("data-pagination", "true");
 };
 
 const jFPrepareColumns = () => {
