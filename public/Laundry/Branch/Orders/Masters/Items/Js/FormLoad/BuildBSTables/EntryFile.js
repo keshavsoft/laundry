@@ -17,16 +17,17 @@ const jFLocalInitialize = () => {
 const jFLocalToTableTag = () => {
     var $table = $('#table');
 
-    $table.attr("data-show-columns", "true");
-    $table.attr("data-search", "true");
-    $table.attr("data-search-highlight", "true");
-    $table.attr("data-searchable", "true");
-    $table.attr("data-show-columns-toggle-all", "true");
-    $table.attr("data-minimum-count-columns", "3");
-    // $table.attr("data-show-pagination-switch", "true");
-    // $table.attr("data-pagination", "true");
-    // $table.attr("data-toggle","table");
-    $table.attr("data-id-field","pk");
+    const tableAttributes = {
+        "data-show-columns": "true",
+        "data-search": "true",
+        "data-search-highlight": "true",
+        "data-searchable": "true",
+        "data-show-columns-toggle-all": "true",
+        "data-minimum-count-columns": "3",
+        "data-id-field": "pk"
+    };
+
+    $table.attr(tableAttributes);
 };
 
 const jFPrepareColumns = () => {
@@ -40,60 +41,75 @@ const jFPrepareColumns = () => {
 
 const jFPrepareCategory = () => {
     var $Category = $('#Category');
-    $Category.attr({
+
+    const CategoryAttributes = {
         "data-field": "Category",
         "data-sortable": "true",
         "data-sort-name": "Category",
         "data-sort-order": "desc"
-    });
+    };
+
+    $Category.attr(CategoryAttributes);
     $Category.addClass("d-none d-sm-table-cell");
 };
 
 const jFPrepareItemName = () => {
     var $ItemName = $('#ItemName');
-    $ItemName.attr({
+
+    const ItemNameAttributes = {
         "data-field": "ItemName",
         "data-sortable": "true",
         "data-sort-name": "ItemName",
         "data-sort-order": "desc"
-    });
+    };
+
+    $ItemName.attr(ItemNameAttributes);
     $ItemName.addClass("d-none d-sm-table-cell");
 };
 
 const jFPreparePieces = () => {
     var $Pieces = $('#Pieces');
-    $Pieces.attr({
+
+    const PiecesAttributes = {
         "data-field": "Pcs",
         "data-sortable": "true",
         "data-sort-name": "Pcs",
         "data-sort-order": "desc",
         "data-halign":"left",
         "data-align":"right"
-    });
+    };
+
+    $Pieces.attr(PiecesAttributes);
     $Pieces.addClass("d-none d-sm-table-cell");
 };
 
 const jFPrepareWashType = () => {
     var $WashType = $('#WashType');
-    $WashType.attr({
+
+    const WashTypeAttributes = {
         "data-field": "Category",
         "data-sortable": "true",
         "data-sort-name": "Category",
         "data-sort-order": "desc"
-    });
+    }
+
+    $WashType.attr(WashTypeAttributes);
     $WashType.addClass("d-none d-sm-table-cell");
 };
 
 const jFPrepareWashRate = () => {
     var $DryWashRate = $('#DryWashRate');
-    $DryWashRate.attr({
-        "data-field": "Pcs",
+
+    const DryWashRateAttributes = {
+        "data-field": "DryWashRate",
         "data-sortable": "true",
         "data-sort-name": "Pcs",
         "data-sort-order": "desc",
         "data-halign":"left",
         "data-align":"right"
-    });
+    };
+
+    $DryWashRate.attr(DryWashRateAttributes);
     $DryWashRate.addClass("d-none d-sm-table-cell");
 };
 

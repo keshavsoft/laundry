@@ -17,15 +17,19 @@ const jFLocalInitialize = () => {
 const jFLocalToTableTag = () => {
     var $table = $('#table');
 
-    $table.attr("data-show-columns", "true");
-    $table.attr("data-search", "true");
-    $table.attr("data-search-highlight", "true");
-    $table.attr("data-searchable", "true");
-    $table.attr("data-show-columns-toggle-all", "true");
-    $table.attr("data-minimum-count-columns", "2");
-    $table.attr("data-show-pagination-switch", "true");
-    $table.attr("data-pagination", "true");
-    $table.attr("data-id-field", "pk")
+    const tableAttributes = {
+        "data-show-columns": "true",
+        "data-search": "true",
+        "data-search-highlight": "true",
+        "data-searchable": "true",
+        "data-show-columns-toggle-all": "true",
+        "data-minimum-count-columns": "3",
+        "data-id-field": "pk",
+        "data-show-pagination-switch" : "true",
+        "data-pagination" : "true"
+    };
+
+    $table.attr(tableAttributes);
 };
 
 const jFPrepareColumns = () => {
@@ -35,25 +39,31 @@ const jFPrepareColumns = () => {
 
 const jFPrepareAddOnService = () => {
     var $AddOnService = $('#AddOnService');
-    $AddOnService.attr({
+
+    const AddOnServiceAttribute = {
         "data-field": "AddOnService",
         "data-sortable": "true",
         "data-sort-name": "AddOnService",
         "data-sort-order": "desc"
-    });
+    };
+
+    $AddOnService.attr(AddOnServiceAttribute);
     $AddOnService.addClass("d-none d-sm-table-cell");
 };
 
 const jFPrepareAddOnRate = () => {
     var $AddOnRate = $('#AddOnRate');
-    $AddOnRate.attr({
+
+    const AddOnRateAttributes = {
         "data-field": "AddOnRate",
         "data-sortable": "true",
         "data-sort-name": "AddOnRate",
         "data-sort-order": "desc",
         "data-halign": "left",
         "data-align": "right"
-    });
+    };
+
+    $AddOnRate.attr(AddOnRateAttributes);
     $AddOnRate.addClass("d-none d-sm-table-cell");
 };
 
