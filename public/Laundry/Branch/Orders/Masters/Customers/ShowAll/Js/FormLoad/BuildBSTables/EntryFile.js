@@ -17,14 +17,17 @@ const jFLocalInitialize = () => {
 const jFLocalToTableTag = () => {
     var $table = $('#table');
 
-    $table.attr("data-show-columns", "true");
-    $table.attr("data-search", "true");
-    $table.attr("data-search-highlight", "true");
-    $table.attr("data-searchable", "true");
-    $table.attr("data-show-columns-toggle-all", "true");
-    $table.attr("data-minimum-count-columns", "2");
-    // $table.attr("data-show-pagination-switch", "true");
-    // $table.attr("data-pagination", "true");
+    const tableAttributes = {
+        "data-show-columns": "true",
+        "data-search": "true",
+        "data-search-highlight": "true",
+        "data-searchable": "true",
+        "data-show-columns-toggle-all": "true",
+        "data-minimum-count-columns": "3",
+        "data-id-field": "pk"
+    };
+
+    $table.attr(tableAttributes);
 };
 
 const jFPrepareColumns = () => {
@@ -36,34 +39,43 @@ const jFPrepareColumns = () => {
 
 const jFPrepareMobile = () => {
     var $mobile = $('#MobileId');
-    $mobile.attr({
+    
+    const MobileAttributes = {
         "data-field": "Mobile",
         "data-sortable": "true",
         "data-sort-name": "Mobile",
         "data-sort-order": "desc"
-    });
+    };
+
+    $mobile.attr(MobileAttributes);
     $mobile.addClass("d-none d-sm-table-cell");
 };
 
 const jFPrepareCustomerName = () => {
     var $CustomerName = $('#CustomerNameId');
-    $CustomerName.attr({
+
+    const CustomerNameAttribute = {
         "data-field": "CustomerName",
         "data-sortable": "true",
         "data-sort-name": "CustomerName",
         "data-sort-order": "desc"
-    });
+    };
+
+    $CustomerName.attr(CustomerNameAttribute);
     $CustomerName.addClass("d-none d-sm-table-cell");
 };
 
 const jFPrepareCity = () => {
     var $City = $('#CityId');
-    $City.attr({
+
+    const CityAttribute = {
         "data-field": "City",
         "data-sortable": "true",
         "data-sort-name": "City",
         "data-sort-order": "desc"
-    });
+    };
+    
+    $City.attr(CityAttribute);
     $City.addClass("d-none d-sm-table-cell");
 };
 
