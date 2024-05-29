@@ -1,8 +1,10 @@
-let StartFunc = ({ inBillNumberid, inCustomerNameid, inMobileNumberid, inBookingDateid, inDeliveryDateid }) => {
+let StartFunc = ({ inBillNumberid, inCustomerNameid, inMobileNumberid, inBookingDateid, inDeliveryDateid, inPaymentid }) => {
     jFLocalToInnerHtmlBillNumberid({ inBillNumberid });
     jFLocalToInnerHtmlCustomerNameid({ inCustomerNameid });
     jFLocalToInnerHtmlMobileNumberid({ inMobileNumberid });
     jFLocalToInnerHtmlBookingDateid({ inBookingDateid });
+    jFLocalToInnerHtmlPaymentid({ inPaymentid });
+
 }
 
 let jFLocalToInnerHtmlBillNumberid = ({ inBillNumberid }) => {
@@ -27,6 +29,12 @@ let jFLocalToInnerHtmlBookingDateid = ({ inBookingDateid }) => {
     let jVarLocalHtmlId = 'BookingDateid';
     let jVarLocalBookingDateid = document.getElementById(jVarLocalHtmlId);
     jVarLocalBookingDateid.innerHTML = inBookingDateid;
+};
+
+let jFLocalToInnerHtmlPaymentid = ({ inPaymentid }) => {
+    let jVarLocalHtmlId = 'Paymentid';
+    let jVarLocalPaymentid = document.getElementById(jVarLocalHtmlId);
+    jVarLocalPaymentid.innerHTML = inPaymentid;
 };
 
 export { StartFunc };

@@ -1,6 +1,7 @@
 import { StartFunc as StartFuncHeading } from "./AfterFetch/Headings/Heading.js";
 import { StartFunc as StartFuncBody } from "./AfterFetch/ItemsTable/Body.js";
 import { StartFunc as StartFuncFooter } from "./AfterFetch/Footer/Footer.js";
+import { StartFunc as StartFuncPaymentMode } from "./PaymentMode.js";
 
 let StartFunc = ({ inFromFetch }) => {
     let data = inFromFetch;
@@ -19,6 +20,7 @@ let StartFunc = ({ inFromFetch }) => {
     let UPIAmount = Object.values(data.CheckOutData)[0].UPIAmount;
     let TotalPrice = 0;
     let TotalPieces=0;
+    let paymentMode = StartFuncPaymentMode({CashAmount, CardAmount, UPIAmount});
     Object.values(data.ItemsInOrder).forEach(item => {
         TotalPrice += item.Total;
         TotalPieces += parseInt(item.Pcs);
@@ -31,6 +33,7 @@ let StartFunc = ({ inFromFetch }) => {
         inCustomerNameid: CustomerName,
         inMobileNumberid: CustomerMobile,
         inBookingDateid: BookingDate,
+        inPaymentid: paymentMode
     });
     StartFuncBody({ inItemData: ItemData,inAddOnsData:Object.values(AddOnsData) });
     StartFuncFooter({
