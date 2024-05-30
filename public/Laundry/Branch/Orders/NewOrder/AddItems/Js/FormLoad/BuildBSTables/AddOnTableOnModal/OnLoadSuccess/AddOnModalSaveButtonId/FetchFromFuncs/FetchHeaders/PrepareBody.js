@@ -1,37 +1,25 @@
 const StartFunc = () => {
-    // AddOnItemSerial
-    // AddOnRate
-    // AddOnService
-
+  
     let jVarLocalAddOnService = jFLocalTableFooterAddOnSelectId();
-    let jVarLocalAddOnRate = jFLocalTableFooterAddOnRate();
+    let jVarLocalAddOnRate = jFLocalTableFooterAddOnRate({inlocalAddOnService : jVarLocalAddOnService});
     let jVarLocalAddOnItemSerial = jFLocalAddOnModalItemSerialId();
-
-    // let jVarLocalAddOnItemSerial = jFLocalTableFooterRateInputId();
-    // let jVarLocalPcs = jFLocalTableFooterPcsInputId();
-    // let jVarLocallocation = jFLocalTableFooterFactoryInputId();
-    // let jVarLocalDeliveryDateTime = jFLocalTableFooterdateInputId();
 
     let LocalLocalObj = {};
     LocalLocalObj.AddOnService = jVarLocalAddOnService
     LocalLocalObj.AddOnRate = parseInt(jVarLocalAddOnRate);
     LocalLocalObj.AddOnItemSerial = parseInt(jVarLocalAddOnItemSerial);
 
-    // LocalLocalObj.Rate = jVarLocalItemRate
-    // LocalLocalObj.Pcs = jVarLocalPcs
-    // LocalLocalObj.location = jVarLocallocation
-    // LocalLocalObj.DeliveryDateTime = jVarLocalDeliveryDateTime
-
     return LocalLocalObj;
 };
 
-let jFLocalTableFooterAddOnRate = () => {
-    let jVarLocalTableFooterAddOnRate = 'TableFooterAddOnRate'
-    let jVarLocalHtmlId = document.getElementById(jVarLocalTableFooterAddOnRate);
+let jFLocalTableFooterAddOnRate = ({inlocalAddOnService}) => {
+    let jVarLocalAddOnService = inlocalAddOnService;
 
-    if (jVarLocalHtmlId === null === false) {
-        return jVarLocalHtmlId.value.trim();
-    };
+    let jVarLocalAddOnArray = JSON.parse(localStorage.getItem("AddOns"));
+
+    let jVarLocalAddOnData = jVarLocalAddOnArray.filter(addon => addon.AddOnService === `${jVarLocalAddOnService}`);
+
+    return jVarLocalAddOnData.length > 0 ? jVarLocalAddOnData[0].AddOnRate : 0;
 };
 
 let jFLocalTableFooterAddOnSelectId = () => {
