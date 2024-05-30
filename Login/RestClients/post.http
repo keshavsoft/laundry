@@ -2,6 +2,6 @@ POST http://localhost:7016/Login/bin/Users
 content-type: application/json
 
 {
-"UserName":"Bhasi",
-"Password":"123456"
+    "UserName":"Dwijesh",
+    "Password":"12345678"
 }
