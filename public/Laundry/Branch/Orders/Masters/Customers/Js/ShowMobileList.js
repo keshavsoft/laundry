@@ -1,7 +1,7 @@
 const StartFunc = () => {
-    let jVarLocalCustomersFromLocslstroge = localStorage.getItem("CustomerNames");
-    let LocaCustomerData = JSON.parse(jVarLocalCustomersFromLocslstroge);
-    let customerArray = Object.values(LocaCustomerData);
+    let jVarLocalCustomersFromLocalstorage = localStorage.getItem("CustomerNames");
+    let LocalCustomerData = JSON.parse(jVarLocalCustomersFromLocalstorage);
+    let customerArray = Object.values(LocalCustomerData);
     let mobileArray = customerArray.map(customer => customer.Mobile);
     const Mobile = "MobileDataListId";
     jFLocalStartFunc(mobileArray,Mobile);
