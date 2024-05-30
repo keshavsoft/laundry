@@ -42,7 +42,7 @@
     <header id="header" class="header fixed-top d-flex align-items-center">
 
         <div class="d-flex align-items-center justify-content-between">
-            <a href="index.html" class="logo d-flex align-items-center">
+            <a href="../../../../../LaundryPos/BranchSelect.html" class="logo d-flex align-items-center">
                 <img src="./assets/img/logo.png" alt="">
                 <span class="d-none d-lg-block" id="BranchNameId">{{Branch}}</span>
             </a>
@@ -303,30 +303,24 @@
 
             <!-- End Create Nav -->
 
-            <li class="nav-item">
+            <!-- <li class="nav-item">
                 <a id="DcQrId" class="nav-link " href="#">
                     <i class="bi bi-grid-3x3"></i></i></i>
                     <span>Dc Qr-Codes</span>
                 </a>
-            </li>
+            </li> -->
 
             <!-- End DcQrs Nav -->
-            <li class="nav-item">
-                <a id="ScanId" class="nav-link collapsed" href="#">
-                    <i class="bi bi-qr-code-scan"></i></i>
-                    <span>Scan</span>
-                </a>
-            </li>
 
             <!-- End Scan Nav -->
             <li class="nav-item">
-                <a class="nav-link coll collapsed" data-bs-target="#charts-nav" data-bs-toggle="collapse" href="#">
-                    <i class="bi bi-record-circle-fill"></i><span>DCAll</span><i class="bi bi-chevron-down ms-auto"></i>
+                <a class="nav-link collapsed" data-bs-target="#charts-nav" data-bs-toggle="collapse" href="#">
+                    <i class="bi bi-record-circle-fill"></i><span>DC</span><i class="bi bi-chevron-down ms-auto"></i>
                 </a>
-                <ul id="charts-nav" class="nav-content  collapse" data-bs-parent="#sidebar-nav">
+                <ul id="charts-nav" class="nav-content collapse" data-bs-parent="#sidebar-nav">
                     <li>
                         <a href="../../DCAll/ShowAll/ShowAll.html" class="">
-                            <i class="bi bi-circle"></i><span>ShowAll</span>
+                            <i class="bi bi-circle"></i><span>Vouchers</span>
                         </a>
                     </li>
                     <li>
@@ -334,18 +328,29 @@
                             <i class="bi bi-circle"></i><span>QrPrint</span>
                         </a>
                     </li>
-
+                    <li>
+                        <a href="../../DCAll/QRCodes/ShowAll.html" class="">
+                            <i class="bi bi-circle"></i><span>QrCodes</span>
+                        </a>
+                    </li>
                 </ul>
             </li><!-- End  DCALL Nav -->
 
             <li class="nav-item">
+                <a id="ScanId" class="nav-link active" href="#">
+                    <i class="bi bi-qr-code-scan"></i></i>
+                    <span>Items</span>
+                </a>
+            </li>
+
+            <li class="nav-item">
                 <a class="nav-link collapsed" data-bs-target="#TodayDC-nav" data-bs-toggle="collapse" href="#">
-                    <i class="bi bi-clock-fill"></i><span>Today-DC</span><i class="bi bi-chevron-down ms-auto"></i>
+                    <i class="bi bi-clock-fill"></i><span>Today</span><i class="bi bi-chevron-down ms-auto"></i>
                 </a>
                 <ul id="TodayDC-nav" class="nav-content  collapse" data-bs-parent="#sidebar-nav">
                     <li>
                         <a href="../../Today/ShowAll/ShowAll.html" class="">
-                            <i class="bi bi-circle"></i><span>ShowAll</span>
+                            <i class="bi bi-circle"></i><span>Vouchers</span>
                         </a>
                     </li>
                     <li>
@@ -389,6 +394,14 @@
                     </li>
 
                 </ul>
+                <ul id="Reports-nav" class="nav-content  collapse" data-bs-parent="#sidebar-nav">
+                    <li>
+                        <a href="../../Reports/Scanned/ShowAll.html">
+                            <i class="bi bi-circle"></i><span>Scanned</span>
+                        </a>
+                    </li>
+
+                </ul>
             </li>
 
         </ul>
@@ -398,14 +411,14 @@
     <main id="main" class="main">
 
         <div class="pagetitle">
-            <h1>Dc-QrCodes</h1>
+            <h1>DC-Items</h1>
 
 
             <nav>
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="../../../Dashboard/Dashboard.html">Home</a></li>
-                    <li class="breadcrumb-item"> <a href="../../Dashboard/Dashboard.html">Dashboard</a></li>
-                    <li class="breadcrumb-item active" id="RefreshBSTableId">ShowAll</li>
+                    <li class="breadcrumb-item"><a href="../../../Orders/NewOrder/Customer.html">Home</a></li>
+                    <!-- <li class="breadcrumb-item"> <a href="../../Dashboard/Dashboard.html">Dashboard</a></li> -->
+                    <li class="breadcrumb-item active" id="RefreshBSTableId">Items</li>
                 </ol>
             </nav>
         </div>
@@ -462,10 +475,10 @@
                                     <tr id="tableHeadRow">
                                         <th data-formatter="jFLocalSerialColumn">#</th>
                                         <th data-field="QrCodeId">QrCode</th>
-                                        <th data-field="VoucherRef" data-filter-control="select">VoucherRef</th>
+                                        <th data-field="VoucherRef" data-filter-control="select">DC #</th>
                                         <th data-field="FactorySelected" data-filter-control="select">Factory Selected
                                         </th>
-                                        <th data-field="BranchName" data-filter-control="select">Branch Name</th>
+                                        <!-- <th data-field="BranchName" data-filter-control="select">Branch Name</th> -->
                                         <th data-field="ItemName" data-filter-control="select">ItemName</th>
                                         <th data-field="Rate" data-filter-control="select">Rate</th>
                                         <th data-field="DateTime">DateTime</th>

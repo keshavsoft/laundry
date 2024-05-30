@@ -42,7 +42,7 @@
     <header id="header" class="header fixed-top d-flex align-items-center">
 
         <div class="d-flex align-items-center justify-content-between">
-            <a href="index.html" class="logo d-flex align-items-center">
+            <a href="../../../../../LaundryPos/BranchSelect.html" class="logo d-flex align-items-center">
                 <img src="./assets/img/logo.png" alt="">
                 <span class="d-none d-lg-block" id="BranchNameId">{{Branch}}</span>
             </a>
@@ -305,17 +305,22 @@
 
             <li class="nav-item">
                 <a class="nav-link " data-bs-target="#charts-nav" data-bs-toggle="collapse" href="#">
-                    <i class="bi bi-record-circle-fill"></i><span>DCAll</span><i class="bi bi-chevron-down ms-auto"></i>
+                    <i class="bi bi-record-circle-fill"></i><span>DC</span><i class="bi bi-chevron-down ms-auto"></i>
                 </a>
                 <ul id="charts-nav" class="nav-content  " data-bs-parent="#sidebar-nav">
                     <li>
                         <a href="../ShowAll/ShowAll.html" class="">
-                            <i class="bi bi-circle"></i><span>ShowAll</span>
+                            <i class="bi bi-circle"></i><span>Vouchers</span>
                         </a>
                     </li>
                     <li>
                         <a href="#" class="active">
                             <i class="bi bi-circle"></i><span>QrPrint</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../QRCodes/ShowAll.html" class="">
+                            <i class="bi bi-circle"></i><span>QrCodes</span>
                         </a>
                     </li>
 
@@ -324,12 +329,12 @@
 
             <li class="nav-item">
                 <a class="nav-link collapsed" data-bs-target="#TodayDC-nav" data-bs-toggle="collapse" href="#">
-                    <i class="bi bi-clock-fill"></i><span>Today-DC</span><i class="bi bi-chevron-down ms-auto"></i>
+                    <i class="bi bi-clock-fill"></i><span>Today</span><i class="bi bi-chevron-down ms-auto"></i>
                 </a>
                 <ul id="TodayDC-nav" class="nav-content  collapse" data-bs-parent="#sidebar-nav">
                     <li>
                         <a href="../../Today/ShowAll/ShowAll.html" class="">
-                            <i class="bi bi-circle"></i><span>ShowAll</span>
+                            <i class="bi bi-circle"></i><span>Vouchers</span>
                         </a>
                     </li>
                     <li>
@@ -374,6 +379,14 @@
                     </li>
 
                 </ul>
+                <ul id="Reports-nav" class="nav-content  collapse" data-bs-parent="#sidebar-nav">
+                    <li>
+                        <a href="../../Reports/Scanned/ShowAll.html">
+                            <i class="bi bi-circle"></i><span>Scanned</span>
+                        </a>
+                    </li>
+
+                </ul>
             </li>
         </ul>
     </aside>
@@ -387,9 +400,9 @@
 
             <nav>
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="../../../Dashboard/Dashboard.html">Home</a></li>
-                    <li class="breadcrumb-item"> <a href="../../Dashboard/Dashboard.html">Dashboard</a></li>
-                    <li class="breadcrumb-item active" id="RefreshBSTableId">Qrcodes</li>
+                    <li class="breadcrumb-item"><a href="../../../Orders/NewOrder/Customer.html">Home</a></li>
+                    <!-- <li class="breadcrumb-item"> <a href="../../Dashboard/Dashboard.html">Dashboard</a></li> -->
+                    <li class="breadcrumb-item active" id="RefreshBSTableId">QrPrint</li>
                 </ol>
             </nav>
         </div>
@@ -409,13 +422,13 @@
                                     <tr id="tableHeadRow">
                                         <th data-field="id" data-formatter="jFGlobalSerialColumn">#</th>
                                         <th data-field="pk">Dc #</th>
-                                        <th data-field="BranchName">BranchName</th>
+                                        <!-- <th data-field="BranchName">BranchName</th> -->
                                         <th data-field="Factory">To Factory</th>
                                         <th data-field="Date">Date</th>
                                         <th data-field="Description">Description</th>
                                         <th data-field="DateTime">DateTime</th>
                                         <th data-formatter="ItemsFormatter">Items</th>
-                                        <th data-formatter="QRCodeGenerate">Scan</th>
+                                        <th data-formatter="QRCodeGenerate">Print</th>
                                     </tr>
                                 </thead>
                             </table>
@@ -470,7 +483,8 @@
     <script>
 
         function jFGlobalSerialColumn(value, row, index) {
-            return index + 1;
+            const totalRows = $('#table').bootstrapTable('getData').length;
+            return totalRows - index;
         };
 
         function operateFormatter(value, row, index) {
@@ -489,13 +503,10 @@
         function QRCodeGenerate(value, row, index) {
             return [
                 `<a class="like" href="#" title="Scan">`,
-                '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-qr-code" viewBox="0 0 16 16">',
-                '<path d="M2 2h2v2H2V2Z"/>',
-                '<path d="M6 0v6H0V0h6ZM5 1H1v4h4V1ZM4 12H2v2h2v-2Z"/>',
-                '<path d="M6 10v6H0v-6h6Zm-5 1v4h4v-4H1Zm11-9h2v2h-2V2Z"/>',
-                '<path d="M10 0v6h6V0h-6Zm5 1v4h-4V1h4ZM8 1V0h1v2H8v2H7V1h1Zm0 5V4h1v2H8ZM6 8V7h1V6h1v2h1V7h5v1h-4v1H7V8H6Zm0 0v1H2V8H1v1H0V7h3v1h3Zm10 1h-1V7h1v2Zm-1 0h-1v2h2v-1h-1V9Zm-4 0h2v1h-1v1h-1V9Zm2 3v-1h-1v1h-1v1H9v1h3v-2h1Zm0 0h3v1h-2v1h-1v-2Zm-4-1v1h1v-2H7v1h2Z"/>',
-                '<path d="M7 12h1v3h4v1H7v-4Zm9 2v2h-3v-1h2v-1h1Z"/>',
-                '</svg>',
+                `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-printer-fill" viewBox="0 0 16 16">
+                <path d="M5 1a2 2 0 0 0-2 2v1h10V3a2 2 0 0 0-2-2H5zm6 8H5a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-3a1 1 0 0 0-1-1z"/>
+                <path d="M0 7a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2h-1v-2a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v2H2a2 2 0 0 1-2-2V7zm2.5 1a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1z"/>
+                </svg>`,
                 '</a>  '
             ].join('')
         }

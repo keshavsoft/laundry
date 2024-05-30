@@ -11,13 +11,17 @@ let StartFunc = async () => {
         let jVarLocaldayDate = jFTodayDate();
         console.log("jVarLocaldayDate: ", jVarLocaldayDate);
         let FlterDataByBranch = jVarLocalDcData.filter(e => e.BranchName == jVarLocalBranchName && e.Date == jVarLocaldayDate);
+        let LocalArrayReverseBranchData = FlterDataByBranch.slice().reverse();
+
         // let LocalBranchFilterData = jVarLocalDcData.filter(e => e.BranchName == jVarLocalBranchName)
-        let LocalScanedFilterData = jVarLocalItemsData.filter(e => e.BranchName == jVarLocalBranchName)
+        let LocalScanedFilterData = jVarLocalItemsData.filter(e => e.BranchName == jVarLocalBranchName);
+        let LocalArrayReverseScannedData = LocalScanedFilterData.slice().reverse();
+
         jFLocalHideSpinner();
         var $table = $("#table");
         let jVarLocalData = jFLocalItemsData({
-            inDcData: FlterDataByBranch,
-            inItemsData: LocalScanedFilterData,
+            inDcData: LocalArrayReverseBranchData,
+            inItemsData: LocalArrayReverseScannedData,
 
         });
         $table.bootstrapTable("load", jVarLocalData);

@@ -3,7 +3,7 @@ import { StartFunc as StartFuncButtonClickFunc } from "./GenerateQrCodeButtonId/
 
 const StartFunc = (row, $element, field) => {
     console.log(field);
-    if (field === 8) {
+    if (field === 7) {
         StartFuncButtonClickFunc({ inRowData: row });
     };
 };

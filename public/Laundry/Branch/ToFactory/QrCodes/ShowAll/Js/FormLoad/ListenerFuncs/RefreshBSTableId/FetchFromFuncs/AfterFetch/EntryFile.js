@@ -5,11 +5,13 @@ let StartFunc = ({ inDataToShow }) => {
     let jVarLocalBranchName = localStorage.getItem("BranchName");
 
     let LocalFilterScanedData = LocalDataToShow.filter(e => e.BranchName == jVarLocalBranchName);
+    let LocalArrayReverseData = LocalFilterScanedData.slice().reverse();
+
     if ((LocalFilterScanedData.length > 0) === false) swal.fire({ title: "No data !", icon: "error" });
 
     jFLocalHideSpinner();
     var $table = $('#table');
-    $table.bootstrapTable("load", LocalFilterScanedData);
+    $table.bootstrapTable("load", LocalArrayReverseData);
 };
 
 let jFLocalHideSpinner = () => {

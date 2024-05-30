@@ -13,11 +13,13 @@ let StartFunc = async () => {
 
 
         let LocalBranchFilterData = jVarLocalDcData.filter(e => e.BranchName == jVarLocalBranchName)
+        let LocalReversedBranchData = LocalBranchFilterData.slice().reverse();
         let LocalScanedFilterData = jVarLocalItemsData.filter(e => e.BranchName == jVarLocalBranchName)
+        let LocalReverseScannedData = LocalScanedFilterData.slice().reverse();
 
         let jVarLocalData = jFLocalItemsData({
-            inDcData: LocalBranchFilterData,
-            inItemsData: LocalScanedFilterData,
+            inDcData: LocalReversedBranchData,
+            inItemsData: LocalReverseScannedData,
 
         });
 

@@ -42,7 +42,7 @@
     <header id="header" class="header fixed-top d-flex align-items-center">
 
         <div class="d-flex align-items-center justify-content-between">
-            <a href="index.html" class="logo d-flex align-items-center">
+            <a href="../../../../../LaundryPos/BranchSelect.html" class="logo d-flex align-items-center">
                 <img src="./assets/img/logo.png" alt="">
                 <span class="d-none d-lg-block" id="BranchNameId">{{Branch}}</span>
             </a>
@@ -305,17 +305,22 @@
 
             <li class="nav-item">
                 <a class="nav-link collapsed" data-bs-target="#charts-nav" data-bs-toggle="collapse" href="#">
-                    <i class="bi bi-record-circle-fill"></i><span>DCAll</span><i class="bi bi-chevron-down ms-auto"></i>
+                    <i class="bi bi-record-circle-fill"></i><span>DC</span><i class="bi bi-chevron-down ms-auto"></i>
                 </a>
                 <ul id="charts-nav" class="nav-content  collapse" data-bs-parent="#sidebar-nav">
                     <li>
                         <a href="../../DCAll/ShowAll/ShowAll.html" class="">
-                            <i class="bi bi-circle"></i><span>ShowAll</span>
+                            <i class="bi bi-circle"></i><span>Vouchers</span>
                         </a>
                     </li>
                     <li>
                         <a href="../../DCAll/QrPrint/QrPrint.html" class="">
                             <i class="bi bi-circle"></i><span>QrPrint</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../../DCAll/QRCodes/ShowAll.html" class="">
+                            <i class="bi bi-circle"></i><span>QrCode</span>
                         </a>
                     </li>
 
@@ -324,12 +329,12 @@
 
             <li class="nav-item">
                 <a class="nav-link collapsed" data-bs-target="#TodayDC-nav" data-bs-toggle="collapse" href="#">
-                    <i class="bi bi-clock-fill"></i><span>Today-DC</span><i class="bi bi-chevron-down ms-auto"></i>
+                    <i class="bi bi-clock-fill"></i><span>Today</span><i class="bi bi-chevron-down ms-auto"></i>
                 </a>
                 <ul id="TodayDC-nav" class="nav-content  collapse" data-bs-parent="#sidebar-nav">
                     <li>
                         <a href="../../Today/ShowAll/ShowAll.html" class="">
-                            <i class="bi bi-circle"></i><span>ShowAll</span>
+                            <i class="bi bi-circle"></i><span>Vouchers</span>
                         </a>
                     </li>
                     <li>
@@ -374,6 +379,14 @@
                     </li>
 
                 </ul>
+                <ul id="Reports-nav" class="nav-content  collapse" data-bs-parent="#sidebar-nav">
+                    <li>
+                        <a href="../../Reports/Scanned/ShowAll.html">
+                            <i class="bi bi-circle"></i><span>Scanned</span>
+                        </a>
+                    </li>
+
+                </ul>
             </li>
         </ul>
     </aside>
@@ -382,13 +395,13 @@
     <main id="main" class="main">
 
         <div class="pagetitle">
-            <h1>Scaned-QrCodes</h1>
+            <h1>Scanned-QrCodes</h1>
 
 
             <nav>
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="../../../Dashboard/Dashboard.html">Home</a></li>
-                    <li class="breadcrumb-item"> <a href="../../Dashboard/Dashboard.html">Dashboard</a></li>
+                    <li class="breadcrumb-item"><a href="../../../Orders/NewOrder/Customer.html">Home</a></li>
+                    <!-- <li class="breadcrumb-item"> <a href="../../Dashboard/Dashboard.html">Dashboard</a></li> -->
                     <li class="breadcrumb-item active" id="RefreshBSTableId">ShowAll</li>
                 </ol>
             </nav>
@@ -411,13 +424,14 @@
                                 <thead>
                                     <tr id="tableHeadRow">
                                         <th data-formatter="jFLocalSerialColumn">#</th>
-                                        <th data-field="pk">QrCode</th>
-                                        <th data-field="VoucherRef" data-filter-control="select">VoucherRef</th>
+                                        <th data-field="QrCodeId">QrCode</th>
+                                        <th data-field="VoucherRef" data-filter-control="select">DC #</th>
                                         <th data-field="ItemName" data-filter-control="select">ItemName</th>
                                         <th data-field="Rate" data-filter-control="select">Rate</th>
-                                        <th data-field="DateTime" data-filter-control="select">DateTime</th>
-                                        <th data-field="VoucherRef" data-filter-control="select">DC #</th>
+                                        <!-- <th data-field="DateTime" data-filter-control="select">DateTime</th> -->
+                                        <!-- <th data-field="VoucherRef" data-filter-control="select">DC #</th> -->
                                         <th data-field="DCDate" data-filter-control="select">DC Date</th>
+                                        <th data-formatter="DateFormatter">Duration</th>
                                         <th data-field="DCFactory" data-filter-control="select">DC Factory</th>
                                     </tr>
                                 </thead>
@@ -443,7 +457,8 @@
     <script>
 
         function jFLocalSerialColumn(value, row, index) {
-            return index + 1;
+            const totalRows = $('#table').bootstrapTable('getData').length;
+            return totalRows - index;
         };
 
         function operateFormatter(value, row, index) {
@@ -458,6 +473,18 @@
                 '</svg>',
                 '</a>  '
             ].join('')
+        }
+        
+        function DateFormatter(value, row, index) {
+            const timestamp1 = new Date(row.DateTime);
+            const timestamp2 = new Date();
+            const diff = timestamp2 - timestamp1;
+
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+
+            return `${days}days ${hours}hrs ${minutes}min`;
         }
 
         function detailFormatter(index, row) {

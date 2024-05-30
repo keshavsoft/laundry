@@ -4,7 +4,7 @@ let StartFunc = async () => {
     let jVarLocalFetchUrl = `/bin/Factory/VoucherDetails/${jVarLocalVoucherRef}`;
     let response = await fetch(jVarLocalFetchUrl);
     let data = await response.json();
-
+    console.log("data: ", data);
     return await data;
 };
 
