@@ -222,21 +222,21 @@
 
             <li class="nav-item">
                 <a id="ParentId" class="nav-link collapsed" href="../../Print/QrPrint/QrPrint.html">
-                    <i class="bi bi-box-arrow-in-left"></i></i>
+                    <i class="bi bi-qr-code"></i>
                     <span>Qr-Print</span>
                 </a>
             </li>
 
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#">
-                    <i class="bi bi-box-arrow-in-left"></i></i>
+                    <i class="bi bi-printer"></i>
                     <span>Bill</span>
                 </a>
             </li>
 
             <li class="nav-item">
                 <a class="nav-link" href="#">
-                    <i class="bi bi-box-arrow-in-left"></i></i>
+                    <i class="bi bi-list-task"></i>
                     <span>Orders</span>
                 </a>
             </li>
@@ -249,7 +249,7 @@
     <main id="main" class="main">
 
         <div class="pagetitle">
-            <h1>Qr - print</h1>
+            <h1>Orders</h1>
 
             <nav>
                 <ol class="breadcrumb">
@@ -399,6 +399,10 @@
     <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
 
     <!-- Template Main JS File -->
+    <script>
+        const Branch = localStorage.getItem("BranchName");
+        document.getElementById("BranchNameId").innerText = Branch;
+    </script>
     <script src="./Js/vendor/bwip-js-min.js"></script>
     <script src="./Js/vendor/print.min.js"></script>
     <script src="./assets/js/main.js"></script>
