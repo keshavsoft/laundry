@@ -42,7 +42,7 @@
     <header id="header" class="header fixed-top d-flex align-items-center">
 
         <div class="d-flex align-items-center justify-content-between">
-            <a href="index.html" class="logo d-flex align-items-center">
+            <a href="../../../../../LaundryPos/BranchSelect.html" class="logo d-flex align-items-center">
                 <img src="./assets/img/logo.png" alt="">
                 <span class="d-none d-lg-block" id="BranchNameId">{{Branch}}</span>
             </a>
@@ -305,17 +305,22 @@
 
             <li class="nav-item">
                 <a class="nav-link collapsed" data-bs-target="#charts-nav" data-bs-toggle="collapse" href="#">
-                    <i class="bi bi-record-circle-fill"></i><span>DCAll</span><i class="bi bi-chevron-down ms-auto"></i>
+                    <i class="bi bi-record-circle-fill"></i><span>DC</span><i class="bi bi-chevron-down ms-auto"></i>
                 </a>
                 <ul id="charts-nav" class="nav-content collapse" data-bs-parent="#sidebar-nav">
                     <li>
                         <a href="../../DCAll/ShowAll/ShowAll.html" class="active">
-                            <i class="bi bi-circle"></i><span>ShowAll</span>
+                            <i class="bi bi-circle"></i><span>Vouchers</span>
                         </a>
                     </li>
                     <li>
                         <a href="../../DCAll/QrPrint/QrPrint.html" class="">
                             <i class="bi bi-circle"></i><span>QrPrint</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../../DCAll/QRCodes/ShowAll.html" class="">
+                            <i class="bi bi-circle"></i><span>QrCodes</span>
                         </a>
                     </li>
 
@@ -324,12 +329,12 @@
 
             <li class="nav-item">
                 <a class="nav-link" data-bs-target="#TodayDC-nav" data-bs-toggle="collapse" href="#">
-                    <i class="bi bi-clock-fill"></i><span>Today-DC</span><i class="bi bi-chevron-down ms-auto"></i>
+                    <i class="bi bi-clock-fill"></i><span>Today</span><i class="bi bi-chevron-down ms-auto"></i>
                 </a>
                 <ul id="TodayDC-nav" class="nav-content" data-bs-parent="#sidebar-nav">
                     <li>
                         <a href="#" class="active">
-                            <i class="bi bi-circle"></i><span>ShowAll</span>
+                            <i class="bi bi-circle"></i><span>Vouchers</span>
                         </a>
                     </li>
                     <li>
@@ -373,6 +378,14 @@
                     </li>
 
                 </ul>
+                <ul id="Reports-nav" class="nav-content  collapse" data-bs-parent="#sidebar-nav">
+                    <li>
+                        <a href="../../Reports/Scanned/ShowAll.html">
+                            <i class="bi bi-circle"></i><span>Scanned</span>
+                        </a>
+                    </li>
+
+                </ul>
             </li>
         </ul>
     </aside>
@@ -386,9 +399,9 @@
 
             <nav>
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="../../../Dashboard/Dashboard.html">Home</a></li>
-                    <li class="breadcrumb-item"> <a href="../../Dashboard/Dashboard.html">Dashboard</a></li>
-                    <li class="breadcrumb-item active" id="RefreshBSTableId">ShowAll</li>
+                    <li class="breadcrumb-item"><a href="../../../Orders/NewOrder/Customer.html">Home</a></li>
+                    <!-- <li class="breadcrumb-item"> <a href="../../Dashboard/Dashboard.html">Dashboard</a></li> -->
+                    <li class="breadcrumb-item active" id="RefreshBSTableId">Vouchers</li>
                 </ol>
             </nav>
         </div>
@@ -439,7 +452,8 @@
     <script>
 
         function jFGlobalSerialColumn(value, row, index) {
-            return index + 1;
+            const totalRows = $('#table').bootstrapTable('getData').length;
+            return totalRows - index;
         };
 
         function QRCodeGenerate(value, row, index) {

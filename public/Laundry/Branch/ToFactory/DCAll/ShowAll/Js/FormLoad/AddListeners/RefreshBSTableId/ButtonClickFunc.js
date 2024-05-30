@@ -9,13 +9,17 @@ let StartFunc = async () => {
         let jVarLocalItemsData = b.JsonData;
         let jVarLocalBranchName = localStorage.getItem("BranchName");
 
-        let LocalBranchFilterData = jVarLocalDcData.filter(e => e.BranchName == jVarLocalBranchName)
-        let LocalScanedFilterData = jVarLocalItemsData.filter(e => e.BranchName == jVarLocalBranchName)
+        let LocalBranchFilterData = jVarLocalDcData.filter(e => e.BranchName == jVarLocalBranchName);
+        let LocalArrayReverseBranchData = LocalBranchFilterData.slice().reverse();
+
+        let LocalScanedFilterData = jVarLocalItemsData.filter(e => e.BranchName == jVarLocalBranchName);
+        let LocalArrayReverseScannedData = LocalScanedFilterData.slice().reverse();
+
         jFLocalHideSpinner();
         var $table = $("#table");
         let jVarLocalData = jFLocalItemsData({
-            inDcData: LocalBranchFilterData,
-            inItemsData: LocalScanedFilterData,
+            inDcData: LocalArrayReverseBranchData,
+            inItemsData: LocalArrayReverseScannedData,
 
         });
         $table.bootstrapTable("load", jVarLocalData);

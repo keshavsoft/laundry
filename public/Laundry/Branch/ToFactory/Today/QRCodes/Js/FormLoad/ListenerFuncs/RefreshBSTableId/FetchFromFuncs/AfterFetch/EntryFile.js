@@ -5,12 +5,14 @@ let StartFunc = ({ inDataToShow }) => {
     let jVarLocalBranchName = localStorage.getItem("BranchName");
     let jVarLocaldayDate = jFTodayDate();
     let FlterDataByBranch = LocalDataToShow.filter(e => e.BranchName == jVarLocalBranchName && new Date(e.DateTime).toISOString().slice(0, 10) == jVarLocaldayDate);
+    let LocalArrayReverseData = FlterDataByBranch.slice().reverse();
+
     if ((FlterDataByBranch.length > 0) === false) swal.fire({ title: "No data !", icon: "error" });
 
     jFLocalHideSpinner();
     
     var $table = $('#table');
-    $table.bootstrapTable("load", FlterDataByBranch);
+    $table.bootstrapTable("load", LocalArrayReverseData);
 };
 
 let jFLocalHideSpinner = () => {
