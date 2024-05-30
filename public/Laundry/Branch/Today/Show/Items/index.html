@@ -235,14 +235,13 @@
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="../Orders/index.html">
                     <i class="bi bi-list-task"></i>
                     <span>Orders</span>
                 </a>
             </li>
-
             <li class="nav-item">
-                <a class="nav-link" href="../Items/index.html">
+                <a class="nav-link" href="#">
                     <i class="bi bi-list-task"></i>
                     <span>Items</span>
                 </a>
@@ -263,7 +262,7 @@
                     <li class="breadcrumb-item"><a id="BRDDashboardId"
                             href="../../../../../LaundryPos/Dashboard/Dashboard.html">Home</a>
                     </li>
-                    <li class="breadcrumb-item active" ><a href="#" id="RefreshBSTableId">Show</a></li>
+                    <li class="breadcrumb-item active"><a href="#" id="RefreshBSTableId">Show</a></li>
                 </ol>
             </nav>
         </div>
@@ -281,16 +280,13 @@
                             </div> -->
 
 
-                            <table id="table" class="table">
+                            <table class="table" id="table">
                                 <thead>
-                                    <tr class="table-primary">
-                                        <th data-field="pk">Order#</th>
-                                        <th data-field="CustomerData.CustomerName">Customer</th>
-                                        <th data-field="CustomerData.CustomerMobile">Mobile</th>
-                                        <th data-field="DateTime" data-formatter="TimeDiff">Date</th>
-                                        <th data-field="AggValues.ItemDetails">Items</th>
-                                        <th data-field="AggValues.SettlementAmount">Settlement</th>
-                                        <th data-field="IsSettled">IsSettled</th>
+                                    <tr>
+                                        <th data-formatter="jFLocalSerialColumn">S.No</th>
+                                        <th data-field="ItemName">ItemName</th>
+                                        <th data-field="Rate">Rate</th>
+                                        <th data-field="Pcs">Pcs</th>
                                     </tr>
                                 </thead>
                             </table>
@@ -307,7 +303,7 @@
             <thead>
                 <tr>
                     <th data-formatter="jFLocalSerialColumn">S.No</th>
-                    <th data-field="ItemName">ItemName</th>
+                    <th data-field="jFLocalItemName">ItemName</th>
                     <th data-field="Rate">Rate</th>
                     <th data-field="Pcs">Pcs</th>
                 </tr>
@@ -367,7 +363,7 @@
             const hours = Math.floor(diff / (1000 * 60 * 60));
             const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
             const seconds = Math.floor((diff % (1000 * 60)) / 1000);
-    
+
             const remainingSeconds = seconds % 60;
             const remainingMinutes = minutes % 60;
             let string = ""
@@ -385,7 +381,7 @@
             }
             return string;
         }
-    
+
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
@@ -409,6 +405,9 @@
     <script>
         const Branch = localStorage.getItem("BranchName");
         document.getElementById("BranchNameId").innerText = Branch;
+        function jFLocalSerialColumn(value, row, index) {
+            return index + 1;
+        };
     </script>
     <script src="./Js/vendor/bwip-js-min.js"></script>
     <script src="./Js/vendor/print.min.js"></script>
