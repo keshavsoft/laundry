@@ -221,7 +221,7 @@
             </li>
 
             <li class="nav-item">
-                <a id="ParentId" class="nav-link " href="#">
+                <a id="ParentId" class="nav-link collapsed" href="../../Print/QrPrint/QrPrint.html">
                     <i class="bi bi-box-arrow-in-left"></i></i>
                     <span>Qr-Print</span>
                 </a>
@@ -235,7 +235,7 @@
             </li>
 
             <li class="nav-item">
-                <a class="nav-link collapsed" href="../Orders/AllOrders.html">
+                <a class="nav-link" href="#">
                     <i class="bi bi-box-arrow-in-left"></i></i>
                     <span>Orders</span>
                 </a>
@@ -268,16 +268,18 @@
                     <div class="card">
                         <div class="card-body">
 
-                            <div class="spinner-border" id="SpinnerId" role="status">
+                            <!-- <div class="spinner-border" id="SpinnerId" role="status">
                                 <span class="visually-hidden">Loading...</span>
 
-                            </div>
+                            </div> -->
 
 
                             <table id="table" class="table">
                                 <thead>
                                     <tr class="table-primary">
                                         <th data-field="pk">Order#</th>
+                                        <th data-field="CustomerData.CustomerName">Customer</th>
+                                        <th data-field="CustomerData.CustomerMobile">Mobile</th>
                                         <th data-field="DateTime" data-formatter="TimeDiff">Date</th>
                                         <th data-field="AggValues.ItemDetails">Items</th>
                                         <th data-field="AggValues.SettlementAmount">Settlement</th>
