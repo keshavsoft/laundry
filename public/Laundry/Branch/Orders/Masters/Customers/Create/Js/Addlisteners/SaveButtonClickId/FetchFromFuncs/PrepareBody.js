@@ -3,6 +3,7 @@ let StartFunc = async () => {
     let jVarLocalForm = document.getElementById("FormId");
 
     let KeysJson = (jFLocalserializeFormData(jVarLocalForm));
+    KeysJson.BranchName=localStorage.getItem("BranchName");
 
     return KeysJson;
 };
