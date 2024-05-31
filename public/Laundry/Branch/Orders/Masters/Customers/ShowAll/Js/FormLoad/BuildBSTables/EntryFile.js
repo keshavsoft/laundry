@@ -31,21 +31,21 @@ const jFPrepareColumns = () => {
 const jFPrepareMobile = () => {
     var $mobile = $('#MobileId');
     
-    $mobile.attr(AttributesJson.MobileAttributes);
+    $mobile.attr(AttributesJson.coloumnAttributes.MobileAttributes);
     $mobile.addClass("d-none d-sm-table-cell");
 };
 
 const jFPrepareCustomerName = () => {
     var $CustomerName = $('#CustomerNameId');
 
-    $CustomerName.attr(AttributesJson.CustomerNameAttribute);
+    $CustomerName.attr(AttributesJson.coloumnAttributes.CustomerNameAttribute);
     $CustomerName.addClass("d-none d-sm-table-cell");
 };
 
 const jFPrepareCity = () => {
     var $City = $('#CityId');
 
-    $City.attr(AttributesJson.CityAttribute);
+    $City.attr(AttributesJson.coloumnAttributes.CityAttribute);
     $City.addClass("d-none d-sm-table-cell");
 };
 
