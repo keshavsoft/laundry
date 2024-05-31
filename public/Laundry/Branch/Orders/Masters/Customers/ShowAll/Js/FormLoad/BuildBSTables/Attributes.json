@@ -8,23 +8,25 @@
         "data-minimum-count-columns": "3",
         "data-id-field": "pk"
     },
-    "MobileAttributes":{
-        "data-field": "Mobile",
-        "data-sortable": "true",
-        "data-sort-name": "Mobile",
-        "data-sort-order": "desc"
-    },
-    "CustomerNameAttribute":{
-        "data-field": "CustomerName",
-        "data-sortable": "true",
-        "data-sort-name": "CustomerName",
-        "data-sort-order": "desc"
-    },
-    "CityAttribute":{
-        "data-field": "City",
-        "data-sortable": "true",
-        "data-sort-name": "City",
-        "data-sort-order": "desc"
+    "coloumnAttributes":{
+        "MobileAttributes":{
+            "data-field": "Mobile",
+            "data-sortable": "true",
+            "data-sort-name": "Mobile",
+            "data-sort-order": "desc"
+        },
+        "CustomerNameAttribute":{
+            "data-field": "CustomerName",
+            "data-sortable": "true",
+            "data-sort-name": "CustomerName",
+            "data-sort-order": "desc"
+        },
+        "CityAttribute":{
+            "data-field": "City",
+            "data-sortable": "true",
+            "data-sort-name": "City",
+            "data-sort-order": "desc"
+        }
     }
    
 }

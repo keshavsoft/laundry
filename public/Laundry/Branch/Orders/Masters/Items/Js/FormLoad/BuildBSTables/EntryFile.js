@@ -30,35 +30,35 @@ const jFPrepareColumns = () => {
 const jFPrepareCategory = () => {
     var $Category = $('#Category');
 
-    $Category.attr(Attributes.CategoryAttributes);
+    $Category.attr(Attributes.coloumnAttributes.CategoryAttributes);
     $Category.addClass("d-none d-sm-table-cell");
 };
 
 const jFPrepareItemName = () => {
     var $ItemName = $('#ItemName');
 
-    $ItemName.attr(Attributes.ItemNameAttributes);
+    $ItemName.attr(Attributes.coloumnAttributes.ItemNameAttributes);
     $ItemName.addClass("d-none d-sm-table-cell");
 };
 
 const jFPreparePieces = () => {
     var $Pieces = $('#Pieces');
 
-    $Pieces.attr(Attributes.PiecesAttributes);
+    $Pieces.attr(Attributes.coloumnAttributes.PiecesAttributes);
     $Pieces.addClass("d-none d-sm-table-cell");
 };
 
 const jFPrepareWashType = () => {
     var $WashType = $('#WashType');
 
-    $WashType.attr(Attributes.WashTypeAttributes);
+    $WashType.attr(Attributes.coloumnAttributes.WashTypeAttributes);
     $WashType.addClass("d-none d-sm-table-cell");
 };
 
 const jFPrepareWashRate = () => {
     var $DryWashRate = $('#DryWashRate');
 
-    $DryWashRate.attr(Attributes.DryWashRateAttributes);
+    $DryWashRate.attr(Attributes.coloumnAttributes.DryWashRateAttributes);
     $DryWashRate.addClass("d-none d-sm-table-cell");
 };
 
