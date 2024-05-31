@@ -1,4 +1,4 @@
-import { StartFunc as StartFuncPullData } from '../../kLowDb/PullData.js';
+import { StartFunc as StartFuncPullData } from '../../kLowDb/FindUser.js';
 
 let PostFunc = ({ inUsername,inPassword }) => {
     return StartFuncPullData({ inUsername,inPassword });
