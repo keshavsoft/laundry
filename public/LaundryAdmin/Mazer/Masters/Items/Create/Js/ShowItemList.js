@@ -1,10 +1,11 @@
 const StartFunc = () => {
-    let jVarLocalCustomersFromLocalstorage = localStorage.getItem("Items");
+    let jVarLocalCustomersFromLocalstorage = localStorage.getItem("ItemNames");
     let LocalCustomerData = JSON.parse(jVarLocalCustomersFromLocalstorage);
-    let ItemArray = Object.values(LocalCustomerData);
-    let ItemsArray = ItemArray.map(item => item.ItemName);
-    const Item = "ItemDataListId";
-    jFLocalStartFunc(ItemsArray,Item);
+    console.log(LocalCustomerData)
+    let customerArray = Object.values(LocalCustomerData);
+    let NameArray = customerArray.map(customer => customer.ItemName);
+    const CustomerName = "ItemDataListId";
+    jFLocalStartFunc(NameArray,CustomerName);
 
 };
 let jFLocalStartFunc = (inDataAsArray, inHtmlSelectId) => {
