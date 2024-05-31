@@ -1,0 +1,7 @@
+POST http://localhost:7016/Login/bin/CreateToken/UsingJwt/
+content-type: application/json
+
+{
+    "UserName":"Dwijesh",
+    "Password":"12345678"
+}
