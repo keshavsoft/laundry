@@ -352,22 +352,21 @@
                         </a>
                     </li>
                     <li>
-                        <a href="../../QrCodePrint/MultiPrintQr/QrCodeRaise.html" class="active">
+                        <a href="../../QrCodePrint/MultiPrintQr/QrCodeRaise.html">
                             <i class="bi bi-circle" ></i><span>Multi Qr Print</span>
                         </a>
                     </li>
                     <li>
-                        <a href="../../QrCodePrint/Qr1/QrCodeRaise.html">
+                        <a href="../../QrCodePrint/Qr1/QrCodeRaise.html" >
                             <i class="bi bi-circle" ></i><span>QR 1</span>
                         </a>
                     </li>
+
                     <li>
-                        <a href="../../QrCodePrint/Qr2/index.html">
+                        <a href="#" class="active">
                             <i class="bi bi-circle" ></i><span>QR 2</span>
                         </a>
                     </li>
-
-
 
                 </ul>
             </li>
@@ -427,21 +426,22 @@
                                         <th data-field="UuId">Order #</th>
                                         <th data-field="CustomerData.CustomerName">Customer Name</th>
                                         <!-- <th data-field="OrderData.BranchName">Branch</th> -->
-                                        <th data-field="CustomerData.CustomerMobile">Mobile</th>
-                                        <th data-formatter="jFLocalDateFormatter">Date</th>
+                                        <!-- <th data-field="CustomerData.CustomerMobile">Mobile</th> -->
+                                        <!-- <th data-formatter="jFLocalDateFormatter">Date</th> -->
+                                        
+                                        <!-- <th data-formatter="jFLocalQrCodeDetails" data-footer-formatter="QrFormatter">
+                                            QrCodes
+                                        </th> -->
+                                        <th data-formatter="jFLocalQrCodeDetails1" data-footer-formatter="QrFormatter">
+                                            QrCodes1
+                                        </th>
+                                        <!-- <th data-formatter="jFLocalQrCodeDetails2" data-footer-formatter="QrFormatter">
+                                            QrCodes2
+                                        </th> -->
                                         <th data-formatter="jFLocalOrderDetails">Order Details</th>
                                         <th data-formatter="jFLocalSettlementDetails"
                                             data-footer-formatter="priceFormatter">
                                             Settlement</th>
-                                        <th data-formatter="jFLocalQrCodeDetails" data-footer-formatter="QrFormatter">
-                                            QrCodes
-                                        </th>
-                                        <th data-formatter="jFLocalQrCodeDetails1" data-footer-formatter="QrFormatter">
-                                            QrCodes1
-                                        </th>
-                                        <th data-formatter="jFLocalQrCodeDetails2" data-footer-formatter="QrFormatter">
-                                            QrCodes2
-                                        </th>
                                     </tr>
                                 </thead>
                             </table>
@@ -472,49 +472,8 @@
     </div>
 </div>
 
-    <template id="TemplateForQrCodePrint">
-        <div style="width: 100%; height: 300px;">
-            <div style="text-align: center;" class="col">
-                <canvas id="CanvasId" width="1" height="1" style="border:1px solid #fff;visibility:hidden"></canvas>
-            </div>
-            <div class="row">
-                <div style="text-align: center;font-weight: 500;font-size: larger; " class="col ">
-                    <label class="BranchClass"></label>-<label class="PkClass"></label>
-                </div>
-            </div>
-
-            <div class="row">
-                <div style="text-align: center; " class="col ">
-                    <label style="font-size: x-large; font-weight: 500;" class="QrCodeClass"></label>-<label style="font-size: x-large;" class="OrderNumberClass"></label>
-                </div>
-            </div>
-            <div class="row">
-                <div style="text-align: center;font-weight: 500;" class="col ItemNameClass">
-                    {{ItemName}}.{{Pcs}}
-                </div>
-            </div>
-            <div class="row">
-                <div style="text-align: center; font-weight: 500;" class="col ItemSerialClass">
-                    {{ItemSerial}}.{{Pcs}}
-                </div>
-            </div>
-            
-            <div class="row">
-                <div style="text-align: center; font-weight: 500;" class="col AddOnDataAsStringClass">
-                    {{AddOnDataAsString}}
-                </div>
-            </div>
-
-            <div class="col" style="text-align: center; font-weight: 500;">
-
-                <label class=" DateTimeClass"></label> @ <label class=" OrderDateClass"></label>
-            
-            </div>
-        
-        </div>
-    </template>
     <template id="TemplateForQrCodePrint1">
-        <div style="width: 100%; height: 280px;">
+        <div style="width: 100%; height: 350px;">
             <div style="text-align: center;" class="col">
                 <canvas id="CanvasId" width="1" height="1" style="border:1px solid #fff;visibility:hidden"></canvas>
             </div>
@@ -540,49 +499,8 @@
                 </div>
             </div>
             
-            <div class="row">
-                <div style="text-align: center; font-weight: 500;" class="col AddOnDataAsStringClass">
-                    {{AddOnDataAsString}}
-                </div>
-            </div>
-
-            <div class="col" style="text-align: center; font-weight: 500;">
-
-                <label class=" DateTimeClass"></label> @ <label class=" OrderDateClass"></label>
-            
-            </div>
-        
-        </div>
-    </template>
-    <template id="TemplateForQrCodePrint2">
-        <div style="width: 100%; height: 250px;">
-            <div style="text-align: center;" class="col">
-                <canvas id="CanvasId" width="1" height="1" style="border:1px solid #fff;visibility:hidden"></canvas>
-            </div>
-            <div class="row">
-                <div style="text-align: center;font-weight: 500;font-size: larger; " class="col ">
-                    <label class="BranchClass"></label>-<label class="PkClass"></label>
-                </div>
-            </div>
-
-            <div class="row">
-                <div style="text-align: center; " class="col ">
-                    <label style="font-size: x-large; font-weight: 500;" class="QrCodeClass"></label>-<label style="font-size: x-large;" class="OrderNumberClass"></label>
-                </div>
-            </div>
-            <div class="row">
-                <div style="text-align: center;font-weight: 500;" class="col ItemNameClass">
-                    {{ItemName}}.{{Pcs}}
-                </div>
-            </div>
-            <div class="row">
-                <div style="text-align: center; font-weight: 500;" class="col ItemSerialClass">
-                    {{ItemSerial}}.{{Pcs}}
-                </div>
-            </div>
-            
-            <div class="row">
-                <div style="text-align: center; font-weight: 500;" class="col AddOnDataAsStringClass">
+            <div class="row" style="width: 150px; margin: 0px auto;">
+                <div style="text-align: center; font-weight: 300;" class="col AddOnDataAsStringClass">
                     {{AddOnDataAsString}}
                 </div>
             </div>
