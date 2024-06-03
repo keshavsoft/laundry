@@ -4,7 +4,6 @@ let StartFunc = () => {
     let jVarLocalMasterButtonId = "MasterButtonId";
     let jVarLocalHtmlId = document.getElementById(jVarLocalMasterButtonId);
 
-    // jVarLocalHtmlId.addEventListener("click", StartFuncToLocalStorage);
     jVarLocalHtmlId.addEventListener("click", () => {
         StartFuncToLocalStorage();
         jFLocalToDataList();

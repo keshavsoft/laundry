@@ -27,6 +27,7 @@ let GetSummeryFunc = async (req, res) => {
 let GetDataOnlyFunc = async (req, res) => {
     let LocalFromRepo = await GetDataOnlyFuncRepo();
 
+    res.status(200);
     res.json(LocalFromRepo);
 };
 
