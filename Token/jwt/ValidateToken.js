@@ -6,7 +6,7 @@ let StartFunc = ({ inToken }) => {
         return jVarTokenInfo;
     }
     catch (err) {
-        return err;
+        return false;
     }
 }
 

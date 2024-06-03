@@ -7,6 +7,7 @@ import { router as routerFromLogin } from "./Login/routes.js";
 
 import { StartFunc as StartFuncKWSServer } from "./Projects/KWSServer/EntryFile.js";
 import { StartFunc as StartFuncPortListen } from "./PortListen.js";
+import { StartFunc as StartFuncBinMiddleWares } from "./MiddleWares/bin/EntryFile.js";
 
 import packageJSON from './package.json' assert {type: 'json'};
 
@@ -46,10 +47,15 @@ app.get('/AboutUs', (req, res) => {
     res.end("KeshavSoft : 9848163021");
 });
 
+const mid =(req,res,next) => {
+    console.log(req.cookies);
+    next();
+}
+
 app.use('/src', routerFromSrc);
-app.use('/bin', routerFromBin);
+app.use('/bin', StartFuncBinMiddleWares, routerFromBin);
 app.use('/Custom', routerFromCustom);
-app.use('/Common', routerFromCommon);
+app.use('/Common',StartFuncBinMiddleWares, routerFromCommon);
 app.use('/utility', routerForUtility);
 app.use('/Login', routerFromLogin);
 
