@@ -11,9 +11,11 @@ let jFLocalShowItems = ({ inData }) => {
     let jvarLocalDataArray=[];
     inData.forEach(element => {
         Object.values(element.ItemsInOrder).forEach(function(key) {
+            key.pk = element.pk;
             jvarLocalDataArray.push(key);
         });
     });
+    // console.log("jvarLocalDataArray", jvarLocalDataArray);
     return jvarLocalDataArray;
 }
 
