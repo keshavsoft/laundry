@@ -6,7 +6,7 @@ let StartFunc = async () => {
     let jVarLocalBranchName = localStorage.getItem("BranchName");
     
     let jVarLocalFetchHeaders = StartFuncFetchHeaders();
-    console.log(jVarLocalFetchHeaders);
+    //console.log(jVarLocalFetchHeaders);
     // let jVarLocalFetchUrl = `/${LocalroutePath}/Transactions/${jVarLocalBranchName}/DataOnly`;
     let jVarLocalFetchUrl = `/${LocalroutePath}/Transactions/${jVarLocalBranchName}/FilterDataFrombody`;
     let response = await fetch(jVarLocalFetchUrl, jVarLocalFetchHeaders);
