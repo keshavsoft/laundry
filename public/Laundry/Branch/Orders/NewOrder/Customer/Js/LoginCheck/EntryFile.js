@@ -1,14 +1,14 @@
-import { StartFunc as StartFuncPostFetch } from "./PostFetch/Entry.js";
+import { StartFunc as StartFuncValidateToken } from "./ValidateToken/Entry.js";
+import { StartFunc as  StartFuncIsFailure} from "./IsFailure/EntryFile.js";
 
 const StartFunc = async () => {
-    let jVarLoaclFromFetch = await StartFuncPostFetch();
+    let jVarLoaclFromFetch = await StartFuncValidateToken();
+    if (jVarLoaclFromFetch === false) {
+        StartFuncIsFailure();
+        return await false;
+    };
 
-    // if (jVarLocalFromAdmin) {
-    //     StartFuncFormLoad();
-    //     StartFuncShowOnDom();
-    // };
-
-    return await jVarLoaclFromFetch;
+    return await true;
 };
 
 export {StartFunc};
