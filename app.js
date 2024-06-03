@@ -22,7 +22,7 @@ const server = http.createServer(app);
 
 var port = normalizePort(process.env.PORT || '7016');
 
-app.disable('x-powered-by');
+// app.disable('x-powered-by');
 
 app.use(cookieParser());
 

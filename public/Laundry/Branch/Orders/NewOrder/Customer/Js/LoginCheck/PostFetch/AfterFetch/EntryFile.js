@@ -1,5 +1,5 @@
 let StartFunc = ({ inToken }) => {
-    document.cookie = `KSToken = ${inToken}`;
+    // document.cookie = `KSToken = ${inToken}`;
 };
 
 export { StartFunc }

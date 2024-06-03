@@ -2,8 +2,8 @@ import { StartFunc as StartFuncFetchFuncs } from "./PostFetch.js";
 import { StartFunc as StartFuncAfterFetch } from "./AfterFetch/EntryFile.js";
 
 
-let StartFunc = async () => {
-    let jVarLocalDataNeeded = await StartFuncFetchFuncs();
+let StartFunc = async ({inUserName,inPassword}) => {
+    let jVarLocalDataNeeded = await StartFuncFetchFuncs({inUserName,inPassword});
 
     if (jVarLocalDataNeeded === null) {
         return await false;

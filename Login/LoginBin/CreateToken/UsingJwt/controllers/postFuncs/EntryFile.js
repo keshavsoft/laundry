@@ -11,6 +11,7 @@ let PostFunc = async (req, res) => {
 
     if ( LocalFromRepo.KTF) {
         let jVarLocalToken = StartFuncCreateToken({inObject : LocalUsername});
+        res.cookie('KSToken', jVarLocalToken, { maxAge: 900000, httpOnly: false });
         res.end(jVarLocalToken);
         //console.log("jVarLocalToken",jVarLocalToken);
     }

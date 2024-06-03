@@ -1,7 +1,7 @@
-let StartFunc = () => {
+let StartFunc = ({inUserName,inPassword}) => {
     let jVarLocalBodyKeysJson = {};
-    jVarLocalBodyKeysJson.UserName = "Dvijesh";
-    jVarLocalBodyKeysJson.Password = "12345678";
+    jVarLocalBodyKeysJson.UserName = inUserName;
+    jVarLocalBodyKeysJson.Password = inPassword;
     
     return jVarLocalBodyKeysJson;
 };
