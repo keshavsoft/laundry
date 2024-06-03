@@ -11,7 +11,7 @@ let PostFunc = async (req, res) => {
 
     if ( LocalFromRepo.KTF) {
         let jVarLocalToken = StartFuncCreateToken({inObject : LocalUsername});
-        res.json(jVarLocalToken);
+        res.end(jVarLocalToken);
         //console.log("jVarLocalToken",jVarLocalToken);
     }
     else{
