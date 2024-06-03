@@ -7,7 +7,7 @@ import { router as routerFromLogin } from "./Login/routes.js";
 
 import { StartFunc as StartFuncKWSServer } from "./Projects/KWSServer/EntryFile.js";
 import { StartFunc as StartFuncPortListen } from "./PortListen.js";
-import { StartFunc as StartFuncBinMiddleWares } from "./MiddleWares/bin/EntryFile.js";
+import { StartFunc as StartFuncBinMiddleWares } from "./MiddleWares/MiddleWares.bin/EntryFile.js";
 
 import packageJSON from './package.json' assert {type: 'json'};
 
