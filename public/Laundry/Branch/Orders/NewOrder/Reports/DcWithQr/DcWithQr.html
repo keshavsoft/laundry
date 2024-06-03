@@ -286,7 +286,7 @@
 
         <ul class="sidebar-nav" id="sidebar-nav">
             <li class="nav-item">
-                <a id="HomeId" class="nav-link collapsed" href="../Customer.html">
+                <a id="HomeId" class="nav-link collapsed" href="../../../Dashboard/Dashboard.html">
                     <i class="bi bi-grid"></i>
                     <span>Home</span>
                 </a>
@@ -308,14 +308,9 @@
                 </a>
                 <ul id="charts-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
                     <li>
-                        <a href="../../../../../LaundryPos/Today/NiceOrders/ShowAll/ShowAll.html" class="">
+                        <a href="../../NiceOrders/ShowAll/ShowAll.html" class="">
                             <i class="bi bi-circle"></i><span>ShowAll</span>
                         </a>
-                        <li>
-                            <a href="../ShowPaymets/ShowPaymets.html" class="">
-                                <i class="bi bi-circle"></i><span>Payments</span>
-                            </a>
-                        </li>
                     </li>
 
                 </ul>
@@ -327,83 +322,24 @@
                 </a>
                 <ul id="Qrcodes-nav" class="nav-content  " data-bs-parent="#sidebar-nav">
                     <li>
-                        <a href="#" class="">
+                        <a href="../ShowAll/ShowAll.html" class="">
                             <i class="bi bi-circle"></i><span>ShowAll</span>
                         </a>
                     </li>
                     <li>
-                        <a href="../DcWithQr/DcWithQr.html" class="">
+                        <a href="#" class="active">
                             <i class="bi bi-circle"></i><span>DcWithQr</span>
                         </a>
                     </li>
+
                     <li>
-                        <a href="#" class="active">
-                            <i class="bi bi-circle"></i><span>Qr Raise</span>
+                        <a href="../LifeCycle/LifeCycle.html" class="">
+                            <i class="bi bi-circle"></i><span>LifeCycle</span>
                         </a>
                     </li>
 
                 </ul>
             </li><!-- End Today Qrcodes Nav -->
-
-            <li class="nav-item">
-                <a class="nav-link collapsed" data-bs-target="#QrCodePrint" data-bs-toggle="collapse" href="#">
-                    <i class="bi bi-qr-code"></i><span>Qrcodes-Print</span><i
-                        class="bi bi-chevron-down ms-auto"></i>
-                </a>
-                <ul id="QrCodePrint" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-                    <li>
-                        <a href="../../NewOrder/QrCodePrint/PrintQr/QrCodePrint.html" class="">
-                            <i class="bi bi-circle"></i><span>Print QR</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="../../NewOrder/QrCodePrint/MultiPrintQr/QrCodeRaise.html" class="">
-                            <i class="bi bi-circle"></i><span>Multi Qr Print</span>
-                        </a>
-                    </li>
-
-                </ul>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link collapsed" data-bs-target="#BillPrint" data-bs-toggle="collapse" href="#">
-                    <i class="bi bi-receipt"></i><span>Bill-Print</span><i
-                        class="bi bi-chevron-down ms-auto"></i>
-                </a>
-                <ul id="BillPrint" class="nav-content collapse" data-bs-parent="#sidebar-nav">
-                    <li>
-                        <a href="../../NewOrder/BillPrint/PrintBill/PrintBill.html">
-                            <i class="bi bi-circle"></i><span>Print Bill</span>
-                        </a>
-                    </li>
-                </ul>
-            </li>
-
-            <li class="nav-item">
-                <a class="nav-link collapsed" data-bs-target="#Reports" data-bs-toggle="collapse" href="#">
-                    <i class="bi bi-graph-up-arrow"></i><span>Reports</span><i
-                        class="bi bi-chevron-down ms-auto"></i>
-                </a>
-                <ul id="Reports" class="nav-content collapse" data-bs-parent="#sidebar-nav">
-                    <li>
-                        <a href="../Reports/Orders/FilterShowAll.html">
-                            <i class="bi bi-circle"></i><span>Orders</span>
-                        </a>
-                    </li>
-                    <li>
-                        <!-- <a href="../Reports/Scane/FilterShowAll/FilterShowAll.html"> -->
-                        <a href="../../NewOrder/Reports/DcWithQr/DcWithQr.html">
-                            <i class="bi bi-circle"></i><span>Qr</span>
-                        </a>
-                    </li>
-                </ul>
-            </li>
-
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="../Search/Search.html">
-                    <i class="bi bi-clock-fill"></i></i>
-                    <span>Search</span>
-                </a>
-            </li>
 
         </ul>
         </li><!-- End Today Orders Nav -->
@@ -414,7 +350,7 @@
     <main id="main" class="main">
 
         <div class="pagetitle">
-            <h1>QrCodes - Raise</h1>
+            <h1>All - QrCodes</h1>
 
 
             <nav>
@@ -436,25 +372,22 @@
                             <div class="spinner-border" id="SpinnerId" role="status">
                                 <span class="visually-hidden">Loading...</span>
                             </div>
-                            <table id="table" data-toolbar="#toolbar" data-search="true" data-show-footer="true"
-                                data-searchable="true" data-show-columns="true" data-show-columns-toggle-all="true"
-                                data-show-export="true" data-detail-formatter="detailFormatter" data-id-field="pk"
-                                data-show-toggle="true" >
+                            <table id="table" data-toolbar="#toolbar" data-search="true" data-searchable="true"
+                                data-show-columns="true" data-show-columns-toggle-all="true" data-show-export="true"
+                                data-id-field="pk" data-show-toggle="true" data-filter-control="true">
                                 <thead>
                                     <tr id="tableHeadRow">
                                         <th data-formatter="jFLocalSerialColumn">#</th>
-                                        <th data-field="UuId">Order Number</th>
-                                        <th data-field="CustomerData.CustomerName">Customer Name</th>
-                                        <th data-field="OrderData.BranchName">Branch</th>
-                                        <th data-field="CustomerData.CustomerMobile">Mobile</th>
-                                        <th data-formatter="jFLocalDateFormatter">Date</th>
-                                        <th data-formatter="jFLocalOrderDetails">Order Details</th>
-                                        <th data-formatter="jFLocalSettlementDetails"
-                                            data-footer-formatter="priceFormatter">
-                                            Settlement</th>
-                                        <th data-formatter="jFLocalQrCodeDetails" data-footer-formatter="QrFormatter">
-                                            QrCodes
+                                        <th data-field="pk" data-filter-control="select">QrCode</th>
+                                        <th data-field="ItemName" data-filter-control="select">ItemName</th>
+                                        <th data-field="Rate" data-filter-control="select">Rate</th>
+                                        <th data-field="DateTime" data-filter-control="select">Order DateTime</th>
+                                        <th data-field="DeliveryDateTime" data-filter-control="select">DeliveryDateTime
                                         </th>
+                                        <th data-field="VoucherNumber" data-filter-control="select">Voucher No</th>
+                                        <th data-field="DCFactory" data-filter-control="select">DC Factory</th>
+                                        <th data-field="Status" data-filter-control="select">Status</th>
+                                        <th data-field="TimeSpan" data-filter-control="select">TimeSpan</th>
                                     </tr>
                                 </thead>
                             </table>
@@ -475,37 +408,24 @@
 
     </footer>
     <!-- End Footer -->
-
-
+    <!-- Vendor JS Files -->
     <script>
-
-
-        function detailFormatter(index, row) {
-            var html = []
-            $.each(row, function (key, value) {
-                html.push('<p><b>' + key + ':</b> ' + value + '</p>')
-            })
-            return html.join('')
-        };
-
         function jFLocalSerialColumn(value, row, index) {
             return index + 1;
         };
-
         function jFLocalDateFormatter(value, row, index) {
             return new Date(row.OrderData.Currentdateandtime).toLocaleDateString('en-GB');
         };
 
         function jFLocalOrderDetails(value, row, index) {
             return [
-                `<a href="../../OrderWithoutCheckout/OrderWithoutCheckout.html?BranchName=${row.OrderData.BranchName}&OrderNumber=${row.UuId}" class="btn btn-success" >${row.AggValues.ItemDetails}</a>`,
+                `<a href="#" class="btn btn-success" >${row.AggValues.ItemDetails}</a>`,
             ].join('')
         }
-
         function jFLocalSettlementDetails(value, row, index) {
             if (row.IsSettled) {
                 return [
-                    `<a href="#" data-ordernumber="${row.UuId}" data-BranchName="${row.OrderData.BranchName}" class="btn btn-danger SettlementButtonClass" >`,
+                    `<a href="#" data-ordernumber="${row.UuId}" data-BranchName="${row.OrderData.BranchName}" class="btn btn-danger " >`,
                     `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-currency-rupee" viewBox="0 0 16 16">`,
                     `<path d="M4 3.06h2.726c1.22 0 2.12.575 2.325 1.724H4v1.051h5.051C8.855 7.001 8 7.558 6.788 7.558H4v1.317L8.437 14h2.11L6.095 8.884h.855c2.316-.018 3.465-1.476 3.688-3.049H12V4.784h-1.345c-.08-.778-.357-1.335-.793-1.732H12V2H4v1.06Z" />`,
                     `</svg>`,
@@ -515,7 +435,7 @@
             }
             else {
                 return [
-                    `<a href="#" data-ordernumber="${row.UuId}" data-BranchName="${row.OrderData.BranchName}" class="btn btn-outline-danger SettlementButtonClass" >`,
+                    `<a href="#" data-ordernumber="${row.UuId}" data-BranchName="${row.OrderData.BranchName}" class="btn btn-outline-danger " >`,
                     `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-currency-rupee" viewBox="0 0 16 16">`,
                     `<path d="M4 3.06h2.726c1.22 0 2.12.575 2.325 1.724H4v1.051h5.051C8.855 7.001 8 7.558 6.788 7.558H4v1.317L8.437 14h2.11L6.095 8.884h.855c2.316-.018 3.465-1.476 3.688-3.049H12V4.784h-1.345c-.08-.778-.357-1.335-.793-1.732H12V2H4v1.06Z" />`,
                     `</svg>`,
@@ -532,7 +452,7 @@
         function jFLocalQrCodeDetails(value, row, index) {
             if (row.IsQrCodesRaised) {
                 return [
-                    `<a href="#" data-rowpk="${row.UuId}" data-branchName=${row.OrderData.BranchName} class="btn btn-primary QRGenerateClass">`,
+                    `<a href="#" data-rowpk="${row.UuId}" data-branchName=${row.OrderData.BranchName} class="btn btn-primary ">`,
                     `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-qr-code" viewBox="0 0 16 16">`,
                     `<path d="M2 2h2v2H2V2Z"></path>`,
                     `<path d="M6 0v6H0V0h6ZM5 1H1v4h4V1ZM4 12H2v2h2v-2Z"></path>`,
@@ -547,7 +467,7 @@
                 ].join('')
             } else {
                 return [
-                    `<a href="#" data-rowpk="${row.UuId}" data-branchName=${row.OrderData.BranchName} class="btn btn-outline-primary QRGenerateClass">`,
+                    `<a href="#" data-rowpk="${row.UuId}" data-branchName=${row.OrderData.BranchName} class="btn btn-outline-primary ">`,
                     `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-qr-code" viewBox="0 0 16 16">`,
                     `<path d="M2 2h2v2H2V2Z"></path>`,
                     `<path d="M6 0v6H0V0h6ZM5 1H1v4h4V1ZM4 12H2v2h2v-2Z"></path>`,
@@ -592,15 +512,14 @@
         src="https://unpkg.com/bootstrap-table@1.22.1/dist/extensions/export/bootstrap-table-export.min.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script
+        src="https://unpkg.com/bootstrap-table@1.22.1/dist/extensions/filter-control/bootstrap-table-filter-control.min.js"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js"
         integrity="sha512-WFN04846sdKMIP5LKNphMaWzU7YpMyCU245etK3g/2ARYbPK9Ub18eG+ljU96qKRCWh+quCY7yefSmlkQw1ANQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
     <!-- Template Main JS File -->
-    <script src="./Js/vendor/bwip-js-min.js"></script>
-    <script src="./Js/vendor/print.min.js"></script>
-
     <script src="./assets/js/main.js"></script>
     <script type="module" src="./Js/StartFunc.js"></script>
 </body>
