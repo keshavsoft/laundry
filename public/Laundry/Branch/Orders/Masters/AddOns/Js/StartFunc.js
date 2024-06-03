@@ -2,15 +2,17 @@
 import { StartFunc as StartFuncShowOnDom } from "./ShowOnDom.js";
 import { StartFunc as StartFuncFormLoad } from "./FormLoad/StartFunc.js";
 import { StartFunc as StartFuncAfterDomLoad } from "./AfterDomLoad/StartFunc.js";
+import { StartFunc as StartFuncLoginCheck } from "./LoginCheck/EntryFile.js";
+import { StartFunc as StartFuncFetchFromFuncs } from "./FormLoad/ListenerFuncs/RefreshBSTableId/FetchFromFuncs/Entry.js";
 
-const StartFunc = () => {
+const StartFunc = async () => {
     // StartFuncNavigation();
+    StartFuncFormLoad();
 
-    let jVarLocalFromAdmin = true;
+    let jVarLocalFromAdmin = await StartFuncLoginCheck({ inSuccessFunc: StartFuncFetchFromFuncs });
+
 
     if (jVarLocalFromAdmin) {
-        StartFuncFormLoad();
-
         StartFuncShowOnDom();
 
         StartFuncAfterDomLoad();
