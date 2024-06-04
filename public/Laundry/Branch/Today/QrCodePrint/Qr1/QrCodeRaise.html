@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    <title>KS Qr-Print</title>
+    <title>UltraWastex</title>
     <meta content="" name="description">
     <meta content="" name="keywords">
 
@@ -27,6 +27,13 @@
 
     <link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.22.1/dist/bootstrap-table.min.css">
 
+    <!-- =======================================================
+  * Template Name: NiceAdmin
+  * Updated: Jan 29 2024 with Bootstrap v5.3.2
+  * Template URL: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
 </head>
 
 <body>
@@ -64,24 +71,88 @@
                 <li class="nav-item dropdown">
 
                     <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
-                        <i class="bi bi-people"></i>
-                        <span class="badge bg-primary badge-number" id="CustomrtCountId">0</span>
+                        <i class="bi bi-bell"></i>
+                        <span class="badge bg-primary badge-number">4</span>
                     </a>
                     <!-- End Notification Icon -->
 
+                    <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow notifications">
+                        <li class="dropdown-header">
+                            You have 4 new notifications
+                            <a href="#"><span class="badge rounded-pill bg-primary p-2 ms-2">View all</span></a>
+                        </li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
 
+                        <li class="notification-item">
+                            <i class="bi bi-exclamation-circle text-warning"></i>
+                            <div>
+                                <h4>Lorem Ipsum</h4>
+                                <p>Quae dolorem earum veritatis oditseno</p>
+                                <p>30 min. ago</p>
+                            </div>
+                        </li>
+
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+
+                        <li class="notification-item">
+                            <i class="bi bi-x-circle text-danger"></i>
+                            <div>
+                                <h4>Atque rerum nesciunt</h4>
+                                <p>Quae dolorem earum veritatis oditseno</p>
+                                <p>1 hr. ago</p>
+                            </div>
+                        </li>
+
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+
+                        <li class="notification-item">
+                            <i class="bi bi-check-circle text-success"></i>
+                            <div>
+                                <h4>Sit rerum fuga</h4>
+                                <p>Quae dolorem earum veritatis oditseno</p>
+                                <p>2 hrs. ago</p>
+                            </div>
+                        </li>
+
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+
+                        <li class="notification-item">
+                            <i class="bi bi-info-circle text-primary"></i>
+                            <div>
+                                <h4>Dicta reprehenderit</h4>
+                                <p>Quae dolorem earum veritatis oditseno</p>
+                                <p>4 hrs. ago</p>
+                            </div>
+                        </li>
+
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li class="dropdown-footer">
+                            <a href="#">Show all notifications</a>
+                        </li>
+
+                    </ul>
                     <!-- End Notification Dropdown Items -->
 
                 </li>
-
                 <!-- End Notification Nav -->
 
-                <!-- <li class="nav-item dropdown">
+                <li class="nav-item dropdown">
 
                     <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
                         <i class="bi bi-chat-left-text"></i>
                         <span class="badge bg-success badge-number">3</span>
                     </a>
+                    <!-- End Messages Icon -->
 
                     <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow messages">
                         <li class="dropdown-header">
@@ -139,8 +210,9 @@
                         </li>
 
                     </ul>
+                    <!-- End Messages Dropdown Items -->
 
-                </li> -->
+                </li>
                 <!-- End Messages Nav -->
 
                 <li class="nav-item dropdown pe-3">
@@ -221,7 +293,7 @@
             </li>
 
             <li class="nav-item">
-                <a id="ParentId" class="nav-link " href="#">
+                <a id="ParentId" class="nav-link collapsed" href="../../Print/QrPrint/QrPrint.html">
                     <i class="bi bi-qr-code"></i>
                     <span>Qr-Print</span>
                 </a>
@@ -246,12 +318,14 @@
                     <span>Items</span>
                 </a>
             </li>
+
+
             <li class="nav-item">
-                <a class="nav-link collapsed" data-bs-target="#QrCodePrint" data-bs-toggle="collapse" href="#">
+                <a class="nav-link" data-bs-target="#QrCodePrint" data-bs-toggle="collapse" href="#">
                     <i class="bi bi-qr-code"></i><span>Qrcodes-Print</span><i
                         class="bi bi-chevron-down ms-auto"></i>
                 </a>
-                <ul id="QrCodePrint" class="nav-content collapse" data-bs-parent="#sidebar-nav">
+                <ul id="QrCodePrint" class="nav-content" data-bs-parent="#sidebar-nav">
                     <li>
                         <a href="../../QrCodePrint/PrintQr/QrCodePrint.html">
                             <i class="bi bi-circle"></i><span>Print QR</span>
@@ -263,7 +337,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="../../QrCodePrint/Qr1/QrCodeRaise.html">
+                        <a href="../../QrCodePrint/Qr1/QrCodeRaise.html" class="active">
                             <i class="bi bi-circle" ></i><span>QR 1</span>
                         </a>
                     </li>
@@ -277,8 +351,14 @@
 
                 </ul>
             </li>
+            
+            
+            
 
+            
 
+        </ul>
+        </li><!-- End Today Orders Nav -->
         </ul>
     </aside>
     <!-- End Sidebar-->
@@ -286,14 +366,14 @@
     <main id="main" class="main">
 
         <div class="pagetitle">
-            <h1>Qr - print</h1>
+            <h1>Multi Qr Print</h1>
+
 
             <nav>
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a id="BRDDashboardId"
-                            href="../../../../../LaundryPos/Dashboard/Dashboard.html">Home</a>
-                    </li>
-                    <li class="breadcrumb-item active" id="RefreshBSTableId">Qr print</li>
+                    <li class="breadcrumb-item"><a href="../../../Dashboard/Dashboard.html">Home</a></li>
+                    <li class="breadcrumb-item"> <a href="../../Dashboard/Dashboard.html">Qrcodes-Print</a></li>
+                    <li class="breadcrumb-item active" id="RefreshBSTableId">Multi Qr Print</li>
                 </ol>
             </nav>
         </div>
@@ -307,34 +387,33 @@
 
                             <div class="spinner-border" id="SpinnerId" role="status">
                                 <span class="visually-hidden">Loading...</span>
-
                             </div>
-
-
                             <table id="table" data-toolbar="#toolbar" data-search="true" data-show-footer="true"
                                 data-searchable="true" data-show-columns="true" data-show-columns-toggle-all="true"
                                 data-show-export="true" data-detail-formatter="detailFormatter" data-id-field="pk"
-                                data-show-toggle="true">
+                                data-show-toggle="true" >
                                 <thead>
                                     <tr id="tableHeadRow">
                                         <th data-formatter="jFLocalSerialColumn">#</th>
                                         <th data-field="UuId">Order #</th>
-                                        <!-- <th data-field="CustomerData.CustomerName">Customer Name</th> -->
+                                        <th data-field="CustomerData.CustomerName">Customer Name</th>
                                         <!-- <th data-field="OrderData.BranchName">Branch</th> -->
-                                        <th data-field="CustomerData.CustomerMobile">Mobile</th>
+                                        <!-- <th data-field="CustomerData.CustomerMobile">Mobile</th> -->
                                         <!-- <th data-formatter="jFLocalDateFormatter">Date</th> -->
+                                        
+                                        <!-- <th data-formatter="jFLocalQrCodeDetails" data-footer-formatter="QrFormatter">
+                                            QrCodes
+                                        </th> -->
+                                        <th data-formatter="jFLocalQrCodeDetails1" data-footer-formatter="QrFormatter">
+                                            QrCodes1
+                                        </th>
+                                        <!-- <th data-formatter="jFLocalQrCodeDetails2" data-footer-formatter="QrFormatter">
+                                            QrCodes2
+                                        </th> -->
                                         <th data-formatter="jFLocalOrderDetails">Order Details</th>
                                         <th data-formatter="jFLocalSettlementDetails"
                                             data-footer-formatter="priceFormatter">
                                             Settlement</th>
-                                        <!-- <th data-formatter="jFLocalQrCodeDetails" data-footer-formatter="QrFormatter">
-                                            QrCodes
-                                        </th> -->
-                                        <th data-formatter="jFLocalPrintColumn">Qr-print</th>
-                                        <th data-formatter="jFLocalPrintColumn1">Qr-print1</th>
-                                        <th data-formatter="jFLocalPrintColumn2">Qr-print2</th>
-                                        <th data-formatter="jFLocalPrintColumn3">Qr-print3</th>
-
                                     </tr>
                                 </thead>
                             </table>
@@ -348,22 +427,64 @@
     <!-- End #main -->
 
     <div class="modal fade" id="ModalForQrCode" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"
-        style="display: none;">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">QrCodes</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body" id="ModalBody">
+    style="display: none;">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">QrCodes</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body" id="ModalBody">
 
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-primary" onclick="printJS('ModalBody', 'html')">Print</button>
-                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" onclick="printJS('ModalBody', 'html')">Print</button>
             </div>
         </div>
     </div>
+</div>
+
+    <template id="TemplateForQrCodePrint1">
+        <div style="width: 100%; height: 280px;">
+            <div style="text-align: center;" class="col">
+                <canvas id="CanvasId" width="1" height="1" style="border:1px solid #fff;visibility:hidden"></canvas>
+            </div>
+            <div class="row">
+                <div style="text-align: center;font-weight: 500;font-size: larger; " class="col ">
+                    <label class="BranchClass"></label>-<label class="PkClass"></label>
+                </div>
+            </div>
+
+            <div class="row">
+                <div style="text-align: center; " class="col ">
+                    <label style="font-size: x-large; font-weight: 500;" class="QrCodeClass"></label>-<label style="font-size: x-large;" class="OrderNumberClass"></label>
+                </div>
+            </div>
+            <div class="row">
+                <div style="text-align: center;font-weight: 500;" class="col ItemNameClass">
+                    {{ItemName}}.{{Pcs}}
+                </div>
+            </div>
+            <div class="row">
+                <div style="text-align: center; font-weight: 500;" class="col ItemSerialClass">
+                    {{ItemSerial}}.{{Pcs}}
+                </div>
+            </div>
+            
+            <div class="row" style="width: 150px; margin: 0px auto;">
+                <div style="text-align: center; font-weight: 300;" class="col AddOnDataAsStringClass">
+                    {{AddOnDataAsString}}
+                </div>
+            </div>
+
+            <div class="col" style="text-align: center; font-weight: 500;">
+
+                <label class=" DateTimeClass"></label> @ <label class=" OrderDateClass"></label>
+            
+            </div>
+        
+        </div>
+    </template>
 
     <!-- ======= Footer ======= -->
     <footer id="footer" class="footer">
@@ -373,7 +494,8 @@
 
     </footer>
     <!-- End Footer -->
-    <!-- Vendor JS Files -->
+
+
     <script>
 
 
@@ -429,7 +551,7 @@
         function jFLocalQrCodeDetails(value, row, index) {
             if (row.IsQrCodesRaised) {
                 return [
-                    `<a href="#" data-rowpk="${row.UuId}" data-branchName=${row.OrderData.BranchName} class="btn btn-primary MultipleQrCodeButtonClass">`,
+                    `<a href="#" data-rowpk="${row.UuId}" data-branchName=${row.OrderData.BranchName} class="btn btn-primary QRGenerateClass">`,
                     `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-qr-code" viewBox="0 0 16 16">`,
                     `<path d="M2 2h2v2H2V2Z"></path>`,
                     `<path d="M6 0v6H0V0h6ZM5 1H1v4h4V1ZM4 12H2v2h2v-2Z"></path>`,
@@ -444,7 +566,7 @@
                 ].join('')
             } else {
                 return [
-                    `<a href="#" data-rowpk="${row.UuId}" data-branchName=${row.OrderData.BranchName} class="btn btn-outline-primary MultipleQrCodeButtonClass">`,
+                    `<a href="#" data-rowpk="${row.UuId}" data-branchName=${row.OrderData.BranchName} class="btn btn-outline-primary QRGenerateClass">`,
                     `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-qr-code" viewBox="0 0 16 16">`,
                     `<path d="M2 2h2v2H2V2Z"></path>`,
                     `<path d="M6 0v6H0V0h6ZM5 1H1v4h4V1ZM4 12H2v2h2v-2Z"></path>`,
@@ -462,11 +584,10 @@
                 ].join('')
             }
         };
-
-        function jFLocalPrintColumn(value, row, index) {
+        function jFLocalQrCodeDetails1(value, row, index) {
             if (row.IsQrCodesRaised) {
                 return [
-                    `<a href="#" data-rowpk="${row.UuId}" data-branchName=${row.OrderData.BranchName} class="btn btn-primary MultipleQrCodeButtonClass">`,
+                    `<a href="#" data-rowpk="${row.UuId}" data-branchName=${row.OrderData.BranchName} class="btn btn-primary QRGenerateClass">`,
                     `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-qr-code" viewBox="0 0 16 16">`,
                     `<path d="M2 2h2v2H2V2Z"></path>`,
                     `<path d="M6 0v6H0V0h6ZM5 1H1v4h4V1ZM4 12H2v2h2v-2Z"></path>`,
@@ -481,7 +602,7 @@
                 ].join('')
             } else {
                 return [
-                    `<a href="#" data-rowpk="${row.UuId}" data-branchName=${row.OrderData.BranchName} class="btn btn-outline-primary MultipleQrCodeButtonClass">`,
+                    `<a href="#" data-rowpk="${row.UuId}" data-branchName=${row.OrderData.BranchName} class="btn btn-outline-primary QRGenerateClass">`,
                     `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-qr-code" viewBox="0 0 16 16">`,
                     `<path d="M2 2h2v2H2V2Z"></path>`,
                     `<path d="M6 0v6H0V0h6ZM5 1H1v4h4V1ZM4 12H2v2h2v-2Z"></path>`,
@@ -490,16 +611,19 @@
                     `</path>`,
                     `<path d="M7 12h1v3h4v1H7v-4Zm9 2v2h-3v-1h2v-1h1Z"></path>`,
                     `</svg>`,
-                    ` 0`,
+                    ` `,
+                    `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-circle" viewBox="0 0 16 16">`,
+                    `<path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"></path>`,
+                    `<path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"></path>`,
+                    `</svg>`,
                     `</a>`
                 ].join('')
             }
         };
-
-        function jFLocalPrintColumn1(value, row, index) {
+        function jFLocalQrCodeDetails2(value, row, index) {
             if (row.IsQrCodesRaised) {
                 return [
-                    `<a href="#" data-rowpk="${row.UuId}" data-branchName=${row.OrderData.BranchName} class="btn btn-primary MultipleQrCodeButtonClass">`,
+                    `<a href="#" data-rowpk="${row.UuId}" data-branchName=${row.OrderData.BranchName} class="btn btn-primary QRGenerateClass">`,
                     `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-qr-code" viewBox="0 0 16 16">`,
                     `<path d="M2 2h2v2H2V2Z"></path>`,
                     `<path d="M6 0v6H0V0h6ZM5 1H1v4h4V1ZM4 12H2v2h2v-2Z"></path>`,
@@ -514,25 +638,7 @@
                 ].join('')
             } else {
                 return [
-                    `<a href="#" data-rowpk="${row.UuId}" data-branchName=${row.OrderData.BranchName} class="btn btn-outline-primary MultipleQrCodeButtonClass">`,
-                    `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-qr-code" viewBox="0 0 16 16">`,
-                    `<path d="M2 2h2v2H2V2Z"></path>`,
-                    `<path d="M6 0v6H0V0h6ZM5 1H1v4h4V1ZM4 12H2v2h2v-2Z"></path>`,
-                    `<path d="M6 10v6H0v-6h6Zm-5 1v4h4v-4H1Zm11-9h2v2h-2V2Z"></path>`,
-                    `<path d="M10 0v6h6V0h-6Zm5 1v4h-4V1h4ZM8 1V0h1v2H8v2H7V1h1Zm0 5V4h1v2H8ZM6 8V7h1V6h1v2h1V7h5v1h-4v1H7V8H6Zm0 0v1H2V8H1v1H0V7h3v1h3Zm10 1h-1V7h1v2Zm-1 0h-1v2h2v-1h-1V9Zm-4 0h2v1h-1v1h-1V9Zm2 3v-1h-1v1h-1v1H9v1h3v-2h1Zm0 0h3v1h-2v1h-1v-2Zm-4-1v1h1v-2H7v1h2Z">`,
-                    `</path>`,
-                    `<path d="M7 12h1v3h4v1H7v-4Zm9 2v2h-3v-1h2v-1h1Z"></path>`,
-                    `</svg>`,
-                    ` 0`,
-                    `</a>`
-                ].join('')
-            }
-        };
-
-        function jFLocalPrintColumn2(value, row, index) {
-            if (row.IsQrCodesRaised) {
-                return [
-                    `<a href="#" data-rowpk="${row.UuId}" data-branchName=${row.OrderData.BranchName} class="btn btn-primary MultipleQrCodeButtonClass">`,
+                    `<a href="#" data-rowpk="${row.UuId}" data-branchName=${row.OrderData.BranchName} class="btn btn-outline-primary QRGenerateClass">`,
                     `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-qr-code" viewBox="0 0 16 16">`,
                     `<path d="M2 2h2v2H2V2Z"></path>`,
                     `<path d="M6 0v6H0V0h6ZM5 1H1v4h4V1ZM4 12H2v2h2v-2Z"></path>`,
@@ -542,61 +648,14 @@
                     `<path d="M7 12h1v3h4v1H7v-4Zm9 2v2h-3v-1h2v-1h1Z"></path>`,
                     `</svg>`,
                     ` `,
-                    `${row.TotalItems}`,
-                    `</a>`
-                ].join('')
-            } else {
-                return [
-                    `<a href="#" data-rowpk="${row.UuId}" data-branchName=${row.OrderData.BranchName} class="btn btn-outline-primary MultipleQrCodeButtonClass">`,
-                    `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-qr-code" viewBox="0 0 16 16">`,
-                    `<path d="M2 2h2v2H2V2Z"></path>`,
-                    `<path d="M6 0v6H0V0h6ZM5 1H1v4h4V1ZM4 12H2v2h2v-2Z"></path>`,
-                    `<path d="M6 10v6H0v-6h6Zm-5 1v4h4v-4H1Zm11-9h2v2h-2V2Z"></path>`,
-                    `<path d="M10 0v6h6V0h-6Zm5 1v4h-4V1h4ZM8 1V0h1v2H8v2H7V1h1Zm0 5V4h1v2H8ZM6 8V7h1V6h1v2h1V7h5v1h-4v1H7V8H6Zm0 0v1H2V8H1v1H0V7h3v1h3Zm10 1h-1V7h1v2Zm-1 0h-1v2h2v-1h-1V9Zm-4 0h2v1h-1v1h-1V9Zm2 3v-1h-1v1h-1v1H9v1h3v-2h1Zm0 0h3v1h-2v1h-1v-2Zm-4-1v1h1v-2H7v1h2Z">`,
-                    `</path>`,
-                    `<path d="M7 12h1v3h4v1H7v-4Zm9 2v2h-3v-1h2v-1h1Z"></path>`,
+                    `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-circle" viewBox="0 0 16 16">`,
+                    `<path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"></path>`,
+                    `<path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"></path>`,
                     `</svg>`,
-                    ` 0`,
                     `</a>`
                 ].join('')
             }
         };
-
-        function jFLocalPrintColumn3(value, row, index) {
-            if (row.IsQrCodesRaised) {
-                return [
-                    `<a href="#" data-rowpk="${row.UuId}" data-branchName=${row.OrderData.BranchName} class="btn btn-primary MultipleQrCodeButtonClass">`,
-                    `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-qr-code" viewBox="0 0 16 16">`,
-                    `<path d="M2 2h2v2H2V2Z"></path>`,
-                    `<path d="M6 0v6H0V0h6ZM5 1H1v4h4V1ZM4 12H2v2h2v-2Z"></path>`,
-                    `<path d="M6 10v6H0v-6h6Zm-5 1v4h4v-4H1Zm11-9h2v2h-2V2Z"></path>`,
-                    `<path d="M10 0v6h6V0h-6Zm5 1v4h-4V1h4ZM8 1V0h1v2H8v2H7V1h1Zm0 5V4h1v2H8ZM6 8V7h1V6h1v2h1V7h5v1h-4v1H7V8H6Zm0 0v1H2V8H1v1H0V7h3v1h3Zm10 1h-1V7h1v2Zm-1 0h-1v2h2v-1h-1V9Zm-4 0h2v1h-1v1h-1V9Zm2 3v-1h-1v1h-1v1H9v1h3v-2h1Zm0 0h3v1h-2v1h-1v-2Zm-4-1v1h1v-2H7v1h2Z">`,
-                    `</path>`,
-                    `<path d="M7 12h1v3h4v1H7v-4Zm9 2v2h-3v-1h2v-1h1Z"></path>`,
-                    `</svg>`,
-                    ` `,
-                    `${row.TotalItems}`,
-                    `</a>`
-                ].join('')
-            } else {
-                return [
-                    `<a href="#" data-rowpk="${row.UuId}" data-branchName=${row.OrderData.BranchName} class="btn btn-outline-primary MultipleQrCodeButtonClass">`,
-                    `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-qr-code" viewBox="0 0 16 16">`,
-                    `<path d="M2 2h2v2H2V2Z"></path>`,
-                    `<path d="M6 0v6H0V0h6ZM5 1H1v4h4V1ZM4 12H2v2h2v-2Z"></path>`,
-                    `<path d="M6 10v6H0v-6h6Zm-5 1v4h4v-4H1Zm11-9h2v2h-2V2Z"></path>`,
-                    `<path d="M10 0v6h6V0h-6Zm5 1v4h-4V1h4ZM8 1V0h1v2H8v2H7V1h1Zm0 5V4h1v2H8ZM6 8V7h1V6h1v2h1V7h5v1h-4v1H7V8H6Zm0 0v1H2V8H1v1H0V7h3v1h3Zm10 1h-1V7h1v2Zm-1 0h-1v2h2v-1h-1V9Zm-4 0h2v1h-1v1h-1V9Zm2 3v-1h-1v1h-1v1H9v1h3v-2h1Zm0 0h3v1h-2v1h-1v-2Zm-4-1v1h1v-2H7v1h2Z">`,
-                    `</path>`,
-                    `<path d="M7 12h1v3h4v1H7v-4Zm9 2v2h-3v-1h2v-1h1Z"></path>`,
-                    `</svg>`,
-                    ` 0`,
-                    `</a>`
-                ].join('')
-            }
-        };
-
-
-
 
         function priceFormatter(data) {
             var field = this.field
@@ -628,11 +687,11 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js"
         integrity="sha512-WFN04846sdKMIP5LKNphMaWzU7YpMyCU245etK3g/2ARYbPK9Ub18eG+ljU96qKRCWh+quCY7yefSmlkQw1ANQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
 
     <!-- Template Main JS File -->
     <script src="./Js/vendor/bwip-js-min.js"></script>
     <script src="./Js/vendor/print.min.js"></script>
+
     <script src="./assets/js/main.js"></script>
     <script type="module" src="./Js/StartFunc.js"></script>
 </body>
