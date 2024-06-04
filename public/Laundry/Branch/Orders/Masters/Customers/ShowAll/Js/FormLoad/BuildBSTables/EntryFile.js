@@ -1,4 +1,5 @@
 import AttributesJson from './Attributes.json' with {type: 'json'};
+
 const StartFunc = () => {
     jFLocalToTableTag();
     jFPrepareColumns();
@@ -30,7 +31,7 @@ const jFPrepareColumns = () => {
 
 const jFPrepareMobile = () => {
     var $mobile = $('#MobileId');
-    
+
     $mobile.attr(AttributesJson.coloumnAttributes.MobileAttributes);
     $mobile.addClass("d-none d-sm-table-cell");
 };
