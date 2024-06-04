@@ -1,7 +1,8 @@
 {
     "tableAttributes": {
         "data-show-columns": "true",
-        "data-search": "true"
+        "data-search": "true",
+        "data-pagination": "true"
     },
     "loadObject": {
         "data" : [],
