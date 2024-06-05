@@ -1,5 +1,4 @@
 import fs from "fs";
-
 import { StartFunc as StartFuncReturnDbObject } from "./CommonFuncs/ReturnDbObject.js";
 
 let StartFunc = ({ inUsername, inPassword }) => {
@@ -10,40 +9,60 @@ let StartFunc = ({ inUsername, inPassword }) => {
     let LocalReturnData = { KTF: false }
 
     let LocalFromLowDb = StartFuncReturnDbObject();
-    
-    
-    
+
     LocalFromLowDb.read();
-    
-    if ("error" in LocalFromLowDb.data){
+
+    if ("error" in LocalFromLowDb.data) {
         LocalReturnData.err = LocalFromLowDb.data.error;
         return LocalReturnData;
-    }
-    
-
-    if (LocalFromLowDb.data.length !== 0) {
-        let LocalFindData = LocalFromLowDb.data.find(e => e.UserName == LocalUsername)
-
-        if (LocalFindData !== undefined) {
-            LocalReturnData.KReason = "UserName Already Exists"
-            return LocalReturnData
-        }
     };
-    
-    let LocalUuId = uuidv4();
-    let LocalObject = {};
-    LocalObject.UserName = LocalUsername;
-    LocalObject.Password = LocalPassword;
-    LocalObject.UuId = LocalUuId;
+
+    if (LocalFuncCheckInData({ inUsername: LocalUsername, inPassword: LocalPassword, inLowDb: LocalFromLowDb }) === false) {
+        LocalReturnData.KReason = "UserName Already Exists";
+        return LocalReturnData;
+    };
+
+    let LocalObject = LocalFuncPrepareObject({ inUsername: LocalUsername, inPassword: LocalPassword });
 
     LocalFromLowDb.data.push(LocalObject);
     LocalFromLowDb.write();
 
     LocalReturnData.KTF = true;
-    LocalReturnData.JsonData = LocalFromLowDb.data;
+    LocalReturnData.JsonData = LocalObject.UuId;
 
+    return LocalReturnData;
+};
 
-    return LocalUuId;
+let LocalFuncCheckInData = ({ inUsername, inPassword, inLowDb }) => {
+
+    let LocalUsername = inUsername;
+    let LocalPassword = inPassword;
+
+    let LocalReturnData = { KTF: false }
+
+    let LocalFromLowDb = inLowDb;
+
+    let LocalFindData = LocalFromLowDb.data.find(e => e.UserName == LocalUsername)
+
+    if (LocalFindData === undefined) {
+        return true;
+    };
+
+    return false;
+};
+
+let LocalFuncPrepareObject = ({ inUsername, inPassword }) => {
+
+    let LocalUuId = uuidv4();
+    let LocalUsername = inUsername;
+    let LocalPassword = inPassword;
+
+    let LocalObject = {};
+    LocalObject.UserName = LocalUsername;
+    LocalObject.Password = LocalPassword;
+    LocalObject.UuId = LocalUuId;
+
+    return LocalObject;
 };
 
 function uuidv4() {
