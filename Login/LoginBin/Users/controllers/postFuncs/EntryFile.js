@@ -11,7 +11,7 @@ let PostFunc = async (req, res) => {
 
     if (LocalFromRepo.KTF === false)  res.status(401).json(LocalFromRepo);
 
-    res.json(LocalFromRepo);
+    res.json(LocalFromRepo.JsonData);
 
 };
 
