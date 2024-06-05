@@ -1,7 +1,7 @@
-PUT http://localhost:7016/Login/bin/Users/9944e151-a65e-4abc-95d2-e30e40913c77
+PUT http://localhost:7016/Login/bin/Users/{UuID}
 content-type: application/json
 
 {
-"UserName":"Dvijesh",
-"Password":"Dwiju@2004"
+"UserName":"",
+"Password":""
 }
