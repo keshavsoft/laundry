@@ -67,9 +67,6 @@
                         <a class="btn btn-large btn-info" id="MasterButtonId" href="#">Masters</a></button>
                     </div>
                     <div class="col-1">
-                        <a class="btn btn-large btn-info" id="BranchButtonId" href="#">{{Branch}}</a></button>
-                    </div>
-                    <div class="col-1">
                         <a class="btn btn-secondary" href="./QrCodeRaise/QrCodeRaise.html"><svg
                                 xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                                 class="bi bi-qr-code" viewBox="0 0 16 16">
@@ -90,6 +87,9 @@
                     <div class="col-1">
                         <a class="btn btn-large btn-info" id="MasterButtonId"
                             href="../../ToFactory/DCAll/ShowAll/ShowAll.html">Factory</a></button>
+                    </div>
+                    <div class="col-1">
+                        <a class="btn btn-secondary fs-4" id="BranchButtonId" href="#">{{Branch}}</a></button>
                     </div>
                 </div>
             </div>
@@ -161,14 +161,6 @@
                 `</a>`
             ].join('');
         };
-        let jVarLocalBranchName = localStorage.getItem("BranchName");
-        let jVarLocalBranchButtonId = document.getElementById("BranchButtonId");
-        jVarLocalBranchButtonId.innerText = jVarLocalBranchName;
-        jVarLocalBranchButtonId.addEventListener('click', function() {
-            window.location.href = "../../../../LaundryPos/BranchSelect.html";
-        });
-
-
     </script>
 
     <script type="module" src="./Customer/Js/EntryFile.js"></script>
