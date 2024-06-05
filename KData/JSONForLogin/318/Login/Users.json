@@ -1,13 +1,16 @@
 [
   {
-    "UserName": "Keshav",
-    "Password": "KeshavSoft",
-    "UuId": "3d47cf96-a203-45f0-b8da-3a3aafdd67f6"
+    "UserName": "Dwijesh",
+    "Password": "12345678",
+    "isMailValidated": true,
+    "Mail": "dwijeshbingumalla@gmail.com",
+    "UuId": "1f137065-0099-4195-a959-9e72f9ba76e2"
   },
   {
-    "UserName": "Keshava",
+    "UserName": "Keshav",
     "Password": "KeshavSoft",
-    "isMailValidated": true,
-    "UuId": "7fa51984-0cb1-4451-85c2-bbfb63ab3b47"
+    "isMailValidated": false,
+    "Mail": "nknnkumar@yahoo.com",
+    "UuId": "e741bacb-f4a3-46fc-8462-4400c61c3384"
   }
 ]
