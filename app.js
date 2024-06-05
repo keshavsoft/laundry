@@ -1,3 +1,6 @@
+import { router as routerFromSrcFixedPk } from "./srcFixedPk/routes.js";
+import { router as routerFromBinFixedPk } from "./binFixedPk/routes.js";
+
 import { router as routerFromSrc } from "./src/routes.js";
 import { router as routerFromBin } from "./bin/routes.js";
 import { router as routerFromCustom } from "./Custom/routes.js";
@@ -47,17 +50,17 @@ app.get('/AboutUs', (req, res) => {
     res.end("KeshavSoft : 9848163021");
 });
 
-const mid =(req,res,next) => {
-    console.log(req.cookies);
-    next();
-}
+app.use('/srcFixedPk', routerFromSrcFixedPk);
+app.use('/binFixedPk', routerFromBinFixedPk);
 
 app.use('/src', routerFromSrc);
 app.use('/bin', StartFuncBinMiddleWares, routerFromBin);
 app.use('/Custom', routerFromCustom);
-app.use('/Common',StartFuncBinMiddleWares, routerFromCommon);
+app.use('/Common', StartFuncBinMiddleWares, routerFromCommon);
 app.use('/utility', routerForUtility);
 app.use('/Login', routerFromLogin);
+
+
 
 StartFuncKWSServer(server);
 

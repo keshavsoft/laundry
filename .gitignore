@@ -1,6 +1,7 @@
 node_modules/
 
 bin/
+binFixedPk/
 
 KData/JSON/
 

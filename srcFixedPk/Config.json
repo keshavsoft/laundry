@@ -1,0 +1,38 @@
+{
+    "jsonConfig": {
+        "DataPk": 318,
+        "DataPath": "KData/JSON",
+        "LoginPath": "KData/JSONForLogin",
+        "tableAndColumns": {
+            "path": "FromTableColumns/318",
+            "name": "318",
+            "children": [
+                {
+                    "path": "FromTableColumns\\317\\Transactions",
+                    "name": "kSampleFolder",
+                    "children": [
+                        {
+                            "path": "FromTableColumns\\317\\Transactions\\Orders.json",
+                            "name": "ksSample.json",
+                            "fileData": {
+                                "Name": {
+                                    "type": "STRING",
+                                    "allowNull": false,
+                                    "unique": true
+                                },
+                                "Mobile": {
+                                    "type": "STRING",
+                                    "allowNull": true
+                                },
+                                "City": {
+                                    "type": "STRING",
+                                    "allowNull": true
+                                }
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}
