@@ -1,12 +1,5 @@
 [
   {
-    "UserName": "Dwijesh",
-    "Password": "12345678",
-    "isMailValidated": true,
-    "Mail": "dwijeshbingumalla@gmail.com",
-    "UuId": "1f137065-0099-4195-a959-9e72f9ba76e2"
-  },
-  {
     "UserName": "Keshav",
     "Password": "KeshavSoft",
     "isMailValidated": false,
