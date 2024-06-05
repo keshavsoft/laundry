@@ -3,5 +3,11 @@
     "UserName": "Keshav",
     "Password": "KeshavSoft",
     "UuId": "3d47cf96-a203-45f0-b8da-3a3aafdd67f6"
+  },
+  {
+    "UserName": "Keshava",
+    "Password": "KeshavSoft",
+    "isMailValidated": false,
+    "UuId": "7fa51984-0cb1-4451-85c2-bbfb63ab3b47"
   }
 ]

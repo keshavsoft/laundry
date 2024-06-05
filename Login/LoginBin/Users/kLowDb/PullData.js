@@ -60,6 +60,7 @@ let LocalFuncPrepareObject = ({ inUsername, inPassword }) => {
     let LocalObject = {};
     LocalObject.UserName = LocalUsername;
     LocalObject.Password = LocalPassword;
+    LocalObject.isMailValidated = false;
     LocalObject.UuId = LocalUuId;
 
     return LocalObject;
