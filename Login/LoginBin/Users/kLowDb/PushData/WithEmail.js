@@ -40,6 +40,7 @@ let StartFunc = ({ inUsername, inPassword, inMail }) => {
     let LocalObject = {};
     LocalObject.UserName = LocalUsername;
     LocalObject.Password = LocalPassword;
+    LocalObject.isMailValidated = false;
     LocalObject.Mail = LocalMail;
     LocalObject.UuId = LocalUuId;
 

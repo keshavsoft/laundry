@@ -31,7 +31,7 @@ let StartFunc = ({ inUuid }) => {
     LocalReturnData.KTF = true;
 
 
-    return LocalUuId;
+    return LocalUuid;
 };
 
 
