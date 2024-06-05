@@ -4,9 +4,9 @@ let GetFunc = async (req, res) => {
 
     let LocalFromRepo = await GetFuncRepo();
     
-    if (LocalFromRepo.KTF){
-        res.json(LocalFromRepo.JsonData);
-    }
+    if (LocalFromRepo.KTF === false) return res.status(404).json({});
+
+    res.json(LocalFromRepo.JsonData);
 };
 
 export { GetFunc };
