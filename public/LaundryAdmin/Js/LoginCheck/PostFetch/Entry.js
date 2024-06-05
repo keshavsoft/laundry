@@ -1,6 +1,6 @@
 import { StartFunc as StartFuncFetchFuncs } from "./PostFetch.js";
 import { StartFunc as StartFuncAfterFetch } from "./AfterFetch/EntryFile.js";
-import { StartFunc as StartFuncFetchHeaders } from "./FetchHeaders/EntryFile.js";
+
 
 
 let StartFunc = async ({inUserName,inPassword, inSuccessFunc}) => {
@@ -11,8 +11,9 @@ let StartFunc = async ({inUserName,inPassword, inSuccessFunc}) => {
     };
 
     if (jVarLocalDataNeeded.status !== 200)  return await false;
+
     StartFuncAfterFetch({ inSuccessFunc });
     return await true;
 };
 
-export { StartFunc };
+export { StartFunc }
