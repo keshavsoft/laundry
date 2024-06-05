@@ -281,14 +281,14 @@
                             </div> -->
 
 
-                            <table id="table" class="table">
+                            <table id="table" class="table" data-show-columns="true">
                                 <thead>
                                     <tr class="table-primary">
-                                        <th data-field="pk">Order#</th>
-                                        <th data-field="CustomerData.CustomerName">Customer</th>
-                                        <th data-field="CustomerData.CustomerMobile">Mobile</th>
-                                        <th data-field="DateTime" data-formatter="TimeDiff">Date</th>
-                                        <th data-field="AggValues.ItemDetails">Items</th>
+                                        <th data-field="pk" data-sortable="true">Order#</th>
+                                        <th data-field="CustomerData.CustomerName" data-sortable="true">Customer</th>
+                                        <th data-field="CustomerData.CustomerMobile" data-sortable="true">Mobile</th>
+                                        <th data-field="DateTime" data-formatter="TimeDiff" data-sortable="true">Date</th>
+                                        <th data-field="AggValues.ItemDetails" data-sortable="true">Items</th>
                                         <th data-field="AggValues.SettlementAmount">Settlement</th>
                                         <th data-field="IsSettled">IsSettled</th>
                                     </tr>
