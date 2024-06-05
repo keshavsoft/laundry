@@ -15,8 +15,8 @@ let  jFTransporter = nodemailer.createTransport({
     port: 587,
     secure: false,
     auth: {
-        user: "21131a0522@gvpce.ac.in",
-        pass: "8184984013",
+        user: "",
+        pass: "",
     },
 });
 
