@@ -13,11 +13,10 @@ let StartFunc = ({ inUsername, inPassword }) => {
     LocalFromLowDb.read();
 
     if (LocalFromLowDb.data.length !== 0) {
-        let LocalFindData = LocalFromLowDb.data.find(e => e.UserName == LocalUsername && e.Password == LocalPassword)
-
-        console.log("LocalData:", LocalFindData);
+        let LocalFindData = LocalFromLowDb.data.find(e => e.UserName == LocalUsername)
 
         if (LocalFindData !== undefined) {
+            LocalReturnData.KReason = "UserName Already Exists"
             return LocalReturnData
         }
     };
@@ -34,7 +33,8 @@ let StartFunc = ({ inUsername, inPassword }) => {
     LocalReturnData.KTF = true;
     LocalReturnData.JsonData = LocalFromLowDb.data;
 
-    return LocalReturnData;
+
+    return LocalUuId;
 };
 
 function uuidv4() {
