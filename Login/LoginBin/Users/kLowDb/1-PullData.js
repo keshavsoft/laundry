@@ -2,24 +2,22 @@ import fs from "fs";
 
 import { StartFunc as StartFuncReturnDbObject } from "./CommonFuncs/ReturnDbObject.js";
 
-let StartFunc = ({ inUsername, inPassword }) => {
+let StartFunc = ({ inUsername, inPassword, inMail }) => {
 
     let LocalUsername = inUsername;
     let LocalPassword = inPassword;
+    let LocalMail = inMail;
 
     let LocalReturnData = { KTF: false }
 
     let LocalFromLowDb = StartFuncReturnDbObject();
-    
-    
-    
+
     LocalFromLowDb.read();
-    
+
     if ("error" in LocalFromLowDb.data){
         LocalReturnData.err = LocalFromLowDb.data.error;
         return LocalReturnData;
     }
-    
 
     if (LocalFromLowDb.data.length !== 0) {
         let LocalFindData = LocalFromLowDb.data.find(e => e.UserName == LocalUsername)
@@ -28,12 +26,21 @@ let StartFunc = ({ inUsername, inPassword }) => {
             LocalReturnData.KReason = "UserName Already Exists"
             return LocalReturnData
         }
+
+        let LocalFindData1 = LocalFromLowDb.data.find(e => e.Mail == LocalMail)
+
+        if (LocalFindData1 !== undefined) {
+            LocalReturnData.KReason = "Email Already Exists"
+            return LocalReturnData
+        }
+
     };
     
     let LocalUuId = uuidv4();
     let LocalObject = {};
     LocalObject.UserName = LocalUsername;
     LocalObject.Password = LocalPassword;
+    LocalObject.Mail = LocalMail;
     LocalObject.UuId = LocalUuId;
 
     LocalFromLowDb.data.push(LocalObject);
