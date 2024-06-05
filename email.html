@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script src="https://smtpjs.com/v3/smtp.js">
+    </script>
+
+    <script>
+        Email.send({
+    Host : "smtp.elasticemail.com",
+    Username : "dwijeshbingumalla@gmail.com",
+    Password : "7BD01041B3256BE437FDE4A07B20E9A3E845",
+    To : 'nknnkumar@yahoo.com',
+    From : "21131a0522@gvpce.ac.in",
+    Subject : "This is the subject",
+    Body : "And this is the body"
+}).then(
+  message => alert(message)
+);
+    </script>
+</body>
+</html>
