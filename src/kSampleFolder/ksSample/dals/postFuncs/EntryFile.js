@@ -11,13 +11,12 @@ import { StartFunc as StartFuncreadreadFileUsingbyBody } from '../../kLowDb/Read
 import { StartFunc as StartFunreadFileSummary } from '../../kLowDb/ReadFileList/readFileSummary.js';
 import { StartFunc as StartFuncreadFileWeekSummary } from '../../kLowDb/ReadFileList/readFileWeekSummary.js';
 import { StartFunc as StartFuncSaveWithChecking } from '../../kLowDb/WriteTofile/SaveWithChecking/StartFunc.js';
-
-
+import { StartFunc as StartFuncAsIs } from '../../kLowDb/WriteTofile/AsIs/InsertRow.js';
 
 // import { StartFunc as StartFuncwriteFile } from '../../kLowDb/WriteTofile/';
 
 let PostFunc = ({ inBodyKeys }) => {
-    return StartFuncwriteFile({ inDataToInsert: inBodyKeys });
+    return StartFuncAsIs({ inDataToInsert: inBodyKeys });
 };
 
 let PostCustomPkFunc = ({ inBodyKeys }) => {
