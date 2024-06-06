@@ -1,4 +1,4 @@
-import { PostFunc as PostFuncRepo, PostFuncWithMail as PostFuncRepoWithMail ,PostFuncWithEndUser as PostFuncRepoWithEndUser} from '../../repos/postFuncs/EntryFile.js';
+import { PostFunc as PostFuncRepo, PostFuncWithMail as PostFuncRepoWithMail ,PostFuncWithEndUser as PostFuncRepoWithEndUser, PostFuncWithDataPk as PostFuncRepoWithDataPk} from '../../repos/postFuncs/EntryFile.js';
 
 let PostFunc = async (req, res) => {
     let LocalData = req.body;
@@ -42,4 +42,18 @@ let PostFuncEndUser = async (req, res) => {
     res.json(LocalFromRepo);
 };
 
-export { PostFunc, PostFuncWithMail, PostFuncEndUser };
+let PostFuncWithDataPk = async (req, res) => {
+    let LocalData = req.body;
+
+    let LocalUsername = LocalData.UserName;
+    let LocalPassword = LocalData.Password;
+    let LocalMail = LocalData.Mail
+
+    let LocalFromRepo = await PostFuncRepoWithDataPk({ inUsername: LocalUsername, inPassword: LocalPassword, inMail: LocalMail });
+
+    if (LocalFromRepo.KTF === false)  res.status(401).json(LocalFromRepo);
+
+    res.json(LocalFromRepo);
+}
+
+export { PostFunc, PostFuncWithMail, PostFuncEndUser, PostFuncWithDataPk};
