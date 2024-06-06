@@ -1,5 +1,5 @@
 let StartFunc = () => {
-    window.location = "AddItems.html";
+    window.location = "../AddItems/AddItems.html";
 };
 
 export { StartFunc };
