@@ -25,7 +25,9 @@ let GetSummeryFunc = async (req, res) => {
 };
 
 let GetDataOnlyFunc = async (req, res) => {
-    let LocalFromRepo = await GetDataOnlyFuncRepo();
+    let LocalReqLocals = req.locals;
+    let LocalDataPk = LocalReqLocals.KeshavSoft.DataPk;
+    let LocalFromRepo = await GetDataOnlyFuncRepo({ inDataPk : LocalDataPk });
 
     res.status(200);
     res.json(LocalFromRepo);
