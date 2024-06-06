@@ -214,9 +214,16 @@
 
         <ul class="sidebar-nav" id="sidebar-nav">
             <li class="nav-item">
-                <a id="HomeId" class="nav-link collapsed" href="../../../../../LaundryPos/Dashboard/Dashboard.html">
+                <a id="HomeId" class="nav-link collapsed" href="../../../../Branch/Orders/NewOrder/Customer.html">
                     <i class="bi bi-grid"></i>
                     <span>Home</span>
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a id="ParentId" class="nav-link collapsed" href="../../QrRaise/QrCodeRaise/QrCodeRaise.html">
+                    <i class="bi bi-qr-code"></i>
+                    <span>Qr-Raise</span>
                 </a>
             </li>
 
@@ -228,7 +235,7 @@
             </li>
 
             <li class="nav-item">
-                <a class="nav-link collapsed" href="#">
+                <a class="nav-link collapsed" href="../../Print/PrintBill/PrintBill.html">
                     <i class="bi bi-printer"></i>
                     <span>Bill</span>
                 </a>
@@ -242,10 +249,61 @@
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="../Items/index.html">
+                <a class="nav-link collapsed" href="../../Show/Items/index.html">
                     <i class="bi bi-list-task"></i>
                     <span>Items</span>
                 </a>
+            </li>
+          
+            <li class="nav-item">
+                <a class="nav-link collapsed" data-bs-target="#QrCodePrint" data-bs-toggle="collapse" href="#">
+                    <i class="bi bi-qr-code"></i><span>Qrcodes-Print</span><i
+                        class="bi bi-chevron-down ms-auto"></i>
+                </a>
+                <ul id="QrCodePrint" class="nav-content collapse" data-bs-parent="#sidebar-nav">
+                    <li>
+                        <a href="../../QrCodePrint/PrintQr/QrCodePrint.html">
+                            <i class="bi bi-circle"></i><span>Print QR</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../../QrCodePrint/MultiPrintQr/QrCodeRaise.html">
+                            <i class="bi bi-circle" ></i><span>Multi Qr Print</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../../QrCodePrint/Qr1/QrCodeRaise.html">
+                            <i class="bi bi-circle" ></i><span>QR 1</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../../QrCodePrint/Qr2/index.html">
+                            <i class="bi bi-circle" ></i><span>QR 2</span>
+                        </a>
+                    </li>
+
+
+
+                </ul>
+            </li>
+            
+            <li class="nav-item">
+                <a class="nav-link collapsed" data-bs-target="#Reports" data-bs-toggle="collapse" href="#">
+                    <i class="bi bi-graph-up-arrow"></i><span>Reports</span><i
+                        class="bi bi-chevron-down ms-auto"></i>
+                </a>
+                <ul id="Reports" class="nav-content collapse" data-bs-parent="#sidebar-nav">
+                    <li>
+                        <a href="../../Reports/Orders/FilterShowAll.html" class="">
+                            <i class="bi bi-circle"></i><span>Orders</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../Reports/Scane/FilterShowAll/FilterShowAll.html">
+                            <i class="bi bi-circle"></i><span>Qr</span>
+                        </a>
+                    </li>
+                </ul>
             </li>
 
 
