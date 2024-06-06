@@ -7,12 +7,10 @@ let StartFunc = ({ inFilesArray }) => {
 
     let LocalFilesArray = inFilesArray;
     let CommonFrom = "src";
-    let CommonTo = "bin";
 
     StartFuncForDatabase({
         inFilesArray: LocalFilesArray,
         inFrom: CommonFrom,
-        inTo: CommonTo
     });
 };
 

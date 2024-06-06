@@ -1,10 +1,9 @@
-import fs from "fs";
-
 import { StartFunc as StartFuncReturnDbObject } from "../CommonFuncs/ReturnDbObject.js";
 
-let StartFunc = ({ inUuid }) => {
+let StartFunc = ({ inDataPk, inUuid }) => {
 
-    let LocalUuid = inUuid
+    let LocalDataPk = inDataPk;
+    let LocalUuId = inUuid;
 
     let LocalReturnData = { KTF: false }
 
@@ -17,14 +16,14 @@ let StartFunc = ({ inUuid }) => {
         return LocalReturnData;
     }
 
-    let LocalFindData = LocalFromLowDb.data.find(e => e.UuId == LocalUuid)
+    let LocalFindData = LocalFromLowDb.data.find(e => e.UuId == LocalUuId)
 
     if (LocalFindData === undefined) {
-        LocalReturnData.KReason = "UuId Not Found"
-        return LocalReturnData
+        LocalReturnData.KReason = "UuID Not Found";
+        return LocalReturnData;
     }
 
-    LocalFindData.isMailValidated = true
+    LocalFindData.DataPk = LocalDataPk;
 
     LocalFromLowDb.write();
 
