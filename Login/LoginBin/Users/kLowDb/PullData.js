@@ -17,7 +17,7 @@ let StartFunc = ({ inUsername, inPassword }) => {
         return LocalReturnData;
     };
 
-    if (LocalFuncCheckInData({ inUsername: LocalUsername, inPassword: LocalPassword, inLowDb: LocalFromLowDb }) === false) {
+    if (LocalFuncCheckInData({ inUsername: LocalUsername, inPassword: LocalPassword }) === false) {
         LocalReturnData.KReason = "UserName Already Exists";
         return LocalReturnData;
     };

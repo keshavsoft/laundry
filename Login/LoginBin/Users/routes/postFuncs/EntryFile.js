@@ -11,6 +11,5 @@ router.post('/', PostFuncMiddleWare, PostFunc);
 router.post("/withMail", PostFuncWithMailMiddleWare, PostFuncWithMail);
 router.post("/endUser", PostFuncWithMailMiddleWare, PostFuncForUser);
 router.post("/withDataPk", PostFuncWithDataPkMiddleWare, PostFuncWithDataPk);
-//withDataPk, DataPk
 
 export { router };

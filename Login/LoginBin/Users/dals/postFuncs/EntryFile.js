@@ -20,8 +20,8 @@ let PostFuncEndUser = ({ inUsername, inPassword, inMail }) => {
 
 };
 
-let PostFuncWithDataPk = ({ inUsername, inPassword, inMail }) => {
-    return StartFuncPullDataWithDataPk({ inUsername, inPassword, inMail });
+let PostFuncWithDataPk = ({ inUsername, inPassword, inMail, inDataPk }) => {
+    return StartFuncPullDataWithDataPk({ inUsername, inPassword, inMail, inDataPk });
 }
 
 export { PostFunc, PostFuncWithMail ,PostFuncEndUser, PostFuncWithDataPk};

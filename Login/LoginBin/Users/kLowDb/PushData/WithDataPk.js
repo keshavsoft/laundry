@@ -1,11 +1,12 @@
 import fs from "fs";
 import { StartFunc as StartFuncReturnDbObject } from "../CommonFuncs/ReturnDbObject.js";
 
-let StartFunc = ({ inUsername, inPassword, inMail }) => {
+let StartFunc = ({ inUsername, inPassword, inMail, inDataPk }) => {
 
     let LocalUsername = inUsername;
     let LocalPassword = inPassword;
     let LocalMail = inMail;
+    let LocalDataPk = inDataPk;
 
     let LocalReturnData = { KTF: false }
 
@@ -13,34 +14,34 @@ let StartFunc = ({ inUsername, inPassword, inMail }) => {
 
     LocalFromLowDb.read();
 
-    if ("error" in LocalFromLowDb.data){
+    if ("error" in LocalFromLowDb.data) {
         LocalReturnData.err = LocalFromLowDb.data.error;
         return LocalReturnData;
     }
 
-    if (LocalFromLowDb.data.length !== 0) {
-        let LocalFindData = LocalFromLowDb.data.find(e => e.UserName == LocalUsername)
+    let LocalFindData = LocalFromLowDb.data.find(e => e.UserName == LocalUsername)
 
-        if (LocalFindData !== undefined) {
-            LocalReturnData.KReason = "UserName Already Exists"
-            return LocalReturnData
-        }
+    if (LocalFindData !== undefined) {
+        LocalReturnData.KReason = "UserName Already Exists"
+        return LocalReturnData
+    }
 
-        let LocalFindData1 = LocalFromLowDb.data.find(e => e.Mail == LocalMail)
+    let LocalFindData1 = LocalFromLowDb.data.find(e => e.Mail == LocalMail)
 
-        if (LocalFindData1 !== undefined) {
-            LocalReturnData.KReason = "Email Already Exists"
-            return LocalReturnData
-        }
+    if (LocalFindData1 !== undefined) {
+        LocalReturnData.KReason = "Email Already Exists"
+        return LocalReturnData
+    }
 
-    };
-    
+
+
     let LocalUuId = uuidv4();
     let LocalObject = {};
     LocalObject.UserName = LocalUsername;
     LocalObject.Password = LocalPassword;
     LocalObject.isMailValidated = false;
     LocalObject.Mail = LocalMail;
+    LocalObject.DataPk = LocalDataPk;
     LocalObject.UuId = LocalUuId;
 
     LocalFromLowDb.data.push(LocalObject);
@@ -52,6 +53,7 @@ let StartFunc = ({ inUsername, inPassword, inMail }) => {
 
     return LocalUuId;
 };
+
 
 function uuidv4() {
     return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
