@@ -17,7 +17,7 @@ let StartFunc = ({ inUsername, inPassword }) => {
         return LocalReturnData;
     };
 
-    if (LocalFuncCheckInData({ inUsername: LocalUsername, inPassword: LocalPassword }) === false) {
+    if (LocalFuncCheckInData({ inUsername: LocalUsername, inLowDb:LocalFromLowDb})) {
         LocalReturnData.KReason = "UserName Already Exists";
         return LocalReturnData;
     };
@@ -33,22 +33,19 @@ let StartFunc = ({ inUsername, inPassword }) => {
     return LocalReturnData;
 };
 
-let LocalFuncCheckInData = ({ inUsername, inPassword, inLowDb }) => {
+let LocalFuncCheckInData = ({ inUsername, inLowDb}) => {
 
     let LocalUsername = inUsername;
-    let LocalPassword = inPassword;
-
-    let LocalReturnData = { KTF: false }
 
     let LocalFromLowDb = inLowDb;
 
     let LocalFindData = LocalFromLowDb.data.find(e => e.UserName == LocalUsername)
 
     if (LocalFindData === undefined) {
-        return true;
+        return false;
     };
 
-    return false;
+    return true;
 };
 
 let LocalFuncPrepareObject = ({ inUsername, inPassword }) => {
