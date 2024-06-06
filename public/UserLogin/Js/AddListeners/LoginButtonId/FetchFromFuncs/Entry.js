@@ -6,11 +6,9 @@ let StartFunc = async () => {
 
     if (StartFuncCheckFunc()) {
 
-        let jVarLocalDataNeeded = await StartFuncFetchFuncs();
+        let jVarLocalStatus = await StartFuncFetchFuncs();
 
-        if (jVarLocalDataNeeded.status === 200) {
-            StartFuncAfterFetch(await jVarLocalDataNeeded.json());
-        };
+        StartFuncAfterFetch({ Status: jVarLocalStatus });
     };
 };
 
