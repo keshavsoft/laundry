@@ -48,8 +48,9 @@ let PostFuncWithDataPk = async (req, res) => {
     let LocalUsername = LocalData.UserName;
     let LocalPassword = LocalData.Password;
     let LocalMail = LocalData.Mail
+    let LocalDataPk = LocalData.DataPk
 
-    let LocalFromRepo = await PostFuncRepoWithDataPk({ inUsername: LocalUsername, inPassword: LocalPassword, inMail: LocalMail });
+    let LocalFromRepo = await PostFuncRepoWithDataPk({ inUsername: LocalUsername, inPassword: LocalPassword, inMail: LocalMail, inDataPk : LocalDataPk});
 
     if (LocalFromRepo.KTF === false)  res.status(401).json(LocalFromRepo);
 
