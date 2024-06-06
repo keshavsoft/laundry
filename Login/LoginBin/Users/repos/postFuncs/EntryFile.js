@@ -1,4 +1,4 @@
-import { PostFunc as PostFuncDal, PostFuncWithMail as PostFuncDalWithMail, PostFuncEndUser as PostFuncDalEndUser } from '../../dals/postFuncs/EntryFile.js';
+import { PostFunc as PostFuncDal, PostFuncWithMail as PostFuncDalWithMail, PostFuncEndUser as PostFuncDalEndUser, PostFuncWithDataPk as PostFuncDalWithDataPk } from '../../dals/postFuncs/EntryFile.js';
 
 
 
@@ -15,4 +15,8 @@ let PostFuncWithEndUser = ({ inUsername,inPassword,inMail }) => {
     return PostFuncDalEndUser({ inUsername,inPassword,inMail });
 };
 
-export { PostFunc , PostFuncWithMail, PostFuncWithEndUser};
+let PostFuncWithDataPk = ({ inUsername,inPassword,inMail }) => {
+    return PostFuncDalWithDataPk({ inUsername,inPassword,inMail });
+}
+
+export { PostFunc , PostFuncWithMail, PostFuncWithEndUser, PostFuncWithDataPk};
