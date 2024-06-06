@@ -20,8 +20,8 @@ let GetSummeryFunc = () => {
     return StartFuncreadSummeryFile();
 };
 
-let GetDataOnlyFunc = () => {
-    let LocalFromLowDb = StartFuncreadFile();
+let GetDataOnlyFunc = ({inDataPk}) => {
+    let LocalFromLowDb = StartFuncreadFile({inDataPk});
 
     if (LocalFromLowDb === false) {
         return false;

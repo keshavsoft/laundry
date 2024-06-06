@@ -19,8 +19,8 @@ let GetSummeryFunc = async () => {
     return GetSummeryFuncDal();
 };
 
-let GetDataOnlyFunc = async () => {
-    return GetDataOnlyFuncDal();
+let GetDataOnlyFunc = async ({inDataPk}) => {
+    return GetDataOnlyFuncDal({inDataPk});
 };
 
 let GetIdFunc = ({ inId }) => {
