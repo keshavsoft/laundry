@@ -15,8 +15,8 @@ import { StartFunc as StartFuncAsIs } from '../../kLowDb/WriteTofile/AsIs/Insert
 
 // import { StartFunc as StartFuncwriteFile } from '../../kLowDb/WriteTofile/';
 
-let PostFunc = ({ inBodyKeys }) => {
-    return StartFuncAsIs({ inDataToInsert: inBodyKeys });
+let PostFunc = ({ inDataToInsert, inDataPk }) => {
+    return StartFuncAsIs({ inDataToInsert, inDataPk });
 };
 
 let PostCustomPkFunc = ({ inBodyKeys }) => {

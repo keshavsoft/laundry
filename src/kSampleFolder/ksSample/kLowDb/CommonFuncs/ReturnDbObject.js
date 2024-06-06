@@ -4,12 +4,14 @@ import Configjson from '../../../../Config.json' assert { type: 'json' };
 import fileNameJson from '../fileName.json' assert { type: 'json' };
 import FolderNameJson from '../../../FolderName.json' assert { type: 'json' };
 
-let StartFunc = () => {
+let StartFunc = ({ inDataPk }) => {
+    let LocalDataPk = inDataPk;
+
     let LocalReturnData = { KTF: false, JSONFolderPath: "", CreatedLog: {} };
 
     LocalReturnData.KTF = false;
 
-    LocalReturnData.UserDataFilePath = `${Configjson.jsonConfig.DataPath}/${Configjson.jsonConfig.DataPk}/${FolderNameJson.folderName}/${fileNameJson.fileName}`;
+    LocalReturnData.UserDataFilePath = `${Configjson.jsonConfig.DataPath}/${LocalDataPk}/${FolderNameJson.folderName}/${fileNameJson.fileName}`;
 
     const defaultData = { error: "From KLowDb" }
 

@@ -19,11 +19,16 @@ import {
 
 import { ClassSample } from '../../ModalClass.js';
 
-
 let PostFunc = async (req, res) => {
     let LocalBody = req.body;
+    let LocalReqLocals = req.locals;
+    let LocalDataPk = LocalReqLocals.KeshavSoft.DataPk;
 
-    let LocalFromRepo = await PostFuncRepo({ ...LocalBody });
+    console.log("LocalBody: ", LocalBody, LocalReqLocals);
+    let LocalFromRepo = await PostFuncRepo({
+        inDataToInsert: LocalBody,
+        inDataPk: LocalDataPk
+    });
 
     if (LocalFromRepo.KTF === false) {
         res.status(500).send(LocalFromRepo.KReason);

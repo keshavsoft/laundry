@@ -13,8 +13,8 @@ import {
     PostSaveWithCheckingFunc as PostSaveWithCheckingFuncDal
 } from '../../dals/postFuncs/EntryFile.js';
 
-let PostFunc = async (inModalObject) => {
-    return PostFuncDal({ inBodyKeys: inModalObject });
+let PostFunc = async ({ inDataToInsert, inDataPk }) => {
+    return PostFuncDal({ inDataToInsert, inDataPk });
 };
 
 let PostCustompkFunc = async (inModalObject) => {
@@ -68,5 +68,5 @@ let FilterDataFrombodyFunc = ({ inFindValue, inFindKey }) => {
 export {
     PostFunc, PostFromModalFunc,
     PostUploadFunc, PostGetSelectColumnsFunc, PostUploadFromModalFunc, PostFilterFunc, PostCustompkFunc,
-    PostWithKeysCheckFunc, GetUsingLoadAshFunc, FilterDataFrombodyFunc, GetsummaryFunc, GetWeeksummaryFunc,PostSaveWithCheckingFunc
+    PostWithKeysCheckFunc, GetUsingLoadAshFunc, FilterDataFrombodyFunc, GetsummaryFunc, GetWeeksummaryFunc, PostSaveWithCheckingFunc
 };

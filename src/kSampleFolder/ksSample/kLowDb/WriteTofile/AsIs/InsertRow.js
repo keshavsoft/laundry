@@ -1,11 +1,11 @@
 import { StartFunc as StartFuncCommonFuncs } from '../../CommonFuncs/ReturnDbObject.js';
 
-let StartFunc = ({ inDataToInsert }) => {
+let StartFunc = ({ inDataToInsert, inDataPk }) => {
     let LocalinDataToInsert = inDataToInsert;
     let LocalReturnData = { KTF: false, JSONFolderPath: "", CreatedLog: {} };
     LocalReturnData.KTF = false;
 
-    const db = StartFuncCommonFuncs()
+    const db = StartFuncCommonFuncs({ inDataPk });
     db.read();
 
     if ("error" in db.data) {
