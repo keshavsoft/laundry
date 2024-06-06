@@ -4,8 +4,8 @@ import Configjson from '../../../../Config.json' assert { type: 'json' };
 import fileNameJson from '../fileName.json' assert { type: 'json' };
 import FolderNameJson from '../../../FolderName.json' assert { type: 'json' };
 
-let StartFunc = () => {
-    let LocalDataPk = Configjson.jsonConfig.DataPk;
+let StartFunc = ({ inDataPk }) => {
+    let LocalDataPk = inDataPk;
 
     let LocalReturnData = { KTF: false, JSONFolderPath: "", CreatedLog: {} };
 

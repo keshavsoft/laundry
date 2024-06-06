@@ -9,7 +9,7 @@ import { StartFunc as StartFuncSampleRow } from '../../kLowDb/ReadFromFile/Sampl
 import { StartFunc as StartFunFilterDataByKeyId } from '../../kLowDb/ReadFromFile/FilterDataByKeyId.js';
 import { StartFunc as StartFuncreadSummeryFile } from '../../kLowDb/ReadFileList/readSummeryFile.js';
 import { StartFunc as StartFuncMaxRow } from '../../kLowDb/ReadFromFile/MaxRow.js';
-import { StartFunc as StartFunReadFileByPk } from '../../kLowDb/ReadFromFile/readFileByPk.js';
+import { StartFunc as StartFunReadFileByPk } from '../../kLowDb/ReadFromFile/ReturnAsArray.js';
 import { StartFunc as StartFuncReadFileByPkNonMaxRow } from '../../kLowDb/ReadFromFile/readFileByPkNonMaxRow.js';
 
 let GetFunc = () => {

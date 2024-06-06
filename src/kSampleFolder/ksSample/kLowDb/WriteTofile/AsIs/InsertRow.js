@@ -1,4 +1,4 @@
-import { StartFunc as StartFuncCommonFuncs } from '../../CommonFuncs/ReturnDbObject.js';
+import { StartFunc as StartFuncCommonFuncs } from '../../CommonFuncs/ReturnDbObjectFromPk.js';
 
 let StartFunc = ({ inDataToInsert, inDataPk }) => {
     let LocalinDataToInsert = inDataToInsert;
