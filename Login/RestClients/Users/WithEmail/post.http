@@ -2,7 +2,7 @@ POST http://localhost:7016/Login/bin/Users/endUser
 content-type: application/json
 
 {
-    "UserName":"Keshav",
+    "UserName":"Dwijesh",
     "Password":"KeshavSoft",
-    "Mail":"nknnkumar@yahoo.com"
+    "Mail":"dwijeshbingumalla@gmail.com"
 }
