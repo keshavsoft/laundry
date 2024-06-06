@@ -51,7 +51,7 @@ app.get('/AboutUs', (req, res) => {
 });
 
 app.use('/srcFixedPk', routerFromSrcFixedPk);
-app.use('/binFixedPk', routerFromBinFixedPk);
+app.use('/binFixedPk', StartFuncBinMiddleWares, routerFromBinFixedPk);
 
 app.use('/src', routerFromSrc);
 app.use('/bin', StartFuncBinMiddleWares, routerFromBin);
@@ -59,8 +59,6 @@ app.use('/Custom', routerFromCustom);
 app.use('/Common', StartFuncBinMiddleWares, routerFromCommon);
 app.use('/utility', routerForUtility);
 app.use('/Login', routerFromLogin);
-
-
 
 StartFuncKWSServer(server);
 

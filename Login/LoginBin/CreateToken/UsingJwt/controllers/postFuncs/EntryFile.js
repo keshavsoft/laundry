@@ -8,18 +8,17 @@ let PostFunc = async (req, res) => {
     let LocalPassword = LocalData.Password;
 
     let LocalFromRepo = await PostFuncRepo({ inUsername: LocalUsername, inPassword: LocalPassword });
+    
+    if (LocalFromRepo.KTF) {
+        let jVarLocalToken = StartFuncCreateToken({ inObject: LocalUsername });
 
-    if ( LocalFromRepo.KTF) {
-        let jVarLocalToken = StartFuncCreateToken({inObject : LocalUsername});
         res.cookie('KSToken', jVarLocalToken, { maxAge: 900000, httpOnly: false });
         res.end(jVarLocalToken);
-        //console.log("jVarLocalToken",jVarLocalToken);
     }
-    else{
+    else {
         res.status(401);
         res.end();
-    }
-    
+    };
 };
 
 export { PostFunc };
