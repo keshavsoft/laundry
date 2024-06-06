@@ -166,10 +166,14 @@ let FilterDataFrombodyFunc = (req, res) => {
     let LocalBodyFindValue = req.body.FindValue
 
     let LocalFromRepo = FilterDataFrombodyFuncRepo({ inFindKey: LocalBodyFindKey, inFindValue: LocalBodyFindValue });
+    
+    if (LocalFromRepo.KTF === false) {
+        res.status(500).send(LocalFromRepo.KReason);
+        return;
+    };
+
     res.json(LocalFromRepo);
 };
-
-
 
 export {
     PostFunc, PostFromModalFunc,

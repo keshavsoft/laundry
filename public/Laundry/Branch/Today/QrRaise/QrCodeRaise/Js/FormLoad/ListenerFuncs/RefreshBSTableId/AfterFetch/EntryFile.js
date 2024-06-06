@@ -1,7 +1,9 @@
 let StartFunc = ({ inDataToShow, inQrCodeData }) => {
     jFLocalHideSpinner();
+
     let LocalinDataToShow = inDataToShow;
     var $table = $('#table');
+ 
     let jVarLocalTransformedData = jFLocalInsertAggValues({ inData: LocalinDataToShow });
     let jVarWithQrCodeData = jFLocalInsertQrCodeData({ inData: jVarLocalTransformedData, inQrCodeData: inQrCodeData });
     let LocalArrayReverseData = jVarWithQrCodeData.slice().reverse();
