@@ -2,8 +2,8 @@ import { StartFunc as StartFuncUpdateFile } from '../../kLowDb/UpdateFile/Update
 import { StartFunc as StartFuncInsertToSubOfRow } from '../../kLowDb/UpdateFile/InsertToSubOfRow.js';
 import { StartFunc as StartFuncUsingLoadAsh } from '../../kLowDb/UpdateFile/UsingLoadAsh.js';
 
-let PutFunc = ({ inDataToUpdate, inId }) => {
-    return StartFuncUpdateFile({ inDataToUpdate, inId });
+let PutFunc = ({ inDataToUpdate, inId, inDataPk }) => {
+    return StartFuncUpdateFile({ inDataToUpdate, inId, inDataPk });
 };
 
 let PutInsertToKeyFunc = ({ inDataToUpdate, inId, inKeyName }) => {

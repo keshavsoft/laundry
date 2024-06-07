@@ -9,10 +9,13 @@ let PutFunc = async (req, res) => {
   let LocalDataToUpdate = req.body;
 
   let LocalIfFromParam = req.params.id;
+  let LocalReqLocals = req.locals;
+  let LocalDataPk = LocalReqLocals.KeshavSoft.DataPk;
 
   let LocalFromRepo = await PutFuncRepo({
     inDataToUpdate: LocalDataToUpdate,
     inId: LocalIfFromParam,
+    inDataPk: LocalDataPk,
   });
 
   if (LocalFromRepo.KTF === false) {

@@ -4,8 +4,8 @@ import {
   PutUpdateUsingLoadAshFunc as PutUpdateUsingLoadAshFuncDal
 } from '../../dals/putFuncs/EntryFile.js';
 
-let PutFunc = async ({ inDataToUpdate, inId }) => {
-  return PutFuncDal({ inDataToUpdate, inId });
+let PutFunc = async ({ inDataToUpdate, inId, inDataPk }) => {
+  return PutFuncDal({ inDataToUpdate, inId, inDataPk });
 };
 
 let PutInsertToKeyFunc = async ({ inDataToUpdate, inId, inKeyName }) => {
