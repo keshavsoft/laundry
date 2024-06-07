@@ -64,24 +64,40 @@
                         </div>
                     </div>
                 </div>
-                <div class="sidebar-menu">
-                    <ul class="menu">
-                        <li class="sidebar-title"><h4>Users</h4></li>
-
-                        <li class="sidebar-item">
-                            <a class="nav-link collapsed" href="../../UserCreateWithMail/index.html">
-                                <i class="bi bi-plus-square"></i></i>
-                                <span class="ms-2">Create</span>
-                            </a>
+                <div class="sidebar-menu p-3">
+                    <ul class="nav flex-column">
+                        <li class="nav-item sidebar-title">
+                            <h4 class="py-2">Users</h4>
                         </li>
 
-                        <li class="sidebar-item">
-                            <a class="nav-link collapsed active" href="#">
-                                <i class="bi bi-file-spreadsheet-fill"></i></i>
+                        <li class="nav-item py-2">
+                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse"
+                                data-bs-target="#createSubmenu" aria-expanded="false" aria-controls="createSubmenu">
+                                <i class="bi bi-plus-square"></i>
+                                <span class="ms-2">Create</span>
+                            </a>
+                            <ul class="collapse" id="createSubmenu">
+                                <li class="nav-item sidebar-subitem py-2">
+                                    <a class="nav-link" href="../../UserCreate/index.html">
+                                        <i class="bi bi-envelope"></i>
+                                        <span class="ms-2">Simple</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item sidebar-subitem py-2">
+                                    <a class="nav-link" href="../../UserCreateWithMail/index.html">
+                                        <i class="bi bi-person"></i>
+                                        <span class="ms-2">With Mail</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item py-2">
+                            <a class="nav-link active" href="#">
+                                <i class="bi bi-file-spreadsheet-fill"></i>
                                 <span class="ms-2">ShowAll</span>
                             </a>
                         </li>
-
                     </ul>
                 </div>
             </div>
