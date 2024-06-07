@@ -1,9 +1,9 @@
-import { StartFunc as StartFuncCommonFuncs } from '../CommonFuncs/ReturnDbObject.js';
+import { StartFunc as StartFuncCommonFuncs } from '../CommonFuncs/ReturnDbObjectFromPk.js';
 
-let StartFunc = async ({ inId }) => {
+let StartFunc = async ({ inId, inDataPk }) => {
   let LocalId = inId;
 
-  const db = StartFuncCommonFuncs();
+  const db = StartFuncCommonFuncs({ inDataPk });
   db.read();
   let LocalarrayOfObjects = db.data;
 

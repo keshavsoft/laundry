@@ -6,7 +6,10 @@ import {
 let DeleteFunc = async (req, res) => {
     let LocalId = req.params.Id;
 
-    let LocalFromRepo = await DeleteFuncRepo({ inId: LocalId });
+    let LocalReqLocals = req.locals;
+    let LocalDataPk = LocalReqLocals.KeshavSoft.DataPk;
+    let LocalFromRepo = await DeleteFuncRepo({ inId: LocalId , inDataPk: LocalDataPk});
+
 
     if (LocalFromRepo.KTF === false) {
         res.status(500).send(LocalFromRepo.KReason);

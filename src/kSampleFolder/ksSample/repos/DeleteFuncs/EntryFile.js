@@ -3,8 +3,8 @@ import {
     DeleteFromKeyFunc as DeleteFromKeyFuncDal
 } from '../../dals/DeleteFuncs/EntryFile.js';
 
-let DeleteFunc = async ({ inId }) => {
-    return await DeleteFuncDal({ inId });
+let DeleteFunc = async ({ inId, inDataPk }) => {
+    return await DeleteFuncDal({ inId, inDataPk });
 };
 
 let DeleteFromKeyFunc = async ({ inSubId, inId, inKeyName }) => {
