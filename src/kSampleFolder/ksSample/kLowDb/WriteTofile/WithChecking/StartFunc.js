@@ -2,10 +2,10 @@ import { StartFunc as StartFuncPullData } from "./PullData/EntryFile.js";
 import { StartFunc as StartFuncChecks } from "./Checks/QrCheck.js";
 import { StartFunc as StartFuncUniqueKeyCheck } from "./Checks/UniqueKeyCheck.js";
 
-let StartFunc = ({ inDataToInsert }) => {
+let StartFunc = ({ inDataToInsert, inDataPk }) => {
     let LocalinDataToInsert = inDataToInsert;
     let LocalReturnData = { KTF: false, JSONFolderPath: "", CreatedLog: {} };
-    let LocalStartFuncPullData = StartFuncPullData();
+    let LocalStartFuncPullData = StartFuncPullData({inDataPk});
 
     if ("error" in LocalStartFuncPullData) {
         LocalReturnData.KReason = LocalStartFuncPullData.error;

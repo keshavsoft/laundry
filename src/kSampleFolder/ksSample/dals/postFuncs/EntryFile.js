@@ -23,8 +23,8 @@ let PostCustomPkFunc = ({ inBodyKeys }) => {
     return StartFuncwriteFileWithCustomPk({ inDataToInsert: inBodyKeys });
 };
 
-let PostWithKeysCheckFunc = ({ inBodyKeys }) => {
-    return StartFuncWriteFileKeysCheck({ inDataToInsert: inBodyKeys });
+let PostWithKeysCheckFunc = ({ inBodyKeys, inDataPk }) => {
+    return StartFuncWriteFileKeysCheck({ inDataToInsert: inBodyKeys, inDataPk });
 };
 
 let PostSaveWithCheckingFunc = ({ inInSertObject, inRefFilterObject }) => {
