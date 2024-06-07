@@ -24,11 +24,17 @@ let StartFunc = ({ inUuid }) => {
         return LocalReturnData
     }
 
+    if (LocalFindData.isMailValidated === true) {
+        LocalReturnData.KReason = "Mail already verified";
+        return LocalReturnData;
+    }
+
     LocalFindData.isMailValidated = true
 
     LocalFromLowDb.write();
 
     LocalReturnData.KTF = true;
+    LocalReturnData.Message = "Mail Verified Successfully"
 
 
     return LocalReturnData;

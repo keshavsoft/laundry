@@ -17,7 +17,7 @@ let ValidateEmailFunc = ({ inUuid }) => {
         let LocalFromLowDbDataPk = StartFuncUpdateDataPk({ inDataPk : LocalDataPk, inUuid: LocalUuId});
         return LocalFromLowDbDataPk;
     }
-    return false
+    return LocalFromLowDb;
 };
 
 export { GetFunc, ValidateEmailFunc };

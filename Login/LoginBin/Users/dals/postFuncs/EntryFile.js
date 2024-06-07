@@ -14,8 +14,12 @@ let PostFuncWithMail = ({ inUsername, inPassword, inMail }) => {
 
 let PostFuncEndUser = ({ inUsername, inPassword, inMail }) => {
     let LocalUuId = StartFuncPullDataEndUser({ inUsername, inPassword, inMail });
+
+    
+
     let url = `http://localhost:7016/Login/bin/Users/ValidateEmail/${LocalUuId}`;
     StartFuncSendMail({inMail:inMail, inlink:url});
+
     return LocalUuId;
 
 };

@@ -14,7 +14,8 @@ let ValidateEmailFunc = async (req, res) => {
 
     let LocalFromRepo = await ValidateEmailFuncRepo({ inUuid: LocalUuid});
 
-    if (LocalFromRepo.KTF === false) return res.status(404).json({});
+    // if (LocalFromRepo.KTF === false) return res.status(404).json(LocalFromRepo.KReason);
+    if (LocalFromRepo.KTF === false) return res.redirect("Login/LoginBin/Users/controllers/redirects/EmailVefiedalready.html");
 
     res.json(LocalFromRepo.JsonData);
 };

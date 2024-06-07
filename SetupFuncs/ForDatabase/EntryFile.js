@@ -6,7 +6,6 @@ import fs from "fs";
 
 let StartFunc = () => {
     let LocalInDataPk = LocalFuncGenerateDataPk();
-    console.log("localindatapk:", LocalInDataPk);
 
     let LocalFilesArray = StartFuncReadDataSchema();
 
