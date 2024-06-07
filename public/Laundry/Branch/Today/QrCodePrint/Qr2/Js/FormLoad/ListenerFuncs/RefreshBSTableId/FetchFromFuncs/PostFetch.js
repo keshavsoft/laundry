@@ -1,4 +1,5 @@
 import ConfigJson from "../../../../Config.json" assert { type: "json" };
+import { StartFunc as StartFuncFetchHeaders } from "./FetchHeaders/EntryFile.js";
 
 let StartFunc = async () => {
     let LocalroutePath = ConfigJson.routePath;
@@ -6,9 +7,11 @@ let StartFunc = async () => {
     // let jVarLocalBranchName = getUrlQueryParams({ inGetKey: "BranchName" });
     let jVarLocalBranchName = localStorage.getItem("BranchName");
 
-    let jVarLocalFetchUrl = `/bin/${LocalroutePath}/${jVarLocalBranchName}/DataOnly`
-    let response = await fetch(jVarLocalFetchUrl);
-    let data = await response.json();
+    let jVarLocalFetchHeaders = StartFuncFetchHeaders();
+    let jVarLocalFetchUrl = `/bin/${LocalroutePath}/${jVarLocalBranchName}/FilterDataFrombody`
+    let response = await fetch(jVarLocalFetchUrl, jVarLocalFetchHeaders);
+    console.log(response)
+    let data = await response.json()
 
     return await data;
 };
