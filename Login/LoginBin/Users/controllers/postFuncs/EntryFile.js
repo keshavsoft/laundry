@@ -37,7 +37,7 @@ let PostFuncEndUser = async (req, res) => {
 
     let LocalFromRepo = await PostFuncRepoWithEndUser({ inUsername: LocalUsername, inPassword: LocalPassword, inMail: LocalMail });
 
-    if (LocalFromRepo.KTF === false)  res.status(401).json(LocalFromRepo);
+    if (LocalFromRepo.KTF === false)  return res.status(409).json(LocalFromRepo);
 
     res.json(LocalFromRepo);
 };
