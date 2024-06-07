@@ -1,12 +1,12 @@
-import { StartFunc as StartFuncCommonFuncs } from '../CommonFuncs/ReturnDbObject.js';
+import { StartFunc as StartFuncCommonFuncs } from '../CommonFuncs/ReturnDbObjectFromPk.js';
 
-let StartFunc = ({ inDataToUpdate, inId }) => {
+let StartFunc = ({ inDataToUpdate, inId, inDataPk }) => {
     let LocalDataToUpdate = inDataToUpdate;
     let LocalReturnData = { KTF: false, JSONFolderPath: "", CreatedLog: {} };
 
     LocalReturnData.KTF = false;
 
-    const db = StartFuncCommonFuncs();
+    const db = StartFuncCommonFuncs({inDataPk});
     db.read();
     
     let LocalFindRow = db.data.find(element => {
