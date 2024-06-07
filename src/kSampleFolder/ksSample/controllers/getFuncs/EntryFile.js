@@ -1,6 +1,7 @@
 import {
   GetFunc as GetFuncRepo,
   GetDataOnlyFunc as GetDataOnlyFuncRepo,
+  GetMaxRowFunc as GetMaxRowFuncRepo,
 } from "../../repos/getFuncs/EntryFile.js";
 
 let GetFunc = async (req, res) => {
@@ -21,4 +22,16 @@ let GetDataOnlyFunc = async (req, res) => {
   res.json(LocalFromRepo);
 };
 
-export { GetFunc, GetDataOnlyFunc };
+let GetMaxRowFunc = (req, res) => {
+  let LocalFromRepo = GetMaxRowFuncRepo();
+
+  if (LocalFromRepo.KTF === false) {
+      res.status(500).send(LocalFromRepo.KReason);
+      return;
+  };
+
+  res.json(LocalFromRepo.JsonData);
+};
+
+
+export { GetFunc, GetDataOnlyFunc ,GetMaxRowFunc};
