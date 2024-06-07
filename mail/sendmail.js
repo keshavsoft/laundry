@@ -15,7 +15,7 @@ let StartFunc = async ({inMail, inlink}) =>{
     };
 
     await jFTransporter.sendMail({
-        from: '"Bingumalla Dwijesh" <21131a0522@gvpce.ac.in>', 
+        from: `"Computer" ${process.env.KS_MAIL_ID}`, 
         to: `${inMail}`,
         subject: "Hello ✔", 
         text: "To activate click on this", 

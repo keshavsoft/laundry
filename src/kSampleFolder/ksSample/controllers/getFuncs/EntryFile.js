@@ -13,8 +13,11 @@ import {
 
 
 let GetFunc = async (req, res) => {
-    let LocalFromRepo = await GetFuncRepo();
+    let LocalReqLocals = req.locals;
+    let LocalDataPk = LocalReqLocals.KeshavSoft.DataPk;
+    let LocalFromRepo = await GetFuncRepo({ inDataPk : LocalDataPk });
 
+    res.status(200);
     res.json(LocalFromRepo);
 };
 
