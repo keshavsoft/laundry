@@ -28,6 +28,7 @@ let StartFunc = ({ inDataPk, inUuid }) => {
     LocalFromLowDb.write();
 
     LocalReturnData.KTF = true;
+    LocalReturnData.DataPk = inDataPk;
 
 
     return LocalReturnData;
