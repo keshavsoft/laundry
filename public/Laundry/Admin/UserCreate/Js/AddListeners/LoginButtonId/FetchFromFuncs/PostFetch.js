@@ -5,7 +5,7 @@ let StartFunc = async () => {
     
     let jVarLocalFetchHeaders = StartFuncFetchHeaders();
     
-    let jVarLocalFetchUrl = `/Login/bin/Users`;
+    let jVarLocalFetchUrl = `/Login/bin/Users/`;
 
     let response = await fetch(jVarLocalFetchUrl, jVarLocalFetchHeaders);
     
