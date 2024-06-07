@@ -21,8 +21,8 @@ let PostCustompkFunc = async (inModalObject) => {
     return PostCustomPkFuncDal({ inBodyKeys: inModalObject });
 };
 
-let PostWithKeysCheckFunc = async (inModalObject) => {
-    return PostWithKeysCheckFuncDal({ inBodyKeys: inModalObject });
+let PostWithKeysCheckFunc = async ({inModalObject, inDataPk}) => {
+    return PostWithKeysCheckFuncDal({ inBodyKeys: inModalObject, inDataPk });
 };
 
 let PostSaveWithCheckingFunc = async ({ inInSertObject, inRefFilterObject }) => {

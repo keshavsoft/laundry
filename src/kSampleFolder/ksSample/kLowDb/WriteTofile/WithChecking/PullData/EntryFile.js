@@ -1,11 +1,11 @@
-import { StartFunc as StartFuncReturnDbObjectWithSchema } from '../../../CommonFuncs/ReturnDbObjectWithSchema.js';
+import { StartFunc as StartFuncReturnDbObjectWithSchemaFromPk } from '../../../CommonFuncs/ReturnDbObjectWithSchemaFromPk.js';
 
-let StartFunc = () => {
+let StartFunc = ({inDataPk}) => {
     let LocalReturnData = { KTF: false, JSONFolderPath: "", CreatedLog: {} };
 
     LocalReturnData.KTF = false;
 
-    const dbFromDbObjectWithSchema = StartFuncReturnDbObjectWithSchema();
+    const dbFromDbObjectWithSchema = StartFuncReturnDbObjectWithSchemaFromPk({inDataPk});
 
     const db = dbFromDbObjectWithSchema.dbObject;
 
