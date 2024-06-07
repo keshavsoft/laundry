@@ -11,8 +11,8 @@ import {
     GetNonMaxRowFunc as GetNonMaxRowFuncDal
 } from '../../dals/getFuncs/EntryFile.js';
 
-let GetFunc = async () => {
-    return GetFuncDal();
+let GetFunc = async ({inDataPk}) => {
+    return GetFuncDal({inDataPk});
 };
 
 let GetSummeryFunc = async () => {

@@ -13,8 +13,8 @@ import { StartFunc as StartFunReadFileByPk } from '../../kLowDb/ReadFromFile/rea
 import { StartFunc as StartFuncReturnAsArray } from "../../kLowDb/ReadFromFile/ReturnAsArray.js";
 import { StartFunc as StartFuncReadFileByPkNonMaxRow } from '../../kLowDb/ReadFromFile/readFileByPkNonMaxRow.js';
 
-let GetFunc = () => {
-    return StartFuncreadFile();
+let GetFunc = ({inDataPk}) => {
+    return StartFuncReturnAsArray({inDataPk});
 };
 
 let GetSummeryFunc = () => {
