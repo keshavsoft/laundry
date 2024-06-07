@@ -10,6 +10,7 @@ let StartFunc = async () => {
     // let jVarLocalFetchUrl = `/${LocalroutePath}/Transactions/${jVarLocalBranchName}/DataOnly`;
     let jVarLocalFetchUrl = `/${LocalroutePath}/Transactions/${jVarLocalBranchName}/FilterDataFrombody`;
     let response = await fetch(jVarLocalFetchUrl, jVarLocalFetchHeaders);
+    console.log(response)
     
     return await response;
 };
