@@ -19,7 +19,7 @@ let StartFunc = async ({inMail, inlink}) =>{
         to: `${inMail}`,
         subject: "Hello ✔", 
         text: "To activate click on this", 
-        html: `<a href=${inlink}>Click here</a>`,
+        html: `<h3>To activate <h1><a href=${inlink}>Click here</a></h1></h3>`,
     });
 }
 
