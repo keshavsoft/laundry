@@ -1,6 +1,7 @@
 import {
   GetFunc as GetFuncDal,
   GetDataOnlyFunc as GetDataOnlyFuncDal,
+  GetMaxRowFunc as GetMaxRowFuncDal,
 } from "../../dals/getFuncs/EntryFile.js";
 
 let GetFunc = async ({ inDataPk }) => {
@@ -11,4 +12,9 @@ let GetDataOnlyFunc = async ({ inDataPk }) => {
   return GetDataOnlyFuncDal({ inDataPk });
 };
 
-export { GetFunc, GetDataOnlyFunc };
+let GetMaxRowFunc = () => {
+  return GetMaxRowFuncDal();
+};
+
+
+export { GetFunc, GetDataOnlyFunc ,GetMaxRowFunc };
