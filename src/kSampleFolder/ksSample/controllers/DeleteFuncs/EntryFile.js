@@ -1,6 +1,5 @@
 import {
-    DeleteFunc as DeleteFuncRepo,
-    DeleteFromKeyFunc as DeleteFromKeyFuncRepo
+    DeleteFunc as DeleteFuncRepo
 } from '../../repos/DeleteFuncs/EntryFile.js';
 
 let DeleteFunc = async (req, res) => {
@@ -19,22 +18,4 @@ let DeleteFunc = async (req, res) => {
     res.json(LocalFromRepo);
 };
 
-let DeleteFromKeyFunc = async (req, res) => {
-    let LocalId = req.params.id;
-    let LocalKey = req.params.inKey;
-    let LocalSubId = req.params.inSubId;
-
-    let LocalFromRepo = await DeleteFromKeyFuncRepo({
-        inId: LocalId,
-        inSubId: LocalSubId, inKeyName: LocalKey
-    });
-
-    if (LocalFromRepo.KTF === false) {
-        res.status(500).send(LocalFromRepo.KReason);
-        return;
-    };
-
-    res.json(LocalFromRepo);
-};
-
-export { DeleteFunc, DeleteFromKeyFunc };
+export { DeleteFunc };
