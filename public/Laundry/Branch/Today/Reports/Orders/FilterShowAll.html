@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    <title>KS Items</title>
+    <title>Reports</title>
     <meta content="" name="description">
     <meta content="" name="keywords">
 
@@ -400,7 +400,7 @@
 
             <nav>
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="../../Dashboard/Dashboard.html" id="BCHomeId">Home</a></li>
+                    <li class="breadcrumb-item"><a href="../../../Orders/NewOrder/Customer.html" id="BCHomeId">Home</a></li>
                     <li class="breadcrumb-item active" id="RefreshBSTableId">Orders</li>
                 </ol>
 
@@ -419,6 +419,11 @@
                             <div class="spinner-border" id="SpinnerId" role="status">
                                 <span class="visually-hidden">Loading...</span>
                             </div>
+                            <div id="toolbar">
+                                <button id="printId" onclick="printJS('table', 'html')" class="btn btn-primary" >
+                                  <i class="fa fa-trash"></i> Print
+                                </button>
+                              </div>
                             <table id="table" data-toolbar="#toolbar" data-search="true" data-show-footer="true"
                                 data-searchable="true" data-show-columns="true" data-show-columns-toggle-all="true"
                                 data-show-export="true" data-detail-formatter="detailFormatter" data-id-field="pk"
@@ -513,6 +518,7 @@
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
     <!-- Template Main JS File -->
+    <script src="./Js/vendor/print.min.js"></script>
     <script src="./assets/js/main.js"></script>
     <script type="module" src="./Js/StartFunc.js"></script>
 </body>
