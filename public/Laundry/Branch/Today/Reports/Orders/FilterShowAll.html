@@ -475,7 +475,7 @@
             return '₹ ' + data.map(ele => ele.CashAmount).filter(value => value !== undefined).reduce((a, b) => a + b, 0)
         };
         function PcsFormatter(data) {
-            return '₹ ' + data.map(ele => ele.TotalPcs).filter(value => value !== undefined).reduce((a, b) => a + b, 0)
+            return  data.map(ele => ele.TotalPcs).filter(value => value !== undefined).reduce((a, b) => a + b, 0)
         };
         function CardAmountFormatter(data) {
             return '₹ ' + data.map(ele => ele.CardAmount).filter(value => value !== undefined).reduce((a, b) => a + b, 0)
