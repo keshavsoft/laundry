@@ -2,6 +2,10 @@ import { StartFunc as StartFuncReturnAsArray } from "../../kLowDb/ReadFromFile/R
 import { StartFunc as StartFuncMaxRow } from '../../kLowDb/ReadFromFile/MaxRow.js';
 import { StartFunc as StartFunRowDataByKeyId } from '../../kLowDb/ReadFromFile/RowDataByKeyId.js';
 import { StartFunc as StartFunFilterDataByKeyId } from '../../kLowDb/ReadFromFile/FilterDataByKeyId.js';
+import { StartFunc as StartFuncGetRowCountById } from '../../kLowDb/ReadFromFile/RowCountById.js';
+import { StartFunc as StartFunReadFileByPk } from '../../kLowDb/ReadFromFile/readFileByPk.js';
+
+
 
 
 
@@ -15,6 +19,19 @@ let GetMaxRowFunc = () => {
 let GetRowDataFunc = ({ inKey, inValue }) => {
     return StartFunRowDataByKeyId({ inKey, inValue });
 
+};
+let GetRowCountByIdFunc = ({ inKey, inValue }) => {
+    return StartFuncGetRowCountById({ inKey, inValue });
+
+};
+let GetIdFunc = ({ inId }) => {
+    let LocalFromLowDb = StartFunReadFileByPk({ inId });
+
+    if (LocalFromLowDb === false) {
+        return false;
+    };
+
+    return LocalFromLowDb.JsonData;
 };
 
 let GetFilterDataFunc = ({ inKey, inValue }) => {
@@ -33,5 +50,5 @@ let GetDataOnlyFunc = ({inDataPk}) => {
 };
 
 export {
-    GetFunc, GetDataOnlyFunc,GetMaxRowFunc,GetRowDataFunc,GetFilterDataFunc
+    GetFunc, GetDataOnlyFunc,GetMaxRowFunc,GetRowDataFunc,GetFilterDataFunc,GetRowCountByIdFunc,GetIdFunc
 };

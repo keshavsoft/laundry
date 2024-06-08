@@ -1,6 +1,6 @@
 
 import {
-    PostWithKeysCheckFunc as PostWithKeysCheckFuncDal
+    PostWithKeysCheckFunc as PostWithKeysCheckFuncDal,PostFunc as PostFuncDal,
 } from '../../dals/postFuncs/EntryFile.js';
 import { StartFunc as StartFuncreadreadFileUsingbyBody } from '../../kLowDb/ReadFileList/readFileUsingbyBody.js';
 
@@ -12,8 +12,11 @@ let PostWithKeysCheckFunc = async ({inModalObject, inDataPk}) => {
 let FilterDataFrombodyFunc = ({ inFindValue, inFindKey }) => {
     return StartFuncreadreadFileUsingbyBody({ inFindValue, inFindKey });
 };
+let PostFunc = async (inModalObject) => {
+    return PostFuncDal({ inBodyKeys: inModalObject });
+};
 
 
 export {
-    PostWithKeysCheckFunc,FilterDataFrombodyFunc
+    PostWithKeysCheckFunc,FilterDataFrombodyFunc,PostFunc
 };

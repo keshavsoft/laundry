@@ -3,7 +3,6 @@ let StartFunc = ({ inDataToShow, inQrCodeData }) => {
 
     let LocalinDataToShow = inDataToShow;
     var $table = $('#table');
- 
     let jVarLocalTransformedData = jFLocalInsertAggValues({ inData: LocalinDataToShow });
     let jVarWithQrCodeData = jFLocalInsertQrCodeData({ inData: jVarLocalTransformedData, inQrCodeData: inQrCodeData });
     let LocalArrayReverseData = jVarWithQrCodeData.slice().reverse();
@@ -44,15 +43,17 @@ let jFLocalInsertQrCodeData = ({ inData, inQrCodeData }) => {
     inData.forEach(element => {
         element.IsQrCodesRaised = false;
         element.TotalItems = 0;
-        let FilterCheck = inQrCodeData.filter(ele => ele.OrderNumber == element.pk && ele.BookingData.OrderData.BranchName == jVarLocalBranchName);
-        if (FilterCheck.length > 0) {
-            element.TotalItems = FilterCheck.length
-            element.IsQrCodesRaised = true;
-        };
-        jVarLocalReturnArray.push(element)
+        if (Array.isArray(inQrCodeData)) {
+            let FilterCheck = inQrCodeData.filter(ele => ele.OrderNumber == element.pk && ele.BookingData.OrderData.BranchName == jVarLocalBranchName);
+            if (FilterCheck.length > 0) {
+                element.TotalItems = FilterCheck.length;
+                element.IsQrCodesRaised = true;
+            }
+        } 
+        jVarLocalReturnArray.push(element);
     });
 
     return jVarLocalReturnArray;
 };
 
-export { StartFunc }
+export { StartFunc };
