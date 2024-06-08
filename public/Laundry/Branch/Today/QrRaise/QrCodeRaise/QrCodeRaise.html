@@ -400,8 +400,7 @@
 
             <nav>
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="../../../Dashboard/Dashboard.html">Home</a></li>
-                    <li class="breadcrumb-item"> <a href="../../Dashboard/Dashboard.html">All</a></li>
+                    <li class="breadcrumb-item"><a href="../../../Orders/NewOrder/Customer.html">Home</a></li>
                     <li class="breadcrumb-item active" id="RefreshBSTableId">Qrcodes</li>
                 </ol>
             </nav>
@@ -424,9 +423,9 @@
                                 <thead>
                                     <tr id="tableHeadRow">
                                         <th data-formatter="jFLocalSerialColumn">#</th>
-                                        <th data-field="UuId">Order Number</th>
+                                        <th data-field="UuId">Order #</th>
                                         <th data-field="CustomerData.CustomerName">Customer Name</th>
-                                        <th data-field="OrderData.BranchName">Branch</th>
+                                        <!-- <th data-field="OrderData.BranchName">Branch</th> -->
                                         <th data-field="CustomerData.CustomerMobile">Mobile</th>
                                         <th data-formatter="jFLocalDateFormatter">Date</th>
                                         <th data-formatter="jFLocalOrderDetails">Order Details</th>
@@ -479,7 +478,7 @@
 
         function jFLocalOrderDetails(value, row, index) {
             return [
-                `<a href="../../OrderWithoutCheckout/OrderWithoutCheckout.html?BranchName=${row.OrderData.BranchName}&OrderNumber=${row.UuId}" class="btn btn-success" >${row.AggValues.ItemDetails}</a>`,
+                `<a href="#" class="btn btn-success" >${row.AggValues.ItemDetails}</a>`,
             ].join('')
         }
 
