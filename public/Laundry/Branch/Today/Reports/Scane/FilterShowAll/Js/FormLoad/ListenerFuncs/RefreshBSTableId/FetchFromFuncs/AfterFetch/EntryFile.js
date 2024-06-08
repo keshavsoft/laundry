@@ -1,77 +1,26 @@
-// import { StartFunc as StartFuncAddListeners } from "../../../../../AddListeners/StartFunc.js";
 
-let StartFunc = ({ inDataToShow, inQrCodeData }) => {
-    
+let StartFunc = ({ inDataToShow, inQrCodeData, ScanedQrCodeData }) => {
+    let LocalDataToShow = inDataToShow;
+
+    let jVarLocalBranchName = localStorage.getItem("BranchName");
+
+    let LocalFilterQrCodeData = inQrCodeData.filter(e => e.BookingData.OrderData.BranchName == jVarLocalBranchName);
+    let LocalFilterScanedQrData = ScanedQrCodeData.filter(e => e.BranchName == jVarLocalBranchName);
+
+    let LocalFilterScanedData = jFLocalFilerFunc({ inQrCodeData: LocalFilterQrCodeData, ScanedQrCodeData: LocalFilterScanedQrData })
+    if ((LocalFilterScanedData.length > 0) === false) swal.fire({ title: "No data !", icon: "error" });
+
     jFLocalHideSpinner();
-    let LocalinDataToShow = inDataToShow;
     var $table = $('#table');
-    let jVarLocalTransformedData = jFLocalInsertAggValues({ inData: LocalinDataToShow });
-    let jVarWithQrCodeData = jFLocalInsertQrCodeData({ inData: jVarLocalTransformedData, inQrCodeData: inQrCodeData });
-    let LocalArrayReverseData = jVarWithQrCodeData.slice().reverse();
-    // localStorage.clear();
-    localStorage.setItem("ReportsData", JSON.stringify(LocalArrayReverseData));
-
 
     $table.bootstrapTable("destroy").bootstrapTable({
-        data: LocalArrayReverseData
+        data: LocalFilterScanedData,
     });
-
-    // StartFuncAddListeners();
 };
-
 
 let jFLocalHideSpinner = () => {
     let jVarLocalSpinnerId = document.getElementById("SpinnerId");
     jVarLocalSpinnerId.style.display = "none";
-
-};
-
-
-let jFLocalInsertAggValues = ({ inData }) => {
-    let jVarLocalReturnObject = [];
-
-    jVarLocalReturnObject = Object.entries(inData).map(element => {
-        element[1].AggValues = {};
-        element[1].AggValues.ItemDetails = `${Object.keys(element[1].ItemsInOrder).length} / ${Object.values(element[1].ItemsInOrder).map(p => p.Pcs).reduce((acc, val) => acc + val, 0)}`;
-
-        element[1].AggValues.SettlementAmount = ""
-        if (Object.values(element[1].CheckOutData)[0]) {
-            element[1].AggValues.SettlementAmount = Object.values(element[1].CheckOutData)[0].CardAmount + Object.values(element[1].CheckOutData)[0].CashAmount + Object.values(element[1].CheckOutData)[0].UPIAmount;
-            element[1].IsSettled = false;
-            element[1].TotalPcs = Object.values(element[1].ItemsInOrder).map(p => p.Pcs).reduce((acc, val) => acc + val, 0)
-
-            element[1].CardAmount = Object.values(element[1].CheckOutData)[0].CardAmount
-            element[1].CashAmount = Object.values(element[1].CheckOutData)[0].CashAmount
-            element[1].UPIAmount = Object.values(element[1].CheckOutData)[0].UPIAmount
-        };
-        if (Object.keys(element[1].CheckOutData).length > 0) {
-            element[1].IsSettled = true;
-        };
-
-        return element[1];
-    });
-
-    return jVarLocalReturnObject;
-};
-
-let jFLocalInsertQrCodeData = ({ inData, inQrCodeData }) => {
-    // let jVarLocalBranchName = getUrlQueryParams({ inGetKey: "BranchName" });
-    let jVarLocalBranchName = localStorage.getItem("BranchName");
-
-    let jVarLocalReturnArray = [];
-    inData.forEach(element => {
-        // element.TimeSpan = jFLocalKInterval({ inCurrentdateandtime: element.OrderData.Currentdateandtime })
-        element.IsQrCodesRaised = false;
-        element.TotalItems = 0;
-        let FilterCheck = inQrCodeData.filter(ele => ele.OrderNumber == element.pk && ele.BookingData.OrderData.BranchName == jVarLocalBranchName);
-        if (FilterCheck.length > 0) {
-            element.TotalItems = FilterCheck.length
-            element.IsQrCodesRaised = true;
-        };
-        jVarLocalReturnArray.push(element)
-    });
-
-    return jVarLocalReturnArray;
 };
 
 let getUrlQueryParams = ({ inGetKey }) => {
@@ -79,6 +28,25 @@ let getUrlQueryParams = ({ inGetKey }) => {
     const parameters = new URLSearchParams(queryString);
     const value = parameters.get(inGetKey);
     return value;
+};
+
+const jFLocalFilerFunc = ({ inQrCodeData, ScanedQrCodeData }) => {
+    let StatusData = inQrCodeData.map(element => {
+        element.Status = ""
+        let someData = ScanedQrCodeData.filter(e => {
+            if (e.QrCodeId == element.pk) {
+                element.Status = "Scaned"
+                element.VoucherNumber = e.VoucherNumber;
+                element.DCFactory = e.DCFactory;
+                element.TimeSpan = jFLocalKInterval({ inCurrentdateandtime: e.DateTime });
+
+                return element;
+            }
+        });
+        return element;
+    });
+    return StatusData
+
 };
 
 let jFLocalKInterval = ({ inCurrentdateandtime }) => {
@@ -94,7 +62,4 @@ let jFLocalKInterval = ({ inCurrentdateandtime }) => {
 
     // console.log(diffDays + " days, " + diffHrs + " hours, " + diffMins + " min...");
 };
-
-
-
 export { StartFunc }
