@@ -1,4 +1,5 @@
-import { PostWithKeysCheckFunc as PostWithKeysCheckFuncRepo ,FilterDataFrombodyFunc as FilterDataFrombodyFuncRepo,} from "../../repos/postFuncs/EntryFile.js";
+import { PostWithKeysCheckFunc as PostWithKeysCheckFuncRepo ,FilterDataFrombodyFunc as FilterDataFrombodyFuncRepo,
+  PostFunc as PostFuncRepo} from "../../repos/postFuncs/EntryFile.js";
 
 let PostWithKeysCheckFunc = async (req, res) => {
   let LocalBody = req.body;
@@ -11,7 +12,18 @@ let PostWithKeysCheckFunc = async (req, res) => {
 
   res.json(LocalFromRepo);
 };
+let PostFunc = async (req, res) => {
+  let LocalBody = req.body;
 
+  let LocalFromRepo = await PostFuncRepo({ ...LocalBody });
+
+  if (LocalFromRepo.KTF === false) {
+      res.status(500).send(LocalFromRepo.KReason);
+      return;
+  };
+
+  res.json(LocalFromRepo);
+};
 
 let FilterDataFrombodyFunc = (req, res) => {
   let LocalBodyFindKey = req.body.FindKey
@@ -21,4 +33,4 @@ let FilterDataFrombodyFunc = (req, res) => {
   res.json(LocalFromRepo);
 };
 
-export { PostWithKeysCheckFunc,FilterDataFrombodyFunc };
+export { PostWithKeysCheckFunc,FilterDataFrombodyFunc,PostFunc };
