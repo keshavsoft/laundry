@@ -286,32 +286,103 @@
 
         <ul class="sidebar-nav" id="sidebar-nav">
             <li class="nav-item">
-                <a id="HomeId" class="nav-link collapsed" href="../../Dashboard/Dashboard.html">
+                <a class="nav-link collapsed" href="#">
+                    <span>Today</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a id="HomeId" class="nav-link collapsed" href="../../../../../../Laundry/Branch/Orders/NewOrder/Customer.html">
                     <i class="bi bi-grid"></i>
                     <span>Home</span>
                 </a>
             </li>
 
+            <li class="nav-item">
+                <a id="ParentId" class="nav-link collapsed" href="../../QrRaise/QrCodeRaise/QrCodeRaise.html">
+                    <i class="bi bi-qr-code"></i>
+                    <span>Qr-Raise</span>
+                </a>
+            </li>
+    
             
+    
+            <li class="nav-item">
+                <a id="ParentId" class="nav-link collapsed" href="#">
+                    <i class="bi bi-qr-code"></i>
+                    <span>Qr-Print</span>
+                </a>
+            </li>
+    
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="../PrintBill/PrintBill.html">
+                    <i class="bi bi-printer"></i>
+                    <span>Bill</span>
+                </a>
+            </li>
+    
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="../../Show/Orders/index.html">
+                    <i class="bi bi-list-task"></i>
+                    <span>Orders</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="../../Show/Items/index.html">
+                    <i class="bi bi-list-task"></i>
+                    <span>Items</span>
+                </a>
+            </li>
+          
+            <li class="nav-item">
+                <a class="nav-link collapsed" data-bs-target="#QrCodePrint" data-bs-toggle="collapse" href="#">
+                    <i class="bi bi-qr-code"></i><span>Qrcodes-Print</span><i
+                        class="bi bi-chevron-down ms-auto"></i>
+                </a>
+                <ul id="QrCodePrint" class="nav-content collapse" data-bs-parent="#sidebar-nav">
+                    <li>
+                        <a href="../../QrCodePrint/PrintQr/QrCodePrint.html">
+                            <i class="bi bi-circle"></i><span>Print QR</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../../QrCodePrint/MultiPrintQr/QrCodeRaise.html">
+                            <i class="bi bi-circle" ></i><span>Multi Qr Print</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../../QrCodePrint/Qr1/QrCodeRaise.html">
+                            <i class="bi bi-circle" ></i><span>QR 1</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../../QrCodePrint/Qr2/index.html">
+                            <i class="bi bi-circle" ></i><span>QR 2</span>
+                        </a>
+                    </li>
+    
+    
+    
+                </ul>
+            </li>
 
             <li class="nav-item">
-                <a class="nav-link " data-bs-target="#charts-nav" data-bs-toggle="collapse" href="#">
-                    <i class="bi bi-bar-chart"></i><span>Orders</span><i class="bi bi-chevron-down ms-auto"></i>
+                <a class="nav-link " data-bs-target="#Reports" data-bs-toggle="collapse" href="#">
+                    <i class="bi bi-graph-up-arrow"></i><span>Reports</span><i
+                        class="bi bi-chevron-down ms-auto"></i>
                 </a>
-                <ul id="charts-nav" class="nav-content  " data-bs-parent="#sidebar-nav">
+                <ul id="Reports" class="nav-content " data-bs-parent="#sidebar-nav">
                     <li>
-                        <a id="ShowAllId" href="../ShowAll/ShowAll.html" class="">
-                            <i class="bi bi-circle"></i><span>ShowAll</span>
+                        <a href="../../Orders/FilterShowAll.html" >
+                            <i class="bi bi-circle"></i><span>Orders</span>
                         </a>
                     </li>
                     <li>
-                        <a id="FilterShowId" href="#" class="active">
-                            <i class="bi bi-circle"></i><span>Filter-ShowAll</span>
+                        <a href="../Scane/FilterShowAll/FilterShowAll.html" class="active">
+                            <i class="bi bi-circle"></i><span>Qr</span>
                         </a>
                     </li>
-                    
                 </ul>
-            </li><!-- End Today Orders Nav -->
+            </li>
         </ul>
     </aside>
     <!-- End Sidebar-->
