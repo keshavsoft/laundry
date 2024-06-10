@@ -341,12 +341,7 @@
                 <ul id="QrCodePrint" class="nav-content collapse" data-bs-parent="#sidebar-nav">
                     <li>
                         <a href="../../QrCodePrint/PrintQr/QrCodePrint.html">
-                            <i class="bi bi-circle"></i><span>Print QR</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="../../QrCodePrint/MultiPrintQr/QrCodeRaise.html">
-                            <i class="bi bi-circle" ></i><span>Multi Qr Print</span>
+                            <i class="bi bi-circle"></i><span>Single QR</span>
                         </a>
                     </li>
                     <li>
@@ -446,6 +441,34 @@
 
     </main>
     <!-- End #main -->
+
+    <div class="modal fade" id="LoginModalId" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <form class="login-form">
+                        <h2 class="text-center mb-4">Login</h2>
+
+                        <div class="mb-3">
+                            <input type="text" id="UsernameId" class="form-control" placeholder="User name"
+                                autofocus>
+                        </div>
+                        <div class="mb-3">
+                            <input type="password" id="PasswordId" class="form-control" id="password"
+                                placeholder="Password">
+                        </div>
+                        <div class="mb-3 text-center mt-3">
+                            <button type="button" id="LoginButtonId"
+                                class="btn btn-primary btn-block w-100">Login</button>
+                        </div>
+                        <div class="text-center mt-3">
+                            <a href="#">Forgot password?</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- ======= Footer ======= -->
     <footer id="footer" class="footer">
