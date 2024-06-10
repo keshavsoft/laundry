@@ -4,6 +4,7 @@ let StartFunc = async ({ Status, inSuccessFunc }) => {
     if (LocalStatus.status === 200) {
         jFLocalModalClose();
         inSuccessFunc();
+        console.log("inSuccessFunc",inSuccessFunc);
     }
     if (LocalStatus.status === 401) {
         jFLocalModalInputFocus();
