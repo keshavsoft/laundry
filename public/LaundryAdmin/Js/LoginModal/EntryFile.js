@@ -3,8 +3,11 @@ import { StartFunc as StartFuncSetFocus } from "./SetFocus.js";
 import { StartFunc as StartFuncAddListeners } from "./AddListeners/EntryFile.js";
 
 const StartFunc = ({ inSuccessFunc }) => {
+    let localCheckCookie = StartFuncCheckCookie();
 
-    if (StartFuncCheckCookie() === false) {
+    if (localCheckCookie === true) {
+        return true;
+    } else {
         StartFuncSetFocus();
     };
     StartFuncAddListeners({ inSuccessFunc });
