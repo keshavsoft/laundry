@@ -10,7 +10,6 @@ let StartFunc = async () => {
         let jVarLocalDcData = a.JsonData;
         let jVarLocalItemsData = b.JsonData;
         let jVarLocalQrCodeDetails = c.JsonData;
-        // let jVarLocalFactoryName = getUrlQueryParams({ inGetKey: "BranchName" });
         let jVarLocalFactoryName = localStorage.getItem("FactoryName");
 
         let LocalBranchFilterData = jVarLocalDcData.filter(e => e.Factory == jVarLocalFactoryName)
