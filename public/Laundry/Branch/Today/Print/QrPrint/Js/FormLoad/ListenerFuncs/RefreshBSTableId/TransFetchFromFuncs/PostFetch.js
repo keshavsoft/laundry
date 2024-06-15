@@ -8,7 +8,8 @@ let StartFunc = async () => {
     let jVarLocalBranchName = localStorage.getItem("BranchName");
 
     let LocalBodyObject = StartFuncFetchHeaders();
-    let jVarLocalFetchUrl = `/bin/${LocalroutePath}/${jVarLocalBranchName}/FilterDataFrombody`
+    let jVarLocalFetchUrl = `/Custom/Clients/Washtex/Orders/Today/WithQrCode`;
+    // let jVarLocalFetchUrl = `/bin/${LocalroutePath}/${jVarLocalBranchName}/FilterDataFrombody`
     let response = await fetch(jVarLocalFetchUrl,LocalBodyObject);
     let data = await response.json();
 

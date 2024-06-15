@@ -7,7 +7,6 @@ let FilterDataFrombodyFunc = (req, res) => {
     let LocalFromRepo = FilterDataFrombodyFuncRepo({
         inFindValue: LocalBodyFindValue, inBranchName: LocalBranchName
     });
-
     if (LocalFromRepo.KTF === false) {
         res.status(500).send(LocalFromRepo.KReason);
         return;
