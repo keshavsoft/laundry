@@ -1,0 +1,9 @@
+
+
+###copy the table schema from step 1(GET)
+POST http://localhost:7016/bin/Transactions/ANR/WithKeysCheck
+content-type: application/json
+
+{
+}
+
