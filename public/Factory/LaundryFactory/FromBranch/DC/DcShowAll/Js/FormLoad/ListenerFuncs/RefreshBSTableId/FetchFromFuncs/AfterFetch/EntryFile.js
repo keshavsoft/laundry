@@ -1,18 +1,19 @@
 let StartFunc = async ({ inDataToShow }) => {
     let jVarLocalDataToShow = inDataToShow;
+    console.log("jVarLocalDataToShow",jVarLocalDataToShow);
     
-    let jVarLocalHtmlId = 'tableHeadRow';
-    let jVarLocaltableHeadRow = document.getElementById(jVarLocalHtmlId);
-    jVarLocaltableHeadRow.appendChild(jFLocalSerialNumberColumn());
-    jVarLocaltableHeadRow.appendChild(jFLocalpkColumn());
-    jVarLocaltableHeadRow.appendChild(jFLocalVoucherNumberColumn());
-    jVarLocaltableHeadRow.appendChild(jFLocalBranchName());
-    jVarLocaltableHeadRow.appendChild(jFLocalFactory());
-    jVarLocaltableHeadRow.appendChild(jFLocalDateColumn());
-    jVarLocaltableHeadRow.appendChild(jFLocalDescriptionColumn());
-    jVarLocaltableHeadRow.appendChild(jFLocalDateTimeColumn());
-    jVarLocaltableHeadRow.appendChild(jFLocalItemsColumn());
-    jVarLocaltableHeadRow.appendChild(jFLocalScanColumn());
+    // let jVarLocalHtmlId = 'tableHeadRow';
+    // let jVarLocaltableHeadRow = document.getElementById(jVarLocalHtmlId);
+    // jVarLocaltableHeadRow.appendChild(jFLocalSerialNumberColumn());
+    // jVarLocaltableHeadRow.appendChild(jFLocalpkColumn());
+    // jVarLocaltableHeadRow.appendChild(jFLocalVoucherNumberColumn());
+    // jVarLocaltableHeadRow.appendChild(jFLocalBranchName());
+    // jVarLocaltableHeadRow.appendChild(jFLocalFactory());
+    // jVarLocaltableHeadRow.appendChild(jFLocalDateColumn());
+    // jVarLocaltableHeadRow.appendChild(jFLocalDescriptionColumn());
+    // jVarLocaltableHeadRow.appendChild(jFLocalDateTimeColumn());
+    // jVarLocaltableHeadRow.appendChild(jFLocalItemsColumn());
+    // jVarLocaltableHeadRow.appendChild(jFLocalScanColumn());
 
     var $table = $('#table');
     $table.bootstrapTable({
@@ -52,7 +53,6 @@ let jFLocalpkColumn = () => {
 };
 
 let jFLocalVoucherNumberColumn = () => {
-
     let jVarLocalNewTh = document.createElement("th");
     jVarLocalNewTh.innerHTML = "Dc #";
     jVarLocalNewTh.dataset.field = "VoucherNumber";

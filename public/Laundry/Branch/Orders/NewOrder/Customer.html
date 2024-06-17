@@ -101,7 +101,8 @@
                         <thead>
                             <tr class="table-primary">
                                 <th data-field="pk">Order#</th>
-                                <th data-field="DateTime" data-formatter="TimeDiff">Date</th>
+                                <th data-field="OrderData.Currentdateandtime" data-formatter="LocalDate">Date</th>
+                                <th data-field="DateTime" data-formatter="TimeDiff">Time Span</th>
                                 <th data-field="AggValues.ItemDetails">Items</th>
                                 <th data-field="AggValues.SettlementAmount">Settlement</th>
                                 <th data-field="IsSettled">IsSettled</th>
@@ -167,36 +168,36 @@
 </body>
 
 <script>
+
     function TimeDiff(value) {
-        let currentTime = new Date().getTime();
-        let time = new Date(value).getTime();
-        // console.log("currr",currentTime);
-        // console.log("you order now ",time);
-        let diff = currentTime - time;
-        console.log(diff);
-        // console.log(diffTime);
-        const hours = Math.floor(diff / (1000 * 60 * 60));
-        const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-        const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+        if (value === undefined) {
+            return "";
+        }
+        var diffMs = (new Date() - new Date(value)); // milliseconds between now & Christmas
+        var diffDays = Math.floor(diffMs / 86400000); // days
+        var diffHrs = Math.floor((diffMs % 86400000) / 3600000); // hours
+        var diffMins = Math.round(((diffMs % 86400000) % 3600000) / 60000); // minutes
 
-        const remainingSeconds = seconds % 60;
-        const remainingMinutes = minutes % 60;
-        let string = ""
-        if (hours > 0) {
-            string += hours + " hours ";
-        }
-        if (remainingMinutes > 0) {
-            string += remainingMinutes + " minutes ";
-        }
-        if (remainingSeconds > 0) {
-            string += remainingSeconds + " seconds ago";
-        }
-        if (remainingSeconds === 0 && remainingMinutes === 0 && hours === 0) {
-            string = "Just now";
-        }
-        return string;
-    }
+        return diffDays + " days, " + diffHrs + " hours, " + diffMins + " min...";
 
+        // console.log(diffDays + " days, " + diffHrs + " hours, " + diffMins + " min...");
+};
+
+function LocalDate(value) {
+        // Create a new Date object with the specified date
+        const date = new Date(value);
+
+        // Get the day, month, and year
+        const day = String(date.getDate()).padStart(2, '0');
+        const month = String(date.getMonth() + 1).padStart(2, '0'); // Months are zero-indexed
+        const year = date.getFullYear();
+
+        // Format the date as "DD-MM-YYYY"
+        const formattedDate = `${day}-${month}-${year}`;
+        return formattedDate;
+};
+
+    
 </script>
 
 </html>
