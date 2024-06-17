@@ -13,6 +13,10 @@ let StartFunc = () => {
     inDataToInsert.DCFactory = jFLocalFromDomDCFactoryTextId();
     inDataToInsert.DCDate = jFLocalFromDomDateTextId();
     inDataToInsert.DCDescription = jFLocalFromDomDescriptionTextId();
+    inDataToInsert.OrderNumber = jFLocalFromDomOrderNumberId();
+    inDataToInsert.OrderDate = jFLocalFromDomOrderDateId();
+    inDataToInsert.DeliveryDate = jFLocalFromDomDeliveryDateId();
+
 
     KeysJson.body = JSON.stringify(inDataToInsert);
 
@@ -87,5 +91,26 @@ let jFLocalFromDomDateTextId = () => {
     let jVarHtmlDateTextId = document.getElementById(jVarLocalHtmlDateTextId);
     let jVarHtmlDateTextIdValue = jVarHtmlDateTextId.value.trim();
     return jVarHtmlDateTextIdValue;
+};
+
+let jFLocalFromDomOrderNumberId = () => {
+    let jVarLocalHtmlOrderNumberId = 'OrderNumberId';
+    let jVarHtmlOrderNumberId = document.getElementById(jVarLocalHtmlOrderNumberId);
+    let jVarHtmlOrderNumberIdValue = jVarHtmlOrderNumberId.value.trim();
+    return jVarHtmlOrderNumberIdValue;
+};
+
+let jFLocalFromDomOrderDateId = () => {
+    let jVarLocalHtmlOrderDateId = 'OrderDateId';
+    let jVarHtmlOrderDateId = document.getElementById(jVarLocalHtmlOrderDateId);
+    let jVarHtmlOrderDateIdValue = jVarHtmlOrderDateId.value.trim();
+    return jVarHtmlOrderDateIdValue;
+};
+
+let jFLocalFromDomDeliveryDateId = () => {
+    let jVarLocalHtmlDeliveryDateId = 'DeliveryDateId';
+    let jVarHtmlDeliveryDateId = document.getElementById(jVarLocalHtmlDeliveryDateId);
+    let jVarHtmlDeliveryDateIdValue = jVarHtmlDeliveryDateId.value.trim();
+    return jVarHtmlDeliveryDateIdValue;
 };
 export { StartFunc }

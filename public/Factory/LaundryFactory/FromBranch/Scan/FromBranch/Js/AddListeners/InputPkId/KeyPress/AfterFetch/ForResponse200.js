@@ -11,6 +11,9 @@ let StartFunc = async ({ inFetchResonse }) => {
         jFLocalToInputInputSalePriceId({ inInputSalePriceId: jVarLocalFetchData.Rate });
         jFLocalToInputFactorySelectedId({ inInputFactorySelectedId: jVarLocalFetchData.location })
      // jFLocalToInputBranchNameId({ inInputFactorySelectedId: jVarLocalFetchData.BookingData.OrderData.BranchName });    30/03/24
+        jFLocalToInputOrderNumberId({ inInputValue: jVarLocalFetchData.GenerateReference.ReferncePk })
+        jFLocalToInputOrderDateId({ inInputValue: jVarLocalFetchData.BookingData.OrderData.Currentdateandtime})
+        jFLocalToInputDeliveryDateId({ inInputValue: jVarLocalFetchData.DeliveryDateTime })
         jFLocalRunSaveClick();
     };
 };
@@ -52,6 +55,24 @@ let jFLocalToInputBranchNameId = ({ inInputPkId }) => {
     let jVarLocalHtmlId = 'InputBranchNameId';
     let jVarLocalInputPkId = document.getElementById(jVarLocalHtmlId);
     jVarLocalInputPkId.value = inInputPkId;
+};
+
+let jFLocalToInputOrderNumberId = ({ inInputValue }) => {
+    let jVarLocalHtmlId = 'OrderNumberId';
+    let jVarLocalInputPkId = document.getElementById(jVarLocalHtmlId);
+    jVarLocalInputPkId.value = inInputValue;
+};
+
+let jFLocalToInputOrderDateId = ({ inInputValue }) => {
+    let jVarLocalHtmlId = 'OrderDateId';
+    let jVarLocalInputPkId = document.getElementById(jVarLocalHtmlId);
+    jVarLocalInputPkId.value = inInputValue;
+};
+
+let jFLocalToInputDeliveryDateId = ({ inInputValue }) => {
+    let jVarLocalHtmlId = 'DeliveryDateId';
+    let jVarLocalInputPkId = document.getElementById(jVarLocalHtmlId);
+    jVarLocalInputPkId.value = inInputValue;
 };
 
 export { StartFunc };
