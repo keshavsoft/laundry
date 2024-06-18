@@ -5,11 +5,9 @@ import { StartFunc as StartFuncAfterFetch } from "./AfterFetch/EntryFile.js";
 let StartFunc = async () => {
     let [a, b] = await Promise.all([StartFuncFetchFuncs(), StartFuncGetFetch()]);
 
-    if (a.KTF && b.KTF) {
-        let jVarLocalQrCode = a.JsonData;
-        let jVarLocalScanedQrCode = b.JsonData;
+        let jVarLocalQrCode = a;
+        let jVarLocalScanedQrCode = b;
         StartFuncAfterFetch({ inQrCodeData: jVarLocalQrCode, ScanedQrCodeData: jVarLocalScanedQrCode });
-    };
 
 };
 

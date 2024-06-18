@@ -13,7 +13,7 @@ let StartFunc = () => {
 
 const jFLocalDate = () => {
     let currentDate = new Date();
-    currentDate.setDate(currentDate.getDate() - 3);
+    currentDate.setDate(currentDate.getDate() - 1);
     return currentDate.toLocaleDateString('en-GB');
 
 }
