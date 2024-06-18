@@ -1,9 +1,16 @@
 import { StartFunc as StartFuncCheckFunc } from "./CheckFunc.js";
-import { StartFunc as StartFuncFetchFromFuncs } from "./FetchFromFuncs/Entry.js";
+import { StartFunc as StartFuncFetchFuncs } from "./GenerateFetcFunc/PostFetch.js";
+import { StartFunc as StartFuncGetFetch } from "./QrCodeDetailsFetchFunc/GetFetch.js";
+import { StartFunc as StartFuncAfterFetch } from "./AfterFetch/EntryFile.js";
 
-let StartFunc = () => {
+let StartFunc = async () => {
     if (StartFuncCheckFunc()) {
-        StartFuncFetchFromFuncs().then();
+        let [a, b] = await Promise.all([StartFuncFetchFuncs(), StartFuncGetFetch()]);
+
+        let jVarLocalQrCode = a;
+        let jVarLocalScanedQrCode = b;
+        StartFuncAfterFetch({ inQrCodeData: jVarLocalQrCode, ScanedQrCodeData: jVarLocalScanedQrCode });
+
     };
 };
 
