@@ -194,19 +194,19 @@
                                                     <tr id="tableHeadRow">
                                                         <th data-formatter="jFLocalSerialColumn">#</th>
                                                         <th data-field="OrderNumber">Order #</th>
-                                                        <th data-field="OrderDate">Order Date</th>
-                                                        <th data-field="DeliveryDate">Delivery Date</th>
-                                                        <th data-field="pk" data-filter-control="select">QrCode</th>
+                                                        <th data-formatter="jFLocalOrderDateFormatter">Order Date</th>
+                                                        <th data-formatter="jFLocalDeliveryDateFormatter">Delivery Date</th>
+                                                        <th data-field="QrCodeId" data-filter-control="select">QrCode</th>
                                                         <th data-field="ItemName" data-filter-control="select">ItemName
                                                         </th>
-                                                        <th data-field="Rate" data-filter-control="select">Rate</th>
-                                                        <th data-field="VoucherNumber" data-filter-control="select">
+                                                        <th data-field="Rate" >Rate</th>
+                                                        <!-- <th data-field="VoucherNumber" data-filter-control="select">
                                                             DC #</th>
                                                         <th data-field="DCDate" data-filter-control="select">DC
-                                                            Date</th>
+                                                            Date</th> -->
                                                         <th data-field="BranchName" data-filter-control="select">
                                                             BranchName</th>
-                                                        <th data-field="TimeSpan" data-filter-control="select">TimeSpan
+                                                        <th data-field="TimeSpan" data-filter-control="select">From Facory TimeSpan
                                                         </th>
                                                     </tr>
                                                 </thead>
@@ -237,8 +237,11 @@
         function jFLocalSerialColumn(value, row, index) {
             return index + 1;
         };
-        function jFLocalDateFormatter(value, row, index) {
-            return new Date(row.OrderData.Currentdateandtime).toLocaleDateString('en-GB');
+         function jFLocalOrderDateFormatter(value, row, index) {
+            return new Date(row.OrderDate).toLocaleDateString('en-GB');
+        };
+        function jFLocalDeliveryDateFormatter(value, row, index) {
+            return new Date(row.DeliveryDate).toLocaleDateString('en-GB');
         };
 
         

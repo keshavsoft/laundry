@@ -12,6 +12,7 @@ let StartFunc = () => {
     inDataToInsert.InSertObject.Rate = jFLocalFromDomInputSalePriceId();
     inDataToInsert.InSertObject.FactorySelected = jFLocalFromDomInputFactorySelectedId();
     inDataToInsert.InSertObject.VoucherRef = jFLocalFromDomInputVoucherRefId();
+    inDataToInsert.InSertObject.WashVoucherRef = jFLocalWashVoucherRefFromDomId();
     inDataToInsert.InSertObject.BranchName = jFLocalFromDomInputBranchNameId();
     inDataToInsert.VoucherNumber = jFLocalFromDomVoucherNumberTextId();
     inDataToInsert.InSertObject.DCFactory = jFLocalFromDomDCFactoryTextId();
@@ -111,6 +112,12 @@ let jFLocalFromDomOrderDateId = () => {
 
 let jFLocalFromDomDeliveryDateId = () => {
     let jVarLocalHtmlDeliveryDateId = 'DeliveryDateId';
+    let jVarHtmlDeliveryDateId = document.getElementById(jVarLocalHtmlDeliveryDateId);
+    let jVarHtmlDeliveryDateIdValue = jVarHtmlDeliveryDateId.value.trim();
+    return jVarHtmlDeliveryDateIdValue;
+};
+let jFLocalWashVoucherRefFromDomId = () => {
+    let jVarLocalHtmlDeliveryDateId = 'InputWashVoucherRefVoucherRefId';
     let jVarHtmlDeliveryDateId = document.getElementById(jVarLocalHtmlDeliveryDateId);
     let jVarHtmlDeliveryDateIdValue = jVarHtmlDeliveryDateId.value.trim();
     return jVarHtmlDeliveryDateIdValue;
