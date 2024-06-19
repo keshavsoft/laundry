@@ -18,9 +18,9 @@ let StartFunc = () => {
     inDataToInsert.InSertObject.DCFactory = jFLocalFromDomDCFactoryTextId();
     inDataToInsert.InSertObject.DCDate = jFLocalFromDomDateTextId();
     inDataToInsert.InSertObject.DCDescription = jFLocalFromDomDescriptionTextId();
-    inDataToInsert.OrderNumber = jFLocalFromDomOrderNumberId();
-    inDataToInsert.OrderDate = jFLocalFromDomOrderDateId();
-    inDataToInsert.DeliveryDate = jFLocalFromDomDeliveryDateId();
+    inDataToInsert.InSertObject.OrderNumber = jFLocalFromDomOrderNumberId();
+    inDataToInsert.InSertObject.OrderDate = jFLocalFromDomOrderDateId();
+    inDataToInsert.InSertObject.DeliveryDate = jFLocalFromDomDeliveryDateId();
 
     KeysJson.body = JSON.stringify(inDataToInsert);
     return KeysJson;

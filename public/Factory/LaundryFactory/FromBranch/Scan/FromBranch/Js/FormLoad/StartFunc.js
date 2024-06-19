@@ -10,7 +10,7 @@ let StartFunc = () => {
     JFlocalNewPkAlertFunc();
     StartFuncDCDetails();
     StartFuncDCCount();
-    jFLocalToInputBranchName();
+    // jFLocalToInputBranchName();
     jFLocalBranchName()
     StartFuncQrTable();
 };
@@ -39,17 +39,6 @@ let jFLocalToInputInputVoucherRefId = () => {
     jVarLocalInputVoucherRefId.value = jVarLocalVoucherRefValue;
 };
 
-let jFLocalToInputBranchName = () => {
-    // let jVarLocalBranchNameparam = getUrlQueryParams({ inGetKey: "BranchName" });
-    let jVarLocalBranchNameparam = localStorage.getItem("FactoryName");
-
-    let jVarLocalHtmlId = 'InputBranchNameId';
-    let jVarLocalBranchName = document.getElementById(jVarLocalHtmlId);
-
-    if (jVarLocalBranchNameparam === null === false) {
-        jVarLocalBranchName.value = jVarLocalBranchNameparam;
-    };
-};
 
 let jFLocalBranchName = () => {
     // let jVarLocalBranchNameparam = getUrlQueryParams({ inGetKey: "BranchName" });

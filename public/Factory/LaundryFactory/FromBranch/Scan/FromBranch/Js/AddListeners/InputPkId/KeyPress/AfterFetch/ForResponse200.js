@@ -10,10 +10,10 @@ let StartFunc = async ({ inFetchResonse }) => {
         jFLocalToInputInputProductNameId({ inInputProductNameId: jVarLocalFetchData.ItemName });
         jFLocalToInputInputSalePriceId({ inInputSalePriceId: jVarLocalFetchData.Rate });
         jFLocalToInputFactorySelectedId({ inInputFactorySelectedId: jVarLocalFetchData.location })
-     // jFLocalToInputBranchNameId({ inInputFactorySelectedId: jVarLocalFetchData.BookingData.OrderData.BranchName });    30/03/24
-        jFLocalToInputOrderNumberId({ inInputValue: jVarLocalFetchData.GenerateReference.ReferncePk })
-        jFLocalToInputOrderDateId({ inInputValue: jVarLocalFetchData.BookingData.OrderData.Currentdateandtime})
-        jFLocalToInputDeliveryDateId({ inInputValue: jVarLocalFetchData.DeliveryDateTime })
+        jFLocalToInputBranchNameId({ inInputValue: jVarLocalFetchData.BookingData.OrderData.BranchName });
+        jFLocalToInputOrderNumberId({ inInputValue: jVarLocalFetchData.GenerateReference.ReferncePk });
+        jFLocalToInputOrderDateId({ inInputValue: jVarLocalFetchData.BookingData.OrderData.Currentdateandtime });
+        jFLocalToInputDeliveryDateId({ inInputValue: jVarLocalFetchData.DeliveryDateTime });
         jFLocalRunSaveClick();
     };
 };
@@ -51,10 +51,10 @@ let jFLocalToInputInputPkId = ({ inInputPkId }) => {
     jVarLocalInputPkId.value = inInputPkId;
 };
 
-let jFLocalToInputBranchNameId = ({ inInputPkId }) => {
+let jFLocalToInputBranchNameId = ({ inInputValue }) => {
     let jVarLocalHtmlId = 'InputBranchNameId';
     let jVarLocalInputPkId = document.getElementById(jVarLocalHtmlId);
-    jVarLocalInputPkId.value = inInputPkId;
+    jVarLocalInputPkId.value = inInputValue;
 };
 
 let jFLocalToInputOrderNumberId = ({ inInputValue }) => {
