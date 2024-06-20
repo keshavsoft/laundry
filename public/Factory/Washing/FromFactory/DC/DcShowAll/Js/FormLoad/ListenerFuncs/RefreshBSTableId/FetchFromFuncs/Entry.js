@@ -32,7 +32,7 @@ let jFLocalItemsData = ({ inDcData, inItemsData }) => {
 
     let jVarLocalReturnArray = localArrayObj.map((element) => {
 
-        let LocalFilterdata = jVarLocalItemsData.filter(e => e.VoucherRef == element.pk)
+        let LocalFilterdata = jVarLocalItemsData.filter(e => e.WashVoucherRef == element.pk)
 
         element.ItemDetails = jVarLocalItemsData.length > 0 ? LocalFilterdata.length : 0;
 

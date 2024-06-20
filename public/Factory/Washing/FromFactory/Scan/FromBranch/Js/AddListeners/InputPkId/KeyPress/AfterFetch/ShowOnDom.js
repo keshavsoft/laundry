@@ -13,6 +13,7 @@ let StartFunc = async ({ inFetchResonse }) => {
         jFLocalToInputOrderDateId({ inInputValue: jVarLocalFetchData.BookingData.OrderData.Currentdateandtime });
         jFLocalToInputDeliveryDateId({ inInputValue: jVarLocalFetchData.DeliveryDateTime });
         jFLocalToInputBranchNameId({ inInputValue: jVarLocalFetchData.BookingData.OrderData.BranchName });
+        jFLocalToInputWashVoucherRefId()
         jFLocalRunSaveClick();
     };
 };
@@ -71,6 +72,22 @@ let jFLocalToInputBranchNameId = ({ inInputValue }) => {
     let jVarLocalHtmlId = 'InputBranchNameId';
     let jVarLocalInputPkId = document.getElementById(jVarLocalHtmlId);
     jVarLocalInputPkId.value = inInputValue;
+};
+
+let jFLocalToInputWashVoucherRefId = () => {
+let jVarLocalWashVoucherRef = getUrlQueryParams({ inGetKey: "WashVoucherRef" });
+
+    let jVarLocalHtmlId = 'InputWashVoucherRefVoucherRefId';
+    let jVarLocalInputPkId = document.getElementById(jVarLocalHtmlId);
+    jVarLocalInputPkId.value = jVarLocalWashVoucherRef;
+};
+
+
+let getUrlQueryParams = ({ inGetKey }) => {
+    const queryString = window.location.search;
+    const parameters = new URLSearchParams(queryString);
+    const value = parameters.get(inGetKey);
+    return value;
 };
 
 export { StartFunc };

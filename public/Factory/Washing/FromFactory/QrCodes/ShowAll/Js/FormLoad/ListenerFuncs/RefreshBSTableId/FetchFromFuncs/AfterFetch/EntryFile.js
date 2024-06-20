@@ -2,6 +2,8 @@
 let StartFunc = ({ inQrCodeData, ScanedQrCodeData }) => {
 
     let jVarLocalBranchName = localStorage.getItem("FactoryName");
+    // console.log("inQrCodeData:",inQrCodeData);
+    // console.log("ScanedQrCodeData:",ScanedQrCodeData);
 
     let LocalFilterQrCodeData = inQrCodeData.filter(e => e.DCFactory == jVarLocalBranchName);
     let LocalFilterScanedQrData = ScanedQrCodeData.filter(e => e.FactorySelected == jVarLocalBranchName);
@@ -22,16 +24,9 @@ let jFLocalHideSpinner = () => {
     jVarLocalSpinnerId.style.display = "none";
 };
 
-let getUrlQueryParams = ({ inGetKey }) => {
-    const queryString = window.location.search;
-    const parameters = new URLSearchParams(queryString);
-    const value = parameters.get(inGetKey);
-    return value;
-};
-
 const jFLocalFilerFunc = ({ inQrCodeData, ScanedQrCodeData }) => {
     let StatusData = inQrCodeData.map(element => {
-        element.Status = ""
+        element.Status = "No"
         let someData = ScanedQrCodeData.filter(e => {
             if (e.QrCodeId == element.QrCodeId) {
                 element.Status = "Scaned"
