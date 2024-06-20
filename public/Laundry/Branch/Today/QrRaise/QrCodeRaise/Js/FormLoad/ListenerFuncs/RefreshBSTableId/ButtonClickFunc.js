@@ -1,5 +1,5 @@
 import { StartFunc as StartFuncTransactionsFetch } from "./TransactionsFetch/PostFetch.js";
-import { StartFunc as StartFuncQrCodesData } from "./FetchFromQrCodes/PostFetch.js";
+// import { StartFunc as StartFuncQrCodesData } from "./FetchFromQrCodes/PostFetch.js";
 import { StartFunc as StartFuncAfterFetch } from "./AfterFetch/EntryFile.js";
 
 let StartFunc = async () => {

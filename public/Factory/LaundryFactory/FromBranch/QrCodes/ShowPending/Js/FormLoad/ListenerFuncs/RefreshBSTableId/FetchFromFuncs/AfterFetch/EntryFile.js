@@ -12,7 +12,7 @@ let StartFunc = ({ inQrCodeData, ScanedQrCodeData }) => {
 
     jFLocalHideSpinner();
     var $table = $('#table');
-    
+
     $table.bootstrapTable("load", LocalArrayReverseData);
 };
 
@@ -22,18 +22,17 @@ let jFLocalHideSpinner = () => {
 };
 
 const jFLocalFilerFunc = ({ inQrCodeData, ScanedQrCodeData }) => {
-    let unmatchedRecords = [];
+    let data1 = inQrCodeData;
+    let data2 = ScanedQrCodeData;
 
-    ScanedQrCodeData.forEach(element => {
-        let someData = inQrCodeData.filter(e => {
-            if (e.QrCodeId !== element.QrCodeId) {
-                e.TimeSpan = jFLocalKInterval({ inCurrentdateandtime: e.DateTime });
-                return e;
-            }
-        });
-        unmatchedRecords = unmatchedRecords.concat(someData);
-    });
-    return unmatchedRecords;
+    const qrCodes1 = new Set(data1.map(record => record.QrCodeId));
+    const qrCodes2 = new Set(data2.map(record => record.QrCodeId));
+
+    const unmatchedInData1 = data1.filter(record => !qrCodes2.has(record.QrCodeId));
+    const unmatchedInData2 = data2.filter(record => !qrCodes1.has(record.QrCodeId));
+
+    return [...unmatchedInData1, ...unmatchedInData2];
+
 };
 
 
