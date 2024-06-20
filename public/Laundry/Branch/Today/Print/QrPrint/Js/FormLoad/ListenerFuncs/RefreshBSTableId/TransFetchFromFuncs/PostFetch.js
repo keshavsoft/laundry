@@ -1,4 +1,4 @@
-import ConfigJson from "../../../../Config.json" assert { type: "json" };
+import ConfigJson from "../../../../Config.json" with { type: "json" };
 import { StartFunc as StartFuncFetchHeaders } from "./FetchHeaders/EntryFile.js";
 
 let StartFunc = async () => {
