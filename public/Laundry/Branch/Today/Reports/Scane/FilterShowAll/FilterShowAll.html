@@ -287,7 +287,7 @@
         <ul class="sidebar-nav" id="sidebar-nav">
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#">
-                    <span>Today</span>
+                    <span>Today - Reports</span>
                 </a>
             </li>
             <li class="nav-item">
@@ -303,21 +303,33 @@
                     <span>Parent</span>
                 </a>
             </li>
-            
+
             <li class="nav-item">
-                <a class="nav-link " data-bs-target="#Reports" data-bs-toggle="collapse" href="#">
-                    <i class="bi bi-graph-up-arrow"></i><span>Reports</span><i
+                <a id="HomeId" class="nav-link collapsed" href="../../../Reports/Orders/FilterShowAll.html">
+                    <i class="bi bi-list-ul"></i>
+                    <span>Orders</span>
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" data-bs-target="#Reports" data-bs-toggle="collapse" href="#">
+                    <i class="bi bi-qr-code"></i><span>Qr</span><i
                         class="bi bi-chevron-down ms-auto"></i>
                 </a>
                 <ul id="Reports" class="nav-content " data-bs-parent="#sidebar-nav">
                     <li>
-                        <a href="../../../Reports/Orders/FilterShowAll.html" class="">
-                            <i class="bi bi-circle"></i><span>Orders</span>
+                        <a href="#" class="active">
+                            <i class="bi bi-circle"></i><span>Show-All</span>
                         </a>
                     </li>
                     <li>
-                        <a href="../Reports/Scane/FilterShowAll/FilterShowAll.html" class="active">
-                            <i class="bi bi-circle"></i><span>Qr</span>
+                        <a href="../InBranch/Index.html">
+                            <i class="bi bi-circle"></i><span>In Branch</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../ToFactory/Index.html">
+                            <i class="bi bi-circle"></i><span>To Factory</span>
                         </a>
                     </li>
                 </ul>
