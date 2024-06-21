@@ -1,29 +1,4 @@
-import { StartFunc as ClubData } from "./ClubData.js";
-
-let StartFunc = ({ inQrCodeData, ScanedQrCodeData }) => {
-    let jVarLocalBranchName = localStorage.getItem("BranchName");
-
-    let LocalFilterQrCodeData = inQrCodeData.filter(e => e.BookingData.OrderData.BranchName == jVarLocalBranchName);
-    let LocalFilterScanedQrData = ScanedQrCodeData.filter(e => e.BranchName == jVarLocalBranchName);
-
-    let LocalFilterScanedData = ClubData({ inQrCodeData: LocalFilterQrCodeData, ScanedQrCodeData: LocalFilterScanedQrData })
-    if ((LocalFilterScanedData.length > 0) === false) swal.fire({ title: "No data !", icon: "error" });
-    let jVarLocalFilteredData = LocalFilterScanedData.filter(element => {
-        return element.Status === "Scaned";
-    });
-
-    jFLocalHideSpinner();
-    var $table = $('#table');
-
-    $table.bootstrapTable("load", jVarLocalFilteredData);
-};
-
-let jFLocalHideSpinner = () => {
-    let jVarLocalSpinnerId = document.getElementById("SpinnerId");
-    jVarLocalSpinnerId.style.display = "none";
-};
-
-const jFLocalFilerFunc = ({ inQrCodeData, ScanedQrCodeData }) => {
+const StartFunc = ({ inQrCodeData, ScanedQrCodeData }) => {
     let StatusData = inQrCodeData.map(element => {
         element.Status = ""
         let someData = ScanedQrCodeData.filter(e => {
