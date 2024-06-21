@@ -3,17 +3,17 @@ let StartFunc = ({ inDataToShow }) => {
 
     let LocalinDataToShow = inDataToShow;
     var $table = $('#table');
-    // let jVarLocalTransformedData = jFLocalInsertAggValues({ inData: LocalinDataToShow });
-    // let jVarWithQrCodeData = jFLocalInsertQrCodeData({ inData: jVarLocalTransformedData, inQrCodeData: inQrCodeData });
-    // let LocalArrayReverseData = LocalinDataToShow.slice().reverse();
-
-    $table.bootstrapTable("load", LocalinDataToShow);
+    let LocalFiterData = jFLocalFilter({ inData: LocalinDataToShow });
+    $table.bootstrapTable("load", LocalFiterData);
 };
 let jFLocalHideSpinner = () => {
     let jVarLocalSpinnerId = document.getElementById("SpinnerId");
     jVarLocalSpinnerId.style.display = "none";
 };
 
-
+const jFLocalFilter = ({ inData }) => {
+    let LocalReturData = inData.filter(element => element.TotalItems === 0);
+    return LocalReturData;
+};
 
 export { StartFunc };
