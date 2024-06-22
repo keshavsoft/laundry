@@ -40,23 +40,10 @@ let jFLocalInsertAggValues = ({ inData }) => {
     return jVarLocalReturnObject;
 };
 
-let jFLocalInsertQrCodeData = ({ inData, inQrCodeData }) => {
-    let jVarLocalBranchName = localStorage.getItem("BranchName");
+let jFLocalInsertQrCodeData = ({ inData }) => {
+    let UPIAmount = inData.filter(element => element.UPIAmount !== 0);
 
-    let jVarLocalReturnArray = [];
-    inData.forEach(element => {
-        // element.TimeSpan = jFLocalKInterval({ inCurrentdateandtime: element.OrderData.Currentdateandtime })
-        element.IsQrCodesRaised = false;
-        element.TotalItems = 0;
-        let FilterCheck = inQrCodeData.filter(ele => ele.OrderNumber == element.pk && ele.BookingData.OrderData.BranchName == jVarLocalBranchName);
-        if (FilterCheck.length > 0) {
-            element.TotalItems = FilterCheck.length
-            element.IsQrCodesRaised = true;
-        };
-        jVarLocalReturnArray.push(element)
-    });
-
-    return jVarLocalReturnArray;
+    return UPIAmount;
 };
 
 

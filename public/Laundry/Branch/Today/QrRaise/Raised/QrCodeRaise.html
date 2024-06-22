@@ -431,16 +431,16 @@
                                 <thead>
                                     <tr id="tableHeadRow">
                                         <th data-formatter="jFLocalSerialColumn">#</th>
-                                        <th data-field="UuId">Order #</th>
+                                        <th data-width="150" data-field="UuId">Order #</th>
                                         <th data-field="CustomerData.CustomerName">Customer Name</th>
                                         <!-- <th data-field="OrderData.BranchName">Branch</th> -->
                                         <th data-field="CustomerData.CustomerMobile">Mobile</th>
-                                        <th data-formatter="jFLocalDateFormatter">Date</th>
-                                        <th data-formatter="jFLocalOrderDetails">Order Details</th>
-                                        <th data-formatter="jFLocalSettlementDetails"
+                                        <th data-formatter="TimeSpan" data-filter-control="select">TimeSpan</th>
+                                        <th data-width="100" data-formatter="jFLocalOrderDetails">Order Details</th>
+                                        <th data-width="100" data-formatter="jFLocalSettlementDetails"
                                             data-footer-formatter="priceFormatter">
                                             Settlement</th>
-                                        <th data-formatter="jFLocalQrCodeDetails" data-footer-formatter="QrFormatter">
+                                        <th data-width="100" data-formatter="jFLocalQrCodeDetails" data-footer-formatter="QrFormatter">
                                             QrCodes
                                         </th>
                                     </tr>
@@ -506,6 +506,16 @@
 
         function jFLocalSerialColumn(value, row, index) {
             return index + 1;
+        };
+
+        function TimeSpan(value, row, index) {
+            var diffMs = (new Date() - new Date(row.DateTime)); // milliseconds between now & Christmas
+            var diffDays = Math.floor(diffMs / 86400000); // days
+            var diffHrs = Math.floor((diffMs % 86400000) / 3600000); // hours
+            var diffMins = Math.round(((diffMs % 86400000) % 3600000) / 60000); // minutes
+
+            return diffDays + " days, " + diffHrs + " hours, " + diffMins + " min";
+            // return new Date(row.DateTime).toLocaleDateString('en-GB');
         };
 
         function jFLocalDateFormatter(value, row, index) {
