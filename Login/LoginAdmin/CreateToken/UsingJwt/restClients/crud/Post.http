@@ -3,8 +3,8 @@ POST http://localhost:7016/Login/LoginAdmin/CreateToken/UsingJwt
 Content-Type: application/json
 
 {
-"UserName": "KeshavAdmin",
-"Password": "KeshavSoft"
+"UserName": "",
+"Password": ""
 }
 
 
