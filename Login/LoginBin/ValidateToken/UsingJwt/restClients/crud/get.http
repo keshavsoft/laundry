@@ -1,4 +1,3 @@
 ###Get for as is data
-GET http://localhost:7016/Common/bin/FilesWithData/ActualData/Transactions
-
+GET http://localhost:7016/Login/bin/ValidateToken/UsingJwt/
 
