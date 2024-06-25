@@ -1,5 +1,5 @@
 ###Get for as is data
-DELETE http://localhost:7016/Login/bin/Users/084eb201-1f01-437c-bf19-b5d7760fcc45
+DELETE http://localhost:7016/Login/bin/Users/<Token>
 Content-Type: application/json
 
 {}
