@@ -3,8 +3,8 @@ PUT http://localhost:7016/Login/LoginAdmin/Users/1d89eb5e-0a66-4885-b6fa-df462a1
 Content-Type: application/json
 
 {
-"UserName": "Sreenivas",
-"Password": "Sree1234567"
+"UserName": "",
+"Password": ""
 }
 
 
