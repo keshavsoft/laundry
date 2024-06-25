@@ -7,7 +7,7 @@ let StartFunc = () => {
 
     LocalReturnData.KTF = false;
 
-    LocalReturnData.UserDataFilePath = `${Configjson.jsonConfig.LoginPath}/${Configjson.jsonConfig.DataPk}/Login/Users.json`;
+    LocalReturnData.UserDataFilePath = `${Configjson.jsonConfig.LoginPath}/${Configjson.jsonConfig.DataPk}/Login/AdminUsers.json`;
 
     const defaultData = { error: "From KLowDb" }
 
