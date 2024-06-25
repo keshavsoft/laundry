@@ -62,7 +62,8 @@
                         <th data-field="Pcs" data-width="75" class="text-end">Pcs</th>
                         <th data-field="Total" data-width="100" class="text-end">Amount</th>
                         <th data-field="location" data-width="100" class="text-center">Factory</th>
-                        <th data-field="DeliveryDateTime" data-width="100" data-formatter="JFDeliveryDateFormat">Delivery</th>
+                        <th data-field="DeliveryDateTime" data-width="100" data-formatter="JFDeliveryDateFormat">
+                            Delivery</th>
                         <th data-formatter="jFLocalOptsFormater" data-width="50">Opts.</th>
                     </thead>
                     <tfoot>
@@ -110,7 +111,7 @@
                                 <select class="form-select" aria-label="Default select example"
                                     id="TableFooterFactoryInputId" tabindex="-1">
                                     <option value="Vizag" selected>Vizag</option>
-                                    <option value="Gurudwara">Gurudwara</option>
+                                    <option value="GD">GD</option>
                                     <option value="Vzm">Vzm</option>
                                 </select>
                             </th>
@@ -131,85 +132,33 @@
             </div>
         </div>
     </div>
-
-    <div class="modal fade" id="AddOnModal" tabindex="-1">
-        <div class="modal-dialog modal-lg">
+    
+    <div class="modal fade" id="LoginModalId" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-sm">
             <div class="modal-content">
-                <div class="modal-header">
-                    <div class="container-fluid">
-                        <div class="row">
-                            <div class="col">
-                                <div class="mb-3">
-                                    <label for="exampleFormControlInput1" class="form-label">#</label>
-                                    <input type="email" class="form-control" id="AddOnModalItemSerialId"
-                                        placeholder="name@example.com" value="Keshav">
-                                </div>
-                            </div>
-                            <div class="col">
-                                <div class="mb-3">
-                                    <label for="exampleFormControlInput1" class="form-label">Item Name</label>
-                                    <input type="email" class="form-control" id="AddOnModalItemNameId"
-                                        placeholder="name@example.com" value="Keshav">
-                                </div>
-                            </div>
-                            <div class="col">
-                                <div class="mb-3">
-                                    <label for="exampleFormControlTextarea1" class="form-label">Rate</label>
-                                    <input type="email" class="form-control" id="exampleFormControlInput1"
-                                        placeholder="name@example.com" value="9848163021">
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
                 <div class="modal-body">
+                    <form class="login-form">
+                        <h2 class="text-center mb-4">Login</h2>
 
-                    <table id="AddOnTable" data-show-footer="true">
-                        <thead>
-                            <tr id="tableHeadRow">
-                                <th data-formatter="jFLocalSerialColumn" data-width="75">#</th>
-                                <!-- <th data-field="AddOnItemSerial">AddOnItem #</th> -->
-                                <th data-field="AddOnService" data-width="400">AddOn Item</th>
-                                <th data-field="AddOnRate" data-width="200">Rate</th>
-                                <th data-formatter="jFLocalOptsForAddOnOnModalFormater" data-width="100">Options</th>
-                            </tr>
-                        </thead>
-                        <tfoot>
-                            <tr>
-                                <th></th>
-                                <th>
-
-
-                                </th>
-                                <th>
-
-                                </th>
-                                <th>
-
-
-                                </th>
-                            </tr>
-                        </tfoot>
-                    </table>
-                    <div class="row mt-3">
-                        <div class="col">
-                            <select class="form-select" aria-label="Select AddOn" id="TableFooterAddOnSelectId">
-                            </select>
+                        <div class="mb-3">
+                            <input type="text" id="UsernameId" class="form-control" placeholder="User name" autofocus>
                         </div>
-                        <div class="col">
-                            <button type="button" class="btn btn-primary" id="AddOnModalSaveButtonId">
-                                Save
-                            </button>
+                        <div class="mb-3">
+                            <input type="password" id="PasswordId" class="form-control" id="password"
+                                placeholder="Password">
                         </div>
-                    </div>
-                </div>
-                <div class="modal-footer">
-
+                        <div class="mb-3 text-center mt-3">
+                            <button type="button" id="LoginButtonId"
+                                class="btn btn-primary btn-block w-100">Login</button>
+                        </div>
+                        <div class="text-center mt-3">
+                            <a href="#">Forgot password?</a>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
-    </div><!-- End Large Modal-->
+    </div>
 
     <div class="modal fade" id="ItemsOnModal" tabindex="-1">
         <div class="modal-dialog modal-lg">
@@ -218,15 +167,15 @@
                     <h1 id="SearchString"></h1>
                 </div>
                 <div class="modal-body">
-                    <table data-search="true" data-search-align="left" data-sort-name="ItemName"
-                    data-sort-order="asc">
+                    <table data-search="true" data-search-align="left" data-sort-name="ItemName" data-sort-order="asc">
                         <thead>
                             <tr>
                                 <th data-formatter="jFLocalSerialColumn" data-width="75">#</th>
                                 <!-- <th data-field="AddOnItemSerial">AddOnItem #</th> -->
                                 <th data-field="Category" data-width="200" data-sortable="true">Category</th>
                                 <th data-field="ItemName" data-width="400" data-sortable="true">Item Name</th>
-                                <th data-field="DryWashRate" data-width="100" data-sortable="true" class="text-end">Rate</th>
+                                <th data-field="DryWashRate" data-width="100" data-sortable="true" class="text-end">Rate
+                                </th>
                             </tr>
                         </thead>
                     </table>
@@ -325,10 +274,10 @@
             jVarLocalTableFooterAddOnSelectId.focus();
         });
 
-        function JFDeliveryDateFormat(value, row, index){
+        function JFDeliveryDateFormat(value, row, index) {
             return value.split('-').reverse().join('-');
         }
-        
+
     </script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap-table@1.22.6/dist/bootstrap-table.min.js"></script>
