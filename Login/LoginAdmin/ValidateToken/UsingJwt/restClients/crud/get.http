@@ -1,4 +1,3 @@
 ###Get for as is data
-GET http://localhost:7016/Login/LoginAdmin/ValidateToken/UsingJwt/eyJhbGciOiJIUzI1NiJ9.MzE4.dSymWGf66_KFOJmdKNIMIAZ8CPGH3JXWekpEpoCZk2Q
-
+GET http://localhost:7016/Login/LoginAdmin/ValidateToken/UsingJwt/
 
