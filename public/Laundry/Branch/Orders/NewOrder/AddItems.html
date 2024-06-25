@@ -132,7 +132,7 @@
             </div>
         </div>
     </div>
-    
+    <!--     
     <div class="modal fade" id="LoginModalId" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-sm">
             <div class="modal-content">
@@ -158,7 +158,88 @@
                 </div>
             </div>
         </div>
+    </div> -->
+
+    <!-- modal popup with bootstrap for addons -->
+    <div class="modal fade" id="AddOnModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col">
+                                <div class="mb-3">
+                                    <label for="exampleFormControlInput1" class="form-label">#</label>
+                                    <input type="email" class="form-control" id="AddOnModalItemSerialId"
+                                        placeholder="name@example.com" value="Keshav">
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="mb-3">
+                                    <label for="exampleFormControlInput1" class="form-label">Item Name</label>
+                                    <input type="email" class="form-control" id="AddOnModalItemNameId"
+                                        placeholder="name@example.com" value="Keshav">
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="mb-3">
+                                    <label for="exampleFormControlTextarea1" class="form-label">Rate</label>
+                                    <input type="email" class="form-control" id="exampleFormControlInput1"
+                                        placeholder="name@example.com" value="9848163021">
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="modal-body">
+
+                    <table id="AddOnTable" data-show-footer="true">
+                        <thead>
+                            <tr id="tableHeadRow">
+                                <th data-formatter="jFLocalSerialColumn" data-width="75">#</th>
+                                <!-- <th data-field="AddOnItemSerial">AddOnItem #</th> -->
+                                <th data-field="AddOnService" data-width="400">AddOn Item</th>
+                                <th data-field="AddOnRate" data-width="200">Rate</th>
+                                <th data-formatter="jFLocalOptsForAddOnOnModalFormater" data-width="100">Options</th>
+                            </tr>
+                        </thead>
+                        <tfoot>
+                            <tr>
+                                <th></th>
+                                <th>
+
+
+                                </th>
+                                <th>
+
+                                </th>
+                                <th>
+
+
+                                </th>
+                            </tr>
+                        </tfoot>
+                    </table>
+                    <div class="row mt-3">
+                        <div class="col">
+                            <select class="form-select" aria-label="Select AddOn" id="TableFooterAddOnSelectId">
+                            </select>
+                        </div>
+                        <div class="col">
+                            <button type="button" class="btn btn-primary" id="AddOnModalSaveButtonId">
+                                Save
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+
+                </div>
+            </div>
+        </div>
     </div>
+    <!-- End AddOnModal Modal-->
 
     <div class="modal fade" id="ItemsOnModal" tabindex="-1">
         <div class="modal-dialog modal-lg">
@@ -185,7 +266,7 @@
                 </div>
             </div>
         </div>
-    </div><!-- End Large Modal-->
+    </div><!-- End ItemsOnModal Modal-->
 
     <div class="modal fade" id="ItemsWithSearchOnModal" tabindex="-1">
         <div class="modal-dialog modal-lg">
