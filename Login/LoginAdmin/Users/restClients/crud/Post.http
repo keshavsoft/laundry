@@ -3,8 +3,8 @@ POST http://localhost:7016/Login/LoginAdmin/Users
 Content-Type: application/json
 
 {
-"UserName": "Sreenivas",
-"Password": "Sree123"
+"UserName": "",
+"Password": ""
 }
 
 
