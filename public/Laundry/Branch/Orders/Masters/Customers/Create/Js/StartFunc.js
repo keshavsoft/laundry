@@ -1,12 +1,14 @@
 import { StartFunc as StartFuncButtonClickFunc } from "./Addlisteners/SaveButtonClickId/ButtonClickFunc.js";
-import { StartFunc as ShowMobileList  } from "../../Js/ShowMobileList.js";
-import { StartFunc as ShowCustomerList  } from "../../Js/ShowCustomerList.js";
+import { StartFunc as StartFuncLoginCheck } from "/Laundry/Js/LoginModal/EntryFile.js";
+import { StartFunc as StartFunclistFuncs } from "./listFuncs.js";
 
+const StartFunc = async () => {
+    let jVarLocalFromAdmin = await StartFuncLoginCheck({ inSuccessFunc: StartFunclistFuncs });
 
-const StartFunc = () => {
-    StartFuncButtonClickFunc();
-    ShowMobileList();
-    ShowCustomerList();
+    if (jVarLocalFromAdmin) {
+        StartFuncButtonClickFunc();
+        StartFunclistFuncs();
+    };
 };
 
 StartFunc();

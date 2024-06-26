@@ -2,7 +2,7 @@ import { StartFunc as StartFuncFetchHeaders } from "./FetchHeaders/EntryFile.js"
 
 let StartFunc = async () => {
     let LocalFetchBody = StartFuncFetchHeaders();
-    let jVarLocalFetchUrl = `/binFixedPk/QrCodes/Generate/summary`;
+    let jVarLocalFetchUrl = `/AdminFixedPk/QrCodes/Generate/summary`;
     let response = await fetch(jVarLocalFetchUrl, LocalFetchBody);
     let data = await response.json();
 
