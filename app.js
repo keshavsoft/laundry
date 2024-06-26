@@ -1,5 +1,6 @@
 import { router as routerFromSrcFixedPk } from "./srcFixedPk/routes.js";
 import { router as routerFromBinFixedPk } from "./binFixedPk/routes.js";
+import { router as routerFromAdminFixedPk} from "./AdminFixedPk/routes.js";
 
 import { router as routerFromSrc } from "./src/routes.js";
 import { router as routerFromBin } from "./bin/routes.js";
@@ -52,6 +53,7 @@ app.get('/AboutUs', (req, res) => {
 
 app.use('/srcFixedPk', routerFromSrcFixedPk);
 app.use('/binFixedPk', StartFuncBinMiddleWares, routerFromBinFixedPk);
+app.use('/AdminFixedPk', StartFuncBinMiddleWares, routerFromAdminFixedPk);
 
 app.use('/src', routerFromSrc);
 app.use('/bin', StartFuncBinMiddleWares, routerFromBin);

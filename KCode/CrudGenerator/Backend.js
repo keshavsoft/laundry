@@ -15,12 +15,25 @@ let StartFunc = ({ inFilesArray }) => {
     });
 
     LocalFuncForsrcFixedPk({ inFilesArray: LocalFilesArray });
+    LocalFuncForAdminFixedPk({ inFilesArray: LocalFilesArray });
 };
 
 let LocalFuncForsrcFixedPk = ({ inFilesArray }) => {
     let LocalFilesArray = inFilesArray;
     let CommonFrom = "srcFixedPk";
     let CommonTo = "binFixedPk";
+
+    StartFuncForBackend({
+        inTablesCollection: LocalFilesArray,
+        inFrom: CommonFrom,
+        inTo: CommonTo
+    });
+};
+
+let LocalFuncForAdminFixedPk = ({ inFilesArray }) => {
+    let LocalFilesArray = inFilesArray;
+    let CommonFrom = "srcFixedPk";
+    let CommonTo = "AdminFixedPk";
 
     StartFuncForBackend({
         inTablesCollection: LocalFilesArray,
