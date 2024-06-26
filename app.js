@@ -12,6 +12,7 @@ import { router as routerFromLogin } from "./Login/routes.js";
 import { StartFunc as StartFuncKWSServer } from "./Projects/KWSServer/EntryFile.js";
 import { StartFunc as StartFuncPortListen } from "./PortListen.js";
 import { StartFunc as StartFuncBinMiddleWares } from "./MiddleWares/MiddleWares.bin/EntryFile.js";
+import { StartFunc as StartFuncAdminFixedPkMiddleWares } from "./MiddleWares/MiddleWares.AdminFixedPk/EntryFile.js";
 
 import packageJSON from './package.json' assert {type: 'json'};
 
@@ -53,7 +54,7 @@ app.get('/AboutUs', (req, res) => {
 
 app.use('/srcFixedPk', routerFromSrcFixedPk);
 app.use('/binFixedPk', StartFuncBinMiddleWares, routerFromBinFixedPk);
-app.use('/AdminFixedPk', StartFuncBinMiddleWares, routerFromAdminFixedPk);
+app.use('/AdminFixedPk', StartFuncAdminFixedPkMiddleWares, routerFromAdminFixedPk);
 
 app.use('/src', routerFromSrc);
 app.use('/bin', StartFuncBinMiddleWares, routerFromBin);

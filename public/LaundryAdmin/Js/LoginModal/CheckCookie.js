@@ -1,5 +1,5 @@
 const StartFunc = () => {
-    const myCookieValue = getCookie('KSToken');
+    const myCookieValue = getCookie('KSAToken');
 
     if ((myCookieValue === "") === false) {
         return true

@@ -1,7 +1,7 @@
 import { StartFunc as StartFuncFetchFuncs } from "./PostFetch.js";
 
 let StartFunc = async () => {
-    let jVarLocalDataNeeded = await StartFuncFetchFuncs({ inToken : jFLocalGetCookie("KSToken")});
+    let jVarLocalDataNeeded = await StartFuncFetchFuncs({ inToken : jFLocalGetCookie("KSAToken")});
 
     if (jVarLocalDataNeeded === null) {
         return await false;

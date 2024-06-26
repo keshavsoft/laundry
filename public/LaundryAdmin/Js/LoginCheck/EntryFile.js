@@ -3,6 +3,7 @@ import { StartFunc as  StartFuncIsFailure} from "./IsFailure/EntryFile.js";
 
 const StartFunc = async ({ inSuccessFunc }) => {
     let jVarLoaclFromFetch = await StartFuncValidateToken();
+    console.log("jVarLoaclFromFetch:",jVarLoaclFromFetch);
     
     if (jVarLoaclFromFetch === false) {
         StartFuncIsFailure({ inSuccessFunc });
