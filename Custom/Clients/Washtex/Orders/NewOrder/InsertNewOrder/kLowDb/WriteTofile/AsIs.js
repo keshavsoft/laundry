@@ -1,13 +1,15 @@
 import { StartFunc as StartFuncCommonFuncs } from '../CommonFuncs/ReturnDbObject.js';
+import { StartFunc as StartFuncFromCustomers } from './FromCustomers.js';
 
 let StartFunc = ({ inDataToInsert, inFileName }) => {
     let LocalFileName = inFileName;
     let LocalinDataToInsert = inDataToInsert;
     let LocalReturnData = { KTF: false, JSONFolderPath: "", CreatedLog: {} };
-    LocalReturnData.KTF = false;
+
+    let LocalCustomerObj = StartFuncFromCustomers({ inDataToInsert: LocalinDataToInsert });
+    LocalinDataToInsert.CustomerData = LocalCustomerObj;
 
     const db = StartFuncCommonFuncs({ inFileName: LocalFileName });
-
     db.read();
 
     if ("error" in db.data) {
@@ -47,8 +49,8 @@ const LocalFuncMaxOrder = ({ inData }) => {
 let LocalFuncCurrentDateOnly = () => {
     let jVarLocalAddDays7 = new Date();
     let date = new Date(jVarLocalAddDays7);
-   
-    
+
+
     let dd = (date.getDate() < 10 ? '0' : '') + date.getDate();
     let MM = ((date.getMonth() + 1) < 10 ? '0' : '') + (date.getMonth() + 1);
     let yyyy = date.getFullYear();
