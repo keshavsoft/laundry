@@ -1,19 +1,13 @@
-import { StartFunc as StartFuncFormLoadBeforeAdmin } from "./FormLoadBeforeAdmin/EntryFile.js";
 import { StartFunc as StartFuncShowOnDom } from "./ShowOnDom.js";
 import { StartFunc as StartFuncFormLoad } from "./FormLoad/StartFunc.js";
-import { StartFunc as StartFuncAfterDomLoad } from "./AfterDomLoad/StartFunc.js";
+import { StartFunc as StartFuncLoginCheck } from "/LaundryAdmin/Js/LoginModal/EntryFile.js";
 
-
-const StartFunc = () => {
-    StartFuncFormLoadBeforeAdmin();
-    let jVarLocalFromAdmin = true;
+const StartFunc = async () => {
+    StartFuncFormLoad();
+    let jVarLocalFromAdmin = await StartFuncLoginCheck({ inSuccessFunc: StartFuncShowOnDom });
 
     if (jVarLocalFromAdmin) {
-        StartFuncFormLoad();
-
-        StartFuncShowOnDom({}).then(() => {
-            StartFuncAfterDomLoad();
-        });
+        StartFuncShowOnDom({}).then();
     };
 };
 

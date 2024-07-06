@@ -52,7 +52,6 @@ const LocalSummaryFunc = ({ inData }) => {
 
     LocalArray.forEach(element => {
         let LocalTodayData = LocalDateAndTime({ inData: element.FileData });
-
         let LocalneedData = {};
         LocalneedData.fileName = path.parse(element.FileName).name;
         LocalneedData.DataCount = element.FileData.length;
@@ -86,15 +85,13 @@ const LocalSummaryFunc = ({ inData }) => {
 
 const LocalDateAndTime = ({ inData }) => {
     const LocalData = inData;
-    // console.log("vasu::",Localdate);
 
     const today = new Date(); // Get today's date
     const todayDate = today.toISOString().split('T')[0]; // Extract today's date portion
-    console.log("LocalData : ", LocalData);
     return LocalData.filter(obj => {
-        // const objDate = new Date(obj.DateTime).toISOString().split('T')[0]; // Extract date portion of object's timestamp
+        const objDate = new Date(obj.OrderData.Currentdateandtime).toISOString().split('T')[0]; // Extract date portion of object's timestamp
 
-        const objDate = new Date(obj.Currentdateandtime);
+        // const objDate = new Date(obj.Currentdateandtime);
 
         return objDate === todayDate; // Compare with today's date
     });
