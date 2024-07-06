@@ -7,10 +7,7 @@ let StartFunc = ({ inDataToShow }) => {
 
     jFLocalHideSpinner();
     var $table = $('#table');
-
-    $table.bootstrapTable("destroy").bootstrapTable({
-        data: LocalmodifiedData,
-    });
+    $table.bootstrapTable('load', LocalmodifiedData);
 };
 
 let jFLocalHideSpinner = () => {

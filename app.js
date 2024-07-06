@@ -59,7 +59,7 @@ app.use('/AdminFixedPk', StartFuncAdminFixedPkMiddleWares, routerFromAdminFixedP
 app.use('/src', routerFromSrc);
 app.use('/bin', StartFuncBinMiddleWares, routerFromBin);
 app.use('/Custom', routerFromCustom);
-app.use('/Common', StartFuncBinMiddleWares, routerFromCommon);
+app.use('/Common', StartFuncAdminFixedPkMiddleWares, routerFromCommon);
 app.use('/utility', routerForUtility);
 app.use('/Login', routerFromLogin);
 
