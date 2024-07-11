@@ -1,11 +1,14 @@
 import { router as routerFromSrcFixedPk } from "./srcFixedPk/routes.js";
 import { router as routerFromBinFixedPk } from "./binFixedPk/routes.js";
-import { router as routerFromAdminFixedPk} from "./AdminFixedPk/routes.js";
+import { router as routerFromAdminFixedPk } from "./AdminFixedPk/routes.js";
 
 import { router as routerFromSrc } from "./src/routes.js";
 import { router as routerFromBin } from "./bin/routes.js";
 import { router as routerFromCustom } from "./Custom/routes.js";
 import { router as routerFromCommon } from "./Common/routes.js";
+
+import { router as routerFromCommonUserJwt } from "./CommonUserJwt/routes.js";
+
 import { router as routerForUtility } from "./Utility/routes.js";
 import { router as routerFromLogin } from "./Login/routes.js";
 
@@ -60,6 +63,7 @@ app.use('/src', routerFromSrc);
 app.use('/bin', StartFuncBinMiddleWares, routerFromBin);
 app.use('/Custom', routerFromCustom);
 app.use('/Common', StartFuncAdminFixedPkMiddleWares, routerFromCommon);
+app.use('/CommonUserJwt', StartFuncBinMiddleWares, routerFromCommonUserJwt);
 app.use('/utility', routerForUtility);
 app.use('/Login', routerFromLogin);
 
