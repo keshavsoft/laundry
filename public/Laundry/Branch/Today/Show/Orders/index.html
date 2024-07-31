@@ -227,8 +227,7 @@
 
             <li class="nav-item">
                 <a class="nav-link collapsed" data-bs-target="#QrCodeRaise" data-bs-toggle="collapse" href="#">
-                    <i class="bi bi-qr-code"></i></i><span>Qr-Raise</span><i
-                        class="bi bi-chevron-down ms-auto"></i>
+                    <i class="bi bi-qr-code"></i></i><span>Qr-Raise</span><i class="bi bi-chevron-down ms-auto"></i>
                 </a>
                 <ul id="QrCodeRaise" class="nav-content collapse" data-bs-parent="#sidebar-nav">
                     <li>
@@ -237,22 +236,21 @@
                         </a>
                     </li>
                     <li>
-                        <a href="../../QrRaise/Pending/QrCodeRaise.html" >
-                            <i class="bi bi-circle" ></i><span>Pending</span>
+                        <a href="../../QrRaise/Pending/QrCodeRaise.html">
+                            <i class="bi bi-circle"></i><span>Pending</span>
                         </a>
                     </li>
                     <li>
                         <a href="../../QrRaise/Raised/QrCodeRaise.html">
-                            <i class="bi bi-circle" ></i><span>Raised</span>
+                            <i class="bi bi-circle"></i><span>Raised</span>
                         </a>
                     </li>
                 </ul>
             </li>
-          
+
             <li class="nav-item">
                 <a class="nav-link collapsed" data-bs-target="#QrCodePrint" data-bs-toggle="collapse" href="#">
-                    <i class="bi bi-qr-code"></i><span>Qrcodes-Print</span><i
-                        class="bi bi-chevron-down ms-auto"></i>
+                    <i class="bi bi-qr-code"></i><span>Qrcodes-Print</span><i class="bi bi-chevron-down ms-auto"></i>
                 </a>
                 <ul id="QrCodePrint" class="nav-content collapse" data-bs-parent="#sidebar-nav">
                     <li>
@@ -260,15 +258,15 @@
                             <i class="bi bi-circle"></i><span>Single QR</span>
                         </a>
                     </li>
-                    
+
                     <li>
                         <a href="../../QrCodePrint/Qr1/QrCodeRaise.html">
-                            <i class="bi bi-circle" ></i><span>QR 1</span>
+                            <i class="bi bi-circle"></i><span>QR 1</span>
                         </a>
                     </li>
                     <li>
                         <a href="../../QrCodePrint/Qr2/index.html">
-                            <i class="bi bi-circle" ></i><span>QR 2</span>
+                            <i class="bi bi-circle"></i><span>QR 2</span>
                         </a>
                     </li>
                 </ul>
@@ -276,23 +274,22 @@
 
             <li class="nav-item">
                 <a class="nav-link collapsed" data-bs-target="#BillPrint" data-bs-toggle="collapse" href="#">
-                    <i class="bi bi-printer"></i><span>Bill</span><i
-                        class="bi bi-chevron-down ms-auto"></i>
+                    <i class="bi bi-printer"></i><span>Bill</span><i class="bi bi-chevron-down ms-auto"></i>
                 </a>
                 <ul id="BillPrint" class="nav-content collapse" data-bs-parent="#sidebar-nav">
                     <li>
-                        <a href="../../Print/PrintBill/PrintBill.html" >
+                        <a href="../../Print/PrintBill/PrintBill.html">
                             <i class="bi bi-circle"></i><span>Bill Print</span>
                         </a>
                     </li>
                     <li>
-                        <a href="../../Print/PrintBill - print/PrintBill.html" >
-                            <i class="bi bi-circle" ></i><span>Print 1</span>
+                        <a href="../../Print/PrintBill - print/PrintBill.html">
+                            <i class="bi bi-circle"></i><span>Print 1</span>
                         </a>
                     </li>
                     <li>
                         <a href="../../Print/PrintBill - print1/PrintBill.html">
-                            <i class="bi bi-circle" ></i><span>Print 2</span>
+                            <i class="bi bi-circle"></i><span>Print 2</span>
                         </a>
                     </li>
                 </ul>
@@ -311,7 +308,7 @@
                     <span>Items</span>
                 </a>
             </li>
-            
+
             <li class="nav-item">
                 <a class="nav-link collapsed" href="../../Reports/Orders/FilterShowAll.html">
                     <i class="bi bi-graph-up-arrow"></i>
@@ -334,8 +331,8 @@
                     <li class="breadcrumb-item"><a id="BRDDashboardId"
                             href="../../../../../LaundryPos/Dashboard/Dashboard.html">Home</a>
                     </li>
-                    <li class="breadcrumb-item active" ><a href="#" id="RefreshBSTableId">Show</a></li>
-                    <li class="breadcrumb-item active" ><a href="#" id="RefreshBSTableId">orders</a></li>
+                    <li class="breadcrumb-item active"><a href="#" id="RefreshBSTableId">Show</a></li>
+                    <li class="breadcrumb-item active"><a href="#" id="RefreshBSTableId">orders</a></li>
                 </ol>
             </nav>
         </div>
@@ -353,7 +350,7 @@
                             </div> -->
 
 
-                            <table id="table" class="table" data-show-columns="true">
+                            <table id="table" class="table" data-show-columns="true" data-show-footer="true">
                                 <thead>
                                     <tr class="table-primary">
                                         <th data-field="pk" id="OrderId">Order#</th>
@@ -361,7 +358,8 @@
                                         <th data-field="CustomerData.CustomerMobile" id="MobileId">Mobile</th>
                                         <th data-field="DateTime" data-formatter="TimeDiff" id="DateId">Time Span</th>
                                         <th data-field="AggValues.ItemDetails" id="ItemsId">Items</th>
-                                        <th data-field="AggValues.SettlementAmount">Settlement</th>
+                                        <th data-field="AggValues.SettlementAmount"
+                                            data-footer-formatter="totalPriceFormatter">Settlement</th>
                                         <th data-field="IsSettled">IsSettled</th>
                                     </tr>
                                 </thead>
@@ -426,8 +424,7 @@
                         <h2 class="text-center mb-4">Login</h2>
 
                         <div class="mb-3">
-                            <input type="text" id="UsernameId" class="form-control" placeholder="User name"
-                                autofocus>
+                            <input type="text" id="UsernameId" class="form-control" placeholder="User name" autofocus>
                         </div>
                         <div class="mb-3">
                             <input type="password" id="PasswordId" class="form-control" id="password"
@@ -467,7 +464,7 @@
             const hours = Math.floor(diff / (1000 * 60 * 60));
             const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
             const seconds = Math.floor((diff % (1000 * 60)) / 1000);
-    
+
             const remainingSeconds = seconds % 60;
             const remainingMinutes = minutes % 60;
             let string = ""
@@ -485,7 +482,7 @@
             }
             return string;
         }
-    
+
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
@@ -515,8 +512,17 @@
         function jFLocalSerialColumn(value, row, index) {
             return index + 1;
         };
+        function totalPriceFormatter(data) {
+            var field = this.field
+            return '₹ ' + data.map(function (row) {
+                return +row.AggValues.SettlementAmount
+            }).reduce(function (sum, i) {
+
+                return sum + i
+            }, 0)
+        }
     </script>
-    
+
     <script src="./Js/vendor/bwip-js-min.js"></script>
     <script src="./Js/vendor/print.min.js"></script>
     <script src="./assets/js/main.js"></script>
