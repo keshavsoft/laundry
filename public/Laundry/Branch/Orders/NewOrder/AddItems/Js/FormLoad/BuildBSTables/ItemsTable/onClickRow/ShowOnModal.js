@@ -1,6 +1,7 @@
 let StartFunc = (row) => {
     jFLocalToInputAddOnModalItemNameId(row.ItemName);
     jFLocalToInputAddOnModalItemSerialId(row.ItemSerial);
+    jFLocalToInputRate(row.Rate);
 };
 
 let jFLocalToInputAddOnModalItemNameId = (inValue) => {
@@ -14,6 +15,15 @@ let jFLocalToInputAddOnModalItemNameId = (inValue) => {
 
 let jFLocalToInputAddOnModalItemSerialId = (inValue) => {
     let jVarLocalHtmlId = 'AddOnModalItemSerialId';
+    let jVarLocalAddOnModalItemSerialId = document.getElementById(jVarLocalHtmlId);
+
+    if (jVarLocalAddOnModalItemSerialId === null === false) {
+        jVarLocalAddOnModalItemSerialId.value = inValue;
+    };
+};
+
+let jFLocalToInputRate = (inValue) => {
+    let jVarLocalHtmlId = 'exampleFormControlInput1';
     let jVarLocalAddOnModalItemSerialId = document.getElementById(jVarLocalHtmlId);
 
     if (jVarLocalAddOnModalItemSerialId === null === false) {
