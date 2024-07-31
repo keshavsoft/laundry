@@ -219,7 +219,8 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a id="HomeId" class="nav-link collapsed" href="../../../../../Laundry/Branch/Orders/NewOrder/Customer.html">
+                <a id="HomeId" class="nav-link collapsed"
+                    href="../../../../../Laundry/Branch/Orders/NewOrder/Customer.html">
                     <i class="bi bi-grid"></i>
                     <span>Home</span>
                 </a>
@@ -227,8 +228,7 @@
 
             <li class="nav-item">
                 <a class="nav-link collapsed" data-bs-target="#QrCodeRaise" data-bs-toggle="collapse" href="#">
-                    <i class="bi bi-qr-code"></i></i><span>Qr-Raise</span><i
-                        class="bi bi-chevron-down ms-auto"></i>
+                    <i class="bi bi-qr-code"></i></i><span>Qr-Raise</span><i class="bi bi-chevron-down ms-auto"></i>
                 </a>
                 <ul id="QrCodeRaise" class="nav-content collapse" data-bs-parent="#sidebar-nav">
                     <li>
@@ -237,13 +237,13 @@
                         </a>
                     </li>
                     <li>
-                        <a href="../../QrRaise/Pending/QrCodeRaise.html" >
-                            <i class="bi bi-circle" ></i><span>Pending</span>
+                        <a href="../../QrRaise/Pending/QrCodeRaise.html">
+                            <i class="bi bi-circle"></i><span>Pending</span>
                         </a>
                     </li>
                     <li>
                         <a href="../../QrRaise/Raised/QrCodeRaise.html">
-                            <i class="bi bi-circle" ></i><span>Raised</span>
+                            <i class="bi bi-circle"></i><span>Raised</span>
                         </a>
                     </li>
                 </ul>
@@ -251,8 +251,7 @@
 
             <li class="nav-item">
                 <a class="nav-link collapsed" data-bs-target="#QrCodePrint" data-bs-toggle="collapse" href="#">
-                    <i class="bi bi-qr-code"></i><span>Qrcodes-Print</span><i
-                        class="bi bi-chevron-down ms-auto"></i>
+                    <i class="bi bi-qr-code"></i><span>Qrcodes-Print</span><i class="bi bi-chevron-down ms-auto"></i>
                 </a>
                 <ul id="QrCodePrint" class="nav-content collapse" data-bs-parent="#sidebar-nav">
                     <li>
@@ -262,12 +261,12 @@
                     </li>
                     <li>
                         <a href="../../QrCodePrint/Qr1/QrCodeRaise.html">
-                            <i class="bi bi-circle" ></i><span>QR 1</span>
+                            <i class="bi bi-circle"></i><span>QR 1</span>
                         </a>
                     </li>
                     <li>
                         <a href="../../QrCodePrint/Qr2/index.html">
-                            <i class="bi bi-circle" ></i><span>QR 2</span>
+                            <i class="bi bi-circle"></i><span>QR 2</span>
                         </a>
                     </li>
                 </ul>
@@ -275,23 +274,22 @@
 
             <li class="nav-item">
                 <a class="nav-link collapsed" data-bs-target="#BillPrint" data-bs-toggle="collapse" href="#">
-                    <i class="bi bi-printer"></i><span>Bill</span><i
-                        class="bi bi-chevron-down ms-auto"></i>
+                    <i class="bi bi-printer"></i><span>Bill</span><i class="bi bi-chevron-down ms-auto"></i>
                 </a>
                 <ul id="BillPrint" class="nav-content collapse" data-bs-parent="#sidebar-nav">
                     <li>
-                        <a href="../../Print/PrintBill/PrintBill.html" >
+                        <a href="../../Print/PrintBill/PrintBill.html">
                             <i class="bi bi-circle"></i><span>Bill Print</span>
                         </a>
                     </li>
                     <li>
-                        <a href="../../Print/PrintBill - print/PrintBill.html" >
-                            <i class="bi bi-circle" ></i><span>Print 1</span>
+                        <a href="../../Print/PrintBill - print/PrintBill.html">
+                            <i class="bi bi-circle"></i><span>Print 1</span>
                         </a>
                     </li>
                     <li>
                         <a href="../../Print/PrintBill - print1/PrintBill.html">
-                            <i class="bi bi-circle" ></i><span>Print 2</span>
+                            <i class="bi bi-circle"></i><span>Print 2</span>
                         </a>
                     </li>
                 </ul>
@@ -309,7 +307,7 @@
                     <span>Items</span>
                 </a>
             </li>
-            
+
             <li class="nav-item">
                 <a class="nav-link collapsed" href="../../Reports/Orders/FilterShowAll.html">
                     <i class="bi bi-graph-up-arrow"></i>
@@ -351,13 +349,13 @@
                             </div> -->
 
 
-                            <table class="table" id="table">
+                            <table class="table" id="table" data-show-footer="true">
                                 <thead>
                                     <tr>
                                         <th data-formatter="jFLocalSerialColumn">S.No</th>
                                         <th data-field="pk">Order No.</th>
                                         <th data-field="ItemName">ItemName</th>
-                                        <th data-field="Rate">Rate</th>
+                                        <th data-field="Rate" data-footer-formatter="totalPriceFormatter">Rate</th>
                                         <th data-field="Pcs">Pcs</th>
                                     </tr>
                                 </thead>
@@ -422,8 +420,7 @@
                         <h2 class="text-center mb-4">Login</h2>
 
                         <div class="mb-3">
-                            <input type="text" id="UsernameId" class="form-control" placeholder="User name"
-                                autofocus>
+                            <input type="text" id="UsernameId" class="form-control" placeholder="User name" autofocus>
                         </div>
                         <div class="mb-3">
                             <input type="password" id="PasswordId" class="form-control" id="password"
@@ -482,6 +479,14 @@
             return string;
         }
 
+        function totalPriceFormatter(data) {
+            var field = this.field
+            return '₹ ' + data.map(function (row) {
+                return +row[field]
+            }).reduce(function (sum, i) {
+                return sum + i
+            }, 0)
+        }
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
