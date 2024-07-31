@@ -3,7 +3,7 @@ import { StartFunc as StartFuncCommonDetails } from './CommonDetails.js';
 import { StartFunc as StartFuncShowSettlementDetails } from './ShowSettlementDetails.js';
 
 const StartFunc = ({ inFromFetch }) => {
-    StartFuncOrderAmount({ inData: inFromFetch.ItemsInOrder });
+    StartFuncOrderAmount({ inData: inFromFetch });
     StartFuncCommonDetails({ inData: inFromFetch });
     StartFuncShowSettlementDetails({ inData: inFromFetch });
 
