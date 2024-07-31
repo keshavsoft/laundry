@@ -60,7 +60,8 @@
                         <th data-formatter="jFLocalAddOnFormater" data-width="100">Add Ons</th>
                         <th data-field="Rate" data-width="100" class="text-end">Rate</th>
                         <th data-field="Pcs" data-width="75" class="text-end">Pcs</th>
-                        <th data-field="Total" data-width="100" class="text-end">Amount</th>
+                        <!-- <th data-field="Total" data-width="100" class="text-end">Amount</th> -->
+                        <th data-formatter="jFLocalTotal" data-width="100" class="text-end">Amount</th>
                         <th data-field="location" data-width="100" class="text-center">Factory</th>
                         <th data-field="DeliveryDateTime" data-width="100" data-formatter="JFDeliveryDateFormat">
                             Delivery</th>
@@ -328,6 +329,28 @@
                     `Click`,
                     `</a>`
                 ].join('')
+            };
+        };
+
+        function jFLocalOptsFormater(value, row, index) {
+            return [
+                `<a href="#" class="btn btn-danger ">`,
+                `<i class="bi bi-trash3"></i>`,
+                `</a>`
+            ].join('');
+        };
+
+        function jFLocalTotal(value, row, index) {
+            let JVarLocalFromStrogeAddOnData = localStorage.getItem("PresentOrder");
+            let JvarLocalData = JSON.parse(JVarLocalFromStrogeAddOnData);
+            let jVarLocalItemSerial = row.ItemSerial;
+            let jVarLocalFilterData = Object.values(JvarLocalData.AddOnData).filter(e => e.AddOnItemSerial === jVarLocalItemSerial);
+
+            if (jVarLocalFilterData.length > 0) {
+                let jVarLocalAddOnPrice = jVarLocalFilterData.map(e => e.AddOnRate).reduce((a, b) => a + b, 0);
+                return (jVarLocalAddOnPrice * row.Pcs) + row.Total
+            } else {
+                return row.Total;
             };
         };
 
