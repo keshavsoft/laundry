@@ -299,22 +299,22 @@
 
                     </datalist>
                     <datalist id="CustomerDataListId">
-        
+
                     </datalist>
                     <div class="row">
                         <div class="col">
                             <div class="card">
                                 <div class="card-body">
-        
+
                                     <form href="#" class="form-horizontal needs-validation" id="FormId">
                                         <div class="row">
-                
+
                                             <div class="col-md-12">
                                                 <label class="col-md-4 col-form-label">CustomerName</label>
-                
+
                                                 <div class="col-md-8">
-                                                    <input kvs1="" id="CustomerName" name="CustomerName" data-clienteval=""
-                                                        type="text" class="form-control" placeholder="Enter Customer Name"
+                                                    <input kvs1="" id="CustomerName" name="CustomerName"
+                                                        data-clienteval="" type="text" class="form-control"
                                                         autocomplete="off" required autofocus list="CustomerDataListId">
                                                     <div class="invalid-feedback">
                                                         Should not be Empty!!
@@ -325,9 +325,9 @@
                                                 <label class="col-md-4 col-form-label">Mobile</label>
                                                 <div class="col-md-8">
                                                     <input kvs1="" id="Mobile" name="Mobile"
-                                                        data-dataattribute="Description" value="" data-clienteval="" type="Number"
-                                                        class="form-control" placeholder="Enter Mobile" autocomplete="off"
-                                                        required list="MobileDataListId">
+                                                        data-dataattribute="Description" value="" data-clienteval=""
+                                                        type="Number" class="form-control" autocomplete="off" required
+                                                        list="MobileDataListId">
                                                     <div class="invalid-feedback " id="MobileClass">
                                                         Should not be Empty!!
                                                     </div>
@@ -336,10 +336,9 @@
                                             <div class="col-md-12">
                                                 <label class="col-md-4 col-form-label">DOB</label>
                                                 <div class="col-md-8">
-                                                    <input kvs1="" id="DOB" name="DOB"
-                                                        data-dataattribute="Description" value="" data-clienteval="" type="date"
-                                                        class="form-control" placeholder="Enter DOB" autocomplete="off"
-                                                        required list="DOBDataListId">
+                                                    <input kvs1="" id="DOB" name="DOB" data-dataattribute="Description"
+                                                        value="" data-clienteval="" type="date" class="form-control"
+                                                        autocomplete="off" required list="DOBDataListId">
                                                     <div class="invalid-feedback " id="DOBClass">
                                                         Should not be Empty!!
                                                     </div>
@@ -349,21 +348,45 @@
                                                 <label class="col-md-4 col-form-label">GST Number</label>
                                                 <div class="col-md-8">
                                                     <input kvs1="" id="GSTNumber" name="GSTNumber"
-                                                        data-dataattribute="Description" value="" data-clienteval="" type="Number"
-                                                        class="form-control" placeholder="Enter GSTNumber" autocomplete="off"
-                                                        required list="GSTNumberDataListId">
+                                                        data-dataattribute="Description" value="" data-clienteval=""
+                                                        type="text" class="form-control" autocomplete="off" required
+                                                        list="GSTNumberDataListId">
                                                     <div class="invalid-feedback " id="GSTNumberClass">
                                                         Should not be Empty!!
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="col-md-12">
-                                                <label class="col-md-4 col-form-label">City</label>
+                                                <label class="col-md-4 col-form-label">Location</label>
                                                 <div class="col-md-8">
-                                                    <input kvs1="" id="City" name="City" data-dataattribute="City" value=""
-                                                        data-clienteval="" type=""
-                                                        class="form-control KeshavSoftHtmlAttributes" min="" max="" step=""
-                                                        placeholder="Enter City" autocomplete="off" list="FactoryId">
+                                                    <input kvs1="" id="City" name="City" data-dataattribute="City"
+                                                        value="" data-clienteval="" type=""
+                                                        class="form-control KeshavSoftHtmlAttributes" min="" max=""
+                                                        step="" autocomplete="off" list="FactoryId">
+                                                    <div class="invalid-feedback">
+                                                        Should not be Empty!!
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <label class="col-md-4 col-form-label">Occupation</label>
+                                                <div class="col-md-8">
+                                                    <input kvs1="" id="Occupation" name="Occupation"
+                                                        data-dataattribute="Occupation" value="" data-clienteval=""
+                                                        type="" class="form-control KeshavSoftHtmlAttributes" min=""
+                                                        max="" step="" autocomplete="off" list="">
+                                                    <div class="invalid-feedback">
+                                                        Should not be Empty!!
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <label class="col-md-4 col-form-label">Company Name</label>
+                                                <div class="col-md-8">
+                                                    <input kvs1="" id="CompanyName" name="CompanyName"
+                                                        data-dataattribute="Company Name" value="" data-clienteval=""
+                                                        type="" class="form-control KeshavSoftHtmlAttributes" min=""
+                                                        max="" step="" autocomplete="off" list="">
                                                     <div class="invalid-feedback">
                                                         Should not be Empty!!
                                                     </div>
@@ -371,7 +394,8 @@
                                             </div>
                                             <div class="col-md-12">
                                                 <div class="col-md-8 m-3">
-                                                    <button type="button" id="CreateCustomerButtonId" class="btn btn-primary">
+                                                    <button type="button" id="CreateCustomerButtonId"
+                                                        class="btn btn-primary">
                                                         Save New
                                                     </button>
                                                 </div>
@@ -411,7 +435,7 @@
 
     <script src="../../assets/static/js/components/dark.js"></script>
     <script src="../../assets/extensions/perfect-scrollbar/perfect-scrollbar.min.js"></script>
-    
+
     <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script> -->
