@@ -4,10 +4,11 @@ import { StartFunc as StartFuncShowToDom } from "./ShowToDom/EntryFile.js";
 import { StartFunc as StartFuncLoginCheck } from "/Laundry/Js/LoginModal/EntryFile.js";
 
 const StartFunc = async () => {
-    let jVarLocalFromAdmin = await StartFuncLoginCheck({ inSuccessFunc: StartFuncShowToDom});
+    await StartFuncFormLoad();
+
+    let jVarLocalFromAdmin = await StartFuncLoginCheck({ inSuccessFunc: StartFuncFormLoad });
 
     if (jVarLocalFromAdmin) {
-        await StartFuncFormLoad();
 
         StartFuncShowToDom();
     };

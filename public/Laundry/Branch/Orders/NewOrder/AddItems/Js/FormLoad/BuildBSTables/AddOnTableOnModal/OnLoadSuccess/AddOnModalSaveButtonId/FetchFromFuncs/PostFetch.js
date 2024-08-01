@@ -1,7 +1,7 @@
 import { StartFunc as StartFuncFetchHeaders } from "./FetchHeaders/EntryFile.js";
 
-let StartFunc = async () => {
-    let jVarLocalFetchHeaders = StartFuncFetchHeaders();
+let StartFunc = async ({ PrepareBody }) => {
+    let jVarLocalFetchHeaders = StartFuncFetchHeaders({ PrepareBody });
     let jVarLocalBranchName = localStorage.getItem("BranchName");
 
     let jVarLocalFetchUrl = `/Custom/Clients/Washtex/Orders/NewOrder/AddAddOn/${jVarLocalBranchName}`;
