@@ -172,21 +172,21 @@
                                 <div class="mb-3">
                                     <label for="exampleFormControlInput1" class="form-label">#</label>
                                     <input type="email" class="form-control" id="AddOnModalItemSerialId"
-                                        placeholder="name@example.com" value="Keshav">
+                                        placeholder="name@example.com" value="Keshav" readonly>
                                 </div>
                             </div>
                             <div class="col">
                                 <div class="mb-3">
                                     <label for="exampleFormControlInput1" class="form-label">Item Name</label>
                                     <input type="email" class="form-control" id="AddOnModalItemNameId"
-                                        placeholder="name@example.com" value="Keshav">
+                                        placeholder="name@example.com" value="Keshav" readonly>
                                 </div>
                             </div>
                             <div class="col">
                                 <div class="mb-3">
                                     <label for="exampleFormControlTextarea1" class="form-label">Rate</label>
                                     <input type="email" class="form-control" id="exampleFormControlInput1"
-                                        placeholder="name@example.com" value="9848163021">
+                                        placeholder="name@example.com" value="9848163021" readonly>
                                 </div>
                             </div>
                         </div>
@@ -290,6 +290,33 @@
                 </div>
                 <div class="modal-footer">
 
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="LoginModalId" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <form class="login-form">
+                        <h2 class="text-center mb-4">Login</h2>
+
+                        <div class="mb-3">
+                            <input type="text" id="UsernameId" class="form-control" placeholder="User name"
+                                autofocus>
+                        </div>
+                        <div class="mb-3">
+                            <input type="password" id="PasswordId" class="form-control" id="password"
+                                placeholder="Password">
+                        </div>
+                        <div class="mb-3 text-center mt-3">
+                            <button type="button" id="LoginButtonId"
+                                class="btn btn-primary btn-block w-100">Login</button>
+                        </div>
+                        <div class="text-center mt-3">
+                            <a href="#">Forgot password?</a>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>

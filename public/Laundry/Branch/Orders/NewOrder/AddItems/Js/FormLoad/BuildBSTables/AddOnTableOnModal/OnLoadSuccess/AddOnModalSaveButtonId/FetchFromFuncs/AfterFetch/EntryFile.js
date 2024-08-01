@@ -17,6 +17,7 @@ let StartFunc = async () => {
 let jFLocalSetFocus = () => {
     let jVarLocalHtmlId = 'TableFooterAddOnSelectId';
     let jVarLocalRefreshBSTableId = document.getElementById(jVarLocalHtmlId);
+    jVarLocalRefreshBSTableId.classList.remove("is-invalid");
     jVarLocalRefreshBSTableId.focus();
 };
 

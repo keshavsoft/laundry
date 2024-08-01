@@ -7,7 +7,6 @@ const StartFunc = async () => {
 
     await StartFuncToLocalStorage();
     StartFuncAddListeners();
-    // jFLocalModalShown();
 };
 
 export { StartFunc };
