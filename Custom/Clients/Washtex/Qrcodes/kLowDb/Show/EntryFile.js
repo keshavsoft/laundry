@@ -1,6 +1,6 @@
 import { StartFunc as StartFuncCommonFuncs } from '../../../../../../bin/QrCodes/Generate/kLowDb/CommonFuncs/ReturnDbObject.js';
 
-const StartFuncForBookings = () => {
+const StartFunc = () => {
     let LocalReturnData = { KTF: false };
     const dbForQrCodes = StartFuncCommonFuncs();
     dbForQrCodes.read();
@@ -10,4 +10,4 @@ const StartFuncForBookings = () => {
     return LocalReturnData;
 };
 
-export { StartFuncForBookings };
+export { StartFunc };
