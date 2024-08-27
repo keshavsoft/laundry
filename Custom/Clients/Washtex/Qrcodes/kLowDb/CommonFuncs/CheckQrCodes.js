@@ -9,7 +9,6 @@ const StartFuncForBookings = ({ inTable, inBookingPk }) => {
     dbForQrCodes.read();
 
     let LocalRowNeeded = dbForQrCodes.data.find(e => e.OrderNumber == LocalBookingPk && e.BookingData.OrderData.BranchName == LocalBranchName);
-    console.log('LocalRowNeeded:',LocalRowNeeded);
 
     if (LocalRowNeeded === undefined) {
         LocalReturnData.KTF = true;
