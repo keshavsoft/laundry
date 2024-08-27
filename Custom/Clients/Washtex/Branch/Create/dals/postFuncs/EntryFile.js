@@ -1,5 +1,6 @@
 import { StartFunc as StartFuncWriteTofile } from '../../kLowDb/WriteTofile/WithChecking/StartFunc.js';
 import { StartFunc as Send } from '../../kLowDb/WriteTofile/Send/EntryFile.js';
+import { StartFunc as ToFactoryScan } from '../../kLowDb/WriteTofile/ToFactoryScan/StartFunc.js';
 
 let PostFunc = (inPostBody) => {
     return StartFuncWriteTofile({ inDataToInsert: inPostBody });
@@ -19,11 +20,12 @@ let PostSendMailGenUuIdFunc = (inPostBody) => {
 let PostSendMailFunc = async ({ inPostBody, inDomainName }) => {
     return await Send({ inDataToInsert: inPostBody, inDomainName });
 };
-let PostScanFunc = async ({ inPostBody, inDomainName }) => {
-    return await Send({ inDataToInsert: inPostBody, inDomainName });
+
+let ToFactoryScanFunc = (inPostBody) => {
+    return ToFactoryScan({ inDataToInsert: inPostBody });
 };
 
 export {
     PostFunc, PostFuncGenUuId, PostWithCheckAndGenPkFunc,
-    PostSendMailGenUuIdFunc, PostSendMailFunc, PostScanFunc
+    PostSendMailGenUuIdFunc, PostSendMailFunc, ToFactoryScanFunc
 };

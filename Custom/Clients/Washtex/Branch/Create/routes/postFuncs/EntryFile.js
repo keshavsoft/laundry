@@ -4,7 +4,7 @@ var router = express.Router();
 
 import {
     PostFunc, PostFuncGenUuId, PostWithCheckAndGenPkFunc, PostSendMailGenUuIdFunc, PostSendMailFunc,
-    PostScanFunc
+    ToFactoryScanFunc
 } from '../../controllers/postFuncs/EntryFile.js';
 
 // Post - it's check foreign and unique check and it's collect Max pk and generate UuId And pk also
@@ -13,7 +13,7 @@ import {
 // router.post('/WithCheckAndGenPk', PostWithCheckAndGenPkFunc);
 // router.post('/SendMailGenUuId', PostSendMailGenUuIdFunc);
 // router.post('/SendMail', PostSendMailFunc);
- router.post('/ScanFunc', PostScanFunc);
+router.post('/ToFactoryScan', ToFactoryScanFunc);
 
 
 

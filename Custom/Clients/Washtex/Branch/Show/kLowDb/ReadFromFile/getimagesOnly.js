@@ -4,7 +4,7 @@ import { JSONFileSync } from 'lowdb/node'
 import Configjson from '../../../../Config.json' assert { type: 'json' };
 import tableNameJson from '../../../tableName.json' assert { type: 'json' };
 import fs from "fs";
-import path, { resolve } from 'path';
+import path from 'path';
 
 const CommonTableName = tableNameJson.tableName;
 const CommonDataPath = `${Configjson.jsonConfig.DataPath}/${Configjson.jsonConfig.DataPk}/${path.parse(CommonTableName).name}`;

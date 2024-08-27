@@ -1,6 +1,6 @@
-import { StartFunc as StartFuncForeignKeyCheck } from "./Checks/ForeignKeyCheck.js";
+import { StartFunc as StartFuncForeignKeyCheck } from "./ForeignKeyCheck.js";
 
-let StartFunc = ({ inTableSchema }) => {
+let StartFunc = ({ inTableSchema, inDataToInsert }) => {
     let LocalReturnData = { KTF: true, JSONFolderPath: "", CreatedLog: {} };
     const LocalTableSchema = inTableSchema;
     let LocalKeysNeeded = {};
@@ -12,14 +12,14 @@ let StartFunc = ({ inTableSchema }) => {
     };
 
     if ((Object.keys(LocalKeysNeeded).length === 0) === false) {
-        return LocalFuncTrue({ inKeysNeeded: LocalKeysNeeded });
+        return LocalFuncTrue({ inKeysNeeded: LocalKeysNeeded, inDataToInsert });
     };
 
     return LocalReturnData;
 };
 
 
-let LocalFuncTrue = ({ inKeysNeeded }) => {
+let LocalFuncTrue = ({ inKeysNeeded, inDataToInsert }) => {
     let LocalReturnData = { KTF: false, JSONFolderPath: "", CreatedLog: {} };
     let LocalKeysNeeded = inKeysNeeded;
 
@@ -28,7 +28,7 @@ let LocalFuncTrue = ({ inKeysNeeded }) => {
 
     let LocalK1 = Object.values(LocalKeysNeeded)[0].references;
     let LocalDataNeeded = StartFuncForeignKeyCheck({
-        inFileName: LocalK1.model,
+        inFileName: LocalK1.model.tableName,
         inKey: LocalK1.key, NeededKey: LocalValueNeeded
     });
 
@@ -36,7 +36,7 @@ let LocalFuncTrue = ({ inKeysNeeded }) => {
         LocalReturnData.KReason = LocalDataNeeded.KReason;
         return LocalReturnData;
     };
-
+    LocalReturnData.KTF = true
     return LocalReturnData;
 };
 

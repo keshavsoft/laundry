@@ -4,16 +4,16 @@ import {
     PostWithCheckAndGenPkFunc as PostWithCheckAndGenPkFuncDal,
     PostSendMailGenUuIdFunc as PostSendMailGenUuIdFuncDal,
     PostSendMailFunc as PostSendMailFuncDal,
-    PostScanFunc as PostScanFuncDal
+    ToFactoryScanFunc as ToFactoryScanFuncDal
 } from '../../dals/postFuncs/EntryFile.js';
 
-import {
-    PostFunc as PostFuncDalsForSequelize
-} from '../../dalsForSequelize/postFuncs/EntryFile.js';
+// import {
+//     PostFunc as PostFuncDalsForSequelize
+// } from '../../dalsForSequelize/postFuncs/EntryFile.js';
 
-import {
-    PostFunc as PostFuncDalsForMongoDB
-} from '../../dalsForMongoDb/postFuncs/EntryFile.js';
+// import {
+//     PostFunc as PostFuncDalsForMongoDB
+// } from '../../dalsForMongoDb/postFuncs/EntryFile.js';
 
 import ConfigJson from '../../../../Config.json' assert {type: 'json'};
 
@@ -75,7 +75,7 @@ let PostSendMailFunc = async ({ inPostBody, inDomainName }) => {
 
     return await PostSendMailFuncDal({ inPostBody, inDomainName });
 };
-let PostScanFunc = async ({ inPostBody, inDomainName }) => {
+let ToFactoryScanFunc = async (inPostBody) => {
     if (ConfigJson.isSequelize) {
         return PostFuncDalsForSequelize(inPostBody);
     };
@@ -84,10 +84,11 @@ let PostScanFunc = async ({ inPostBody, inDomainName }) => {
         return PostFuncDalsForMongoDB(inPostBody);
     };
 
-    return await PostScanFuncDal({ inPostBody, inDomainName });
+    return ToFactoryScanFuncDal(inPostBody);
 };
+
 
 export {
     PostFunc, PostFuncGenUuId, PostWithCheckAndGenPkFunc,
-    PostSendMailGenUuIdFunc, PostSendMailFunc, PostScanFunc
+    PostSendMailGenUuIdFunc, PostSendMailFunc, ToFactoryScanFunc
 };
