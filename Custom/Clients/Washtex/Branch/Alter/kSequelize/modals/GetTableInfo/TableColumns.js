@@ -1,4 +1,4 @@
-import { StartFunc as StartFuncInitializeSequelize } from '../../../../../kSequelize/AssignSchema.js';
+// import { StartFunc as StartFuncInitializeSequelize } from '../../../../../kSequelize/AssignSchema.js';
 
 import tableNameJson from '../../../../tableName.json' assert { type: 'json' };
 import path from "path";
