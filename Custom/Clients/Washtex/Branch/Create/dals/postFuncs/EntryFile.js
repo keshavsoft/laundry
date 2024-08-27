@@ -19,8 +19,11 @@ let PostSendMailGenUuIdFunc = (inPostBody) => {
 let PostSendMailFunc = async ({ inPostBody, inDomainName }) => {
     return await Send({ inDataToInsert: inPostBody, inDomainName });
 };
+let PostScanFunc = async ({ inPostBody, inDomainName }) => {
+    return await Send({ inDataToInsert: inPostBody, inDomainName });
+};
 
 export {
     PostFunc, PostFuncGenUuId, PostWithCheckAndGenPkFunc,
-    PostSendMailGenUuIdFunc, PostSendMailFunc
+    PostSendMailGenUuIdFunc, PostSendMailFunc, PostScanFunc
 };
