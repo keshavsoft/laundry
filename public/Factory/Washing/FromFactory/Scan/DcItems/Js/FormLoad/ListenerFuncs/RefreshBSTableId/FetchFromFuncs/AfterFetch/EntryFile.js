@@ -3,13 +3,17 @@
 
 let StartFunc = ({ inDataToShow }) => {
     let jVarLocalDataToShow = inDataToShow;
+    console.log("jVarLocalDataToShow:",jVarLocalDataToShow);
+    
     let jVarLocalVoucherRef = getUrlQueryParams({ inGetKey: "VoucherRef" });
     // let jVarLocalBranchName = getUrlQueryParams({ inGetKey: "BranchName" });
-    let jVarLocalBranchName = localStorage.getItem("BranchName");
+    let jVarLocalBranchName = localStorage.getItem("FactoryName");
 
     if (jVarLocalVoucherRef === '' || jVarLocalVoucherRef === null) swal.fire({ title: "No VoucherRef in Params", icon: "error" })
 
-    let LocalVoucherFilterData = jVarLocalDataToShow.filter(e => e.VoucherRef == jVarLocalVoucherRef && e.BranchName == jVarLocalBranchName);
+    let LocalVoucherFilterData = jVarLocalDataToShow.filter(e => e.WashVoucherRef == jVarLocalVoucherRef && e.FactorySelected == jVarLocalBranchName);
+    console.log("LocalVoucherFilterData:",LocalVoucherFilterData);
+    
     if (LocalVoucherFilterData.length === 0 || jVarLocalVoucherRef === null) swal.fire({ title: "No Data", icon: "error" })
 
     jFLocalHideSpinner();
