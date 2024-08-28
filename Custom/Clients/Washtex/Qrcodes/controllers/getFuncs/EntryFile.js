@@ -23,7 +23,8 @@ let GetHomeFunc = (req, res) => {
 };
 
 let GetBranchNameFunc = (req, res) => {
-    let LocalFromRepo = GetBranchNameFuncRepo();
+    let LocalBranchName = req.params.inBranchName;
+    let LocalFromRepo = GetBranchNameFuncRepo({ inBranchName: LocalBranchName });
     res.json(LocalFromRepo);
 };
 let GetBranchDateFunc = (req, res) => {
@@ -45,7 +46,8 @@ let GetTodayFunc = (req, res) => {
 };
 
 
-export { GetIdWithTableFunc, GetHomeFunc, GetBranchNameFunc,
-  GetBranchDateFunc, GetBranchTodayFunc,
-GetDateFunc, GetTodayFunc
+export {
+    GetIdWithTableFunc, GetHomeFunc, GetBranchNameFunc,
+    GetBranchDateFunc, GetBranchTodayFunc,
+    GetDateFunc, GetTodayFunc
 };
