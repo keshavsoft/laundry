@@ -3,12 +3,12 @@ var router = express.Router();
 
 import { GetIdWithTableFunc, GetHomeFunc } from '../../controllers/getFuncs/EntryFile.js';
 
-router.get('/', GetHomeFunc);
-router.get('/Branch/:inBranchName', GetHomeFunc);
-router.get('/Date/:inDate', GetHomeFunc);
-router.get('/Today', GetHomeFunc);
-router.get('/BranchDate/:inBranchName/:inDate', GetHomeFunc);
-router.get('/BranchToday', GetHomeFunc);
+router.get('/Home/:inHome', GetHomeFunc);
+router.get('/Branch/:inBranchName', GetBranchNameFunc);
+router.get('/Date/:inDate', GetDateFunc);
+router.get('/Today', GetTodayFunc);
+router.get('/BranchDate/:inBranchName/:inDate', GetBranchDateFunc);
+router.get('/BranchToday/', GetBranchTodayFunc);
 
 router.get('/Table/:inTable/:id', GetIdWithTableFunc);
 
