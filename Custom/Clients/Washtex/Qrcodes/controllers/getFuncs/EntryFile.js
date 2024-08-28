@@ -1,6 +1,7 @@
 import {
     GetIdWithTableFunc as GetIdWithTableFuncRepo,
-    GetHomeFunc as GetHomeFuncRepo
+    GetHomeFunc as GetHomeFuncRepo,
+    GetBranchNameFunc as GetBranchNameFuncRepo
 } from '../../repos/getFuncs/EntryFile.js';
 
 let GetIdWithTableFunc = async (req, res) => {
@@ -16,5 +17,9 @@ let GetHomeFunc = (req, res) => {
     let LocalFromRepo = GetHomeFuncRepo();
     res.json(LocalFromRepo);
 };
+let GetBranchNameFunc = (req, res) => {
+    let LocalFromRepo = GetBranchNameFuncRepo();
+    res.json(LocalFromRepo);
+};
 
-export { GetIdWithTableFunc, GetHomeFunc };
+export { GetIdWithTableFunc, GetHomeFunc, GetBranchNameFunc };
