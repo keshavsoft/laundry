@@ -4,7 +4,8 @@ import {
     PostWithCheckAndGenPkFunc as PostWithCheckAndGenPkFuncRepo,
     PostSendMailGenUuIdFunc as PostSendMailGenUuIdFuncRepo,
     PostSendMailFunc as PostSendMailFuncRepo,
-    FromBranchScanFunc as FromBranchScanFuncRepo
+    FromBranchScanFunc as FromBranchScanFuncRepo,
+    CancelScanFunc as CancelScanFuncRepo
 } from '../../repos/postFuncs/EntryFile.js';
 
 let PostFunc = async (req, res) => {
@@ -90,7 +91,21 @@ let FromBranchScanFunc = async (req, res) => {
     res.status(200).send(LocalFromRepo.pk.toString());
 };
 
+let CancelScanFunc = async (req, res) => {
+    let LocalBody = req.body;
+
+    let LocalFromRepo = await CancelScanFuncRepo({ ...LocalBody });
+
+    if (LocalFromRepo.KTF === false) {
+        res.status(500).send(LocalFromRepo.KReason);
+        return;
+    };
+
+    res.status(200).send(LocalFromRepo.pk.toString());
+};
+
 export {
     PostFunc, PostFuncGenUuId, PostWithCheckAndGenPkFunc,
-    PostSendMailGenUuIdFunc, PostSendMailFunc, FromBranchScanFunc
+    PostSendMailGenUuIdFunc, PostSendMailFunc, FromBranchScanFunc,
+    CancelScanFunc
 };

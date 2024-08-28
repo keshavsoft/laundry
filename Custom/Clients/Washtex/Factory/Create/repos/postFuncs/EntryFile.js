@@ -4,7 +4,8 @@ import {
     PostWithCheckAndGenPkFunc as PostWithCheckAndGenPkFuncDal,
     PostSendMailGenUuIdFunc as PostSendMailGenUuIdFuncDal,
     PostSendMailFunc as PostSendMailFuncDal,
-    FromBranchScanFunc as FromBranchScanFuncDal
+    FromBranchScanFunc as FromBranchScanFuncDal,
+    CancelScanFunc as CancelScanFuncDal
 } from '../../dals/postFuncs/EntryFile.js';
 
 // import {
@@ -86,9 +87,20 @@ let FromBranchScanFunc = async (inPostBody) => {
 
     return FromBranchScanFuncDal(inPostBody);
 };
+let CancelScanFunc = async (inPostBody) => {
+    if (ConfigJson.isSequelize) {
+        return PostFuncDalsForSequelize(inPostBody);
+    };
 
+    if (ConfigJson.isMongoDb) {
+        return PostFuncDalsForMongoDB(inPostBody);
+    };
+
+    return CancelScanFuncDal(inPostBody);
+};
 
 export {
     PostFunc, PostFuncGenUuId, PostWithCheckAndGenPkFunc,
-    PostSendMailGenUuIdFunc, PostSendMailFunc, FromBranchScanFunc
+    PostSendMailGenUuIdFunc, PostSendMailFunc, FromBranchScanFunc,
+    CancelScanFunc
 };

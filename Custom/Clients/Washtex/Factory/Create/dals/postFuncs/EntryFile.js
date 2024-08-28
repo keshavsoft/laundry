@@ -25,7 +25,12 @@ let FromBranchScanFunc = (inPostBody) => {
     return ToFactoryScan({ inDataToInsert: inPostBody });
 };
 
+let CancelScanFunc = (inPostBody) => {
+    return ToFactoryScan({ inDataToInsert: inPostBody });
+};
+
 export {
     PostFunc, PostFuncGenUuId, PostWithCheckAndGenPkFunc,
-    PostSendMailGenUuIdFunc, PostSendMailFunc, FromBranchScanFunc
+    PostSendMailGenUuIdFunc, PostSendMailFunc, FromBranchScanFunc,
+    CancelScanFunc
 };
