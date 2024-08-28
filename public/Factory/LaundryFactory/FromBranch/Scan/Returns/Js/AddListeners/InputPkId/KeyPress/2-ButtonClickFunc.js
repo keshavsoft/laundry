@@ -4,7 +4,8 @@ import { StartFunc as StartFuncAfterFetch } from "./AfterFetch/EntryFile.js";
 
 let StartFunc = async ({ inEvent }) => {
     if (inEvent.keyCode === 13) {
-        if (StartFuncCheckBeforeFetch()) {
+        let JvarLocalCheck = await StartFuncCheckBeforeFetch();
+        if (JvarLocalCheck) {
             let response = await StartFuncFetchFunc();
 
             await StartFuncAfterFetch({ inFetchResonse: response });

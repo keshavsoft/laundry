@@ -6,14 +6,19 @@ let StartFunc = async ({ inFetchResonse }) => {
         let jVarLocalFetchData = jVarLocalResponseData;
         jVarGlobalPresentViewData2 = jVarLocalFetchData;
 
+
         jFLocalToInputInputPkId({ inInputPkId: jVarLocalFetchData.pk });
         jFLocalToInputInputProductNameId({ inInputProductNameId: jVarLocalFetchData.ItemName });
         jFLocalToInputInputSalePriceId({ inInputSalePriceId: jVarLocalFetchData.Rate });
-        jFLocalToInputFactorySelectedId({ inInputFactorySelectedId: jVarLocalFetchData.location })
+        jFLocalToInputFactorySelectedId({ inInputFactorySelectedId: jVarLocalFetchData.BookingData.OrderData.BranchName })
         jFLocalToInputBranchNameId({ inInputValue: jVarLocalFetchData.BookingData.OrderData.BranchName });
         jFLocalToInputOrderNumberId({ inInputValue: jVarLocalFetchData.GenerateReference.ReferncePk });
         jFLocalToInputOrderDateId({ inInputValue: jVarLocalFetchData.BookingData.OrderData.Currentdateandtime });
         jFLocalToInputDeliveryDateId({ inInputValue: jVarLocalFetchData.DeliveryDateTime });
+
+        jFLocalToInputDCBranchNameDCDetailsTextId({ inDCBranchNameDCDetailsTextId: jVarLocalFetchData.BookingData.OrderData.BranchName });
+        jFLocalToInputCustomerId({ inDCBranchNameDCDetailsTextId: jVarLocalFetchData.BookingData.CustomerData.CustomerName });
+        jFLocalToInputCustomerMobile({ inDCBranchNameDCDetailsTextId: jVarLocalFetchData.BookingData.CustomerData.CustomerMobile });
         // jFLocalRunSaveClick();
     };
 };
@@ -73,6 +78,32 @@ let jFLocalToInputDeliveryDateId = ({ inInputValue }) => {
     let jVarLocalHtmlId = 'DeliveryDateId';
     let jVarLocalInputPkId = document.getElementById(jVarLocalHtmlId);
     jVarLocalInputPkId.value = inInputValue;
+};
+
+let jFLocalToInputDCBranchNameDCDetailsTextId = ({ inDCBranchNameDCDetailsTextId }) => {
+    let jVarLocalHtmlId = 'DCBranchNameDCDetailsTextId';
+    let jVarLocalDCBranchNameDCDetailsTextId = document.getElementById(jVarLocalHtmlId);
+
+    if (jVarLocalDCBranchNameDCDetailsTextId === null === false) {
+        jVarLocalDCBranchNameDCDetailsTextId.innerHTML = inDCBranchNameDCDetailsTextId;
+    };
+};
+
+let jFLocalToInputCustomerId = ({ inDCBranchNameDCDetailsTextId }) => {
+    let jVarLocalHtmlId = 'CustomerId';
+    let jVarLocalDCBranchNameDCDetailsTextId = document.getElementById(jVarLocalHtmlId);
+
+    if (jVarLocalDCBranchNameDCDetailsTextId === null === false) {
+        jVarLocalDCBranchNameDCDetailsTextId.innerHTML = inDCBranchNameDCDetailsTextId;
+    };
+};
+let jFLocalToInputCustomerMobile = ({ inDCBranchNameDCDetailsTextId }) => {
+    let jVarLocalHtmlId = 'CustomerNumberId';
+    let jVarLocalDCBranchNameDCDetailsTextId = document.getElementById(jVarLocalHtmlId);
+
+    if (jVarLocalDCBranchNameDCDetailsTextId === null === false) {
+        jVarLocalDCBranchNameDCDetailsTextId.innerHTML = inDCBranchNameDCDetailsTextId;
+    };
 };
 
 export { StartFunc };
