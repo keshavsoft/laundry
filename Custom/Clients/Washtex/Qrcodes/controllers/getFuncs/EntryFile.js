@@ -3,7 +3,9 @@ import {
     GetHomeFunc as GetHomeFuncRepo,
     GetBranchNameFunc as GetBranchNameFuncRepo,
     GetBranchDateFunc as GetBranchDateFuncRepo,
-    GetBranchTodayFunc as GetBranchTodayFuncRepo
+    GetBranchTodayFunc as GetBranchTodayFuncRepo,
+    GetDateFunc as GetDateFuncRepo,
+    GetTodayFunc as GetTodayFuncRepo
 } from '../../repos/getFuncs/EntryFile.js';
 
 let GetIdWithTableFunc = async (req, res) => {
@@ -19,6 +21,7 @@ let GetHomeFunc = (req, res) => {
     let LocalFromRepo = GetHomeFuncRepo();
     res.json(LocalFromRepo);
 };
+
 let GetBranchNameFunc = (req, res) => {
     let LocalFromRepo = GetBranchNameFuncRepo();
     res.json(LocalFromRepo);
@@ -32,4 +35,17 @@ let GetBranchTodayFunc = (req, res) => {
     res.json(LocalFromRepo);
 };
 
-export { GetIdWithTableFunc, GetHomeFunc, GetBranchNameFunc, GetBranchDateFunc, GetBranchTodayFunc };
+let GetDateFunc = (req, res) => {
+    let LocalFromRepo = GetDateFuncRepo();
+    res.json(LocalFromRepo);
+};
+let GetTodayFunc = (req, res) => {
+    let LocalFromRepo = GetTodayFuncRepo();
+    res.json(LocalFromRepo);
+};
+
+
+export { GetIdWithTableFunc, GetHomeFunc, GetBranchNameFunc,
+  GetBranchDateFunc, GetBranchTodayFunc,
+GetDateFunc, GetTodayFunc
+};
