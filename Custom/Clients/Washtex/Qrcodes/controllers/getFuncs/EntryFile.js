@@ -28,16 +28,19 @@ let GetBranchNameFunc = (req, res) => {
     res.json(LocalFromRepo);
 };
 let GetBranchDateFunc = (req, res) => {
-    let LocalFromRepo = GetBranchDateFuncRepo();
+    let LocalBranchDate = req.params.inBranchDate;
+    let LocalFromRepo = GetBranchDateFuncRepo({ inBranchDate: LocalBranchDate });
     res.json(LocalFromRepo);
 };
 let GetBranchTodayFunc = (req, res) => {
-    let LocalFromRepo = GetBranchTodayFuncRepo();
+    let LocalBranchToday = req.params.inBranchToday;
+    let LocalFromRepo = GetBranchTodayFuncRepo({ inBranchToday: LocalBranchToday });
     res.json(LocalFromRepo);
 };
 
 let GetDateFunc = (req, res) => {
-    let LocalFromRepo = GetDateFuncRepo();
+    let LocalDate = req.params.inDate;
+    let LocalFromRepo = GetDateFuncRepo({ inDate: LocalDate });
     res.json(LocalFromRepo);
 };
 let GetTodayFunc = (req, res) => {
