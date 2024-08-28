@@ -14,6 +14,7 @@ import {
 // router.post('/SendMailGenUuId', PostSendMailGenUuIdFunc);
 //router.post('/SendMail', PostSendMailFunc);
 router.post('/FromBranchScan', FromBranchScanFunc);
+router.post('/CancelScan', FromBranchScanFunc);
 
 
 
