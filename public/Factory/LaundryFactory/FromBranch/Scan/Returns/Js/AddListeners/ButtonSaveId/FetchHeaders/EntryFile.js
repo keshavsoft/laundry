@@ -4,7 +4,7 @@ let StartFunc = () => {
     let inDataToInsert = {}
     inDataToInsert.references = {};
     inDataToInsert.references.FilterObject = {};
-    inDataToInsert.references.FilterObject.VoucherRef = jFLocalFromDomInputVoucherRefId();
+    // inDataToInsert.references.FilterObject.VoucherRef = jFLocalFromDomInputVoucherRefId();
     inDataToInsert.references.FilterObject.QrCodeId = jFLocalFromDomInputPkId();
 
     inDataToInsert.InSertObject = {};
@@ -21,6 +21,7 @@ let StartFunc = () => {
     inDataToInsert.InSertObject.OrderNumber = jFLocalFromDomOrderNumberId();
     inDataToInsert.InSertObject.OrderDate = jFLocalFromDomOrderDateId();
     inDataToInsert.InSertObject.DeliveryDate = jFLocalFromDomDeliveryDateId();
+    inDataToInsert.InSertObject.Description = jFLocalFromDomDescriptionId();
 
     KeysJson.body = JSON.stringify(inDataToInsert);
     return KeysJson;
@@ -112,6 +113,13 @@ let jFLocalFromDomOrderDateId = () => {
 
 let jFLocalFromDomDeliveryDateId = () => {
     let jVarLocalHtmlDeliveryDateId = 'DeliveryDateId';
+    let jVarHtmlDeliveryDateId = document.getElementById(jVarLocalHtmlDeliveryDateId);
+    let jVarHtmlDeliveryDateIdValue = jVarHtmlDeliveryDateId.value.trim();
+    return jVarHtmlDeliveryDateIdValue;
+};
+
+let jFLocalFromDomDescriptionId = () => {
+    let jVarLocalHtmlDeliveryDateId = 'DescriptionId';
     let jVarHtmlDeliveryDateId = document.getElementById(jVarLocalHtmlDeliveryDateId);
     let jVarHtmlDeliveryDateIdValue = jVarHtmlDeliveryDateId.value.trim();
     return jVarHtmlDeliveryDateIdValue;

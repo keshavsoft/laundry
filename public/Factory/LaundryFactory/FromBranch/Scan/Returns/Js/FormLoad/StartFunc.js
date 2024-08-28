@@ -1,18 +1,12 @@
 import { StartFunc as StartFuncDCDetails } from "./DCDetails/Entry.js";
-// import { StartFunc as StartFuncDCCount } from "./DCCount/Entry.js";
 import { StartFunc as StartFuncParams } from "./Params/EntryFile.js";
-// import { StartFunc as StartFuncQrTable } from "./QrTable/EntryFile.js";
 
 let StartFunc = () => {
     StartFuncParams();
-    // jFLocalToInputInputVoucherRefId()
-    // JFlocalShowAlertFunc();
-    // JFlocalNewPkAlertFunc();
-    StartFuncDCDetails();
-    // StartFuncDCCount();
-    // jFLocalToInputBranchName();
+    JFlocalShowAlertFunc();
+    JFlocalNewPkAlertFunc();
+    // StartFuncDCDetails();
     jFLocalBranchName()
-    // StartFuncQrTable();
 };
 
 const JFlocalShowAlertFunc = () => {
@@ -21,7 +15,6 @@ const JFlocalShowAlertFunc = () => {
 
     if (jVarLocalVoucherRefValue) {
         jvarLocalAlertId.style.display = ""
-
     };
 };
 
@@ -31,19 +24,9 @@ const JFlocalNewPkAlertFunc = () => {
     jvarLocalAlertId.innerHTML = jVarLocalVoucherRefValue;
 };
 
-let jFLocalToInputInputVoucherRefId = () => {
-    let jVarLocalVoucherRefValue = getUrlQueryParams({ inGetKey: "VoucherRef" });
-
-    let jVarLocalHtmlId = 'InputVoucherRefId';
-    let jVarLocalInputVoucherRefId = document.getElementById(jVarLocalHtmlId);
-    jVarLocalInputVoucherRefId.value = jVarLocalVoucherRefValue;
-};
-
 
 let jFLocalBranchName = () => {
-    // let jVarLocalBranchNameparam = getUrlQueryParams({ inGetKey: "BranchName" });
     let jVarLocalBranchNameparam = localStorage.getItem("FactoryName");
-
     let jVarLocalHtmlId = 'BranchNameId';
     let jVarLocalBranchName = document.getElementById(jVarLocalHtmlId);
 
