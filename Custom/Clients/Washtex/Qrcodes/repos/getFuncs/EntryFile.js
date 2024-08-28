@@ -17,18 +17,18 @@ let GetHomeFunc = () => {
     return GetHomeFuncDal();
 };
 
-let GetBranchDateFunc = () => {
-    return GetBranchDateFuncDal();
+let GetBranchDateFunc = ({ BranchDate }) => {
+    return GetBranchDateFuncDal({ BranchDate });
 };
-let GetBranchTodayFunc = () => {
-    return GetBranchTodayFuncDal();
+let GetBranchTodayFunc = ({ BranchToday }) => {
+    return GetBranchTodayFuncDal({ BranchToday });
 };
 
-let GetBranchNameFunc = () => {
-    return GetBranchNameFuncDal();
+let GetBranchNameFunc = ({ inBranchName }) => {
+    return GetBranchNameFuncDal({ inBranchName });
 };
-let GetDateFunc = () => {
-    return GetDateFuncDal();
+let GetDateFunc = ({ inDate }) => {
+    return GetDateFuncDal({ inDate });
 };
 let GetTodayFunc = () => {
     return GetTodayFuncDal();
@@ -36,6 +36,6 @@ let GetTodayFunc = () => {
 
 export {
     GetIdWithTableFunc,
-    GetHomeFunc,GetBranchDateFunc,GetBranchTodayFunc,
-GetBranchNameFunc, GetDateFunc, GetTodayFunc
+    GetHomeFunc, GetBranchDateFunc, GetBranchTodayFunc,
+    GetBranchNameFunc, GetDateFunc, GetTodayFunc
 };
