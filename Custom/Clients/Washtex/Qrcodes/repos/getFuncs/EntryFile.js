@@ -2,6 +2,8 @@
 import {
     GetIdWithTableFunc as GetIdWithTableFuncDal,
     GetHomeFunc as GetHomeFuncDal,
+    GetBranchDateFunc as GetBranchDateFuncDal,
+    GetBranchTodayFunc as GetBranchTodayFuncDal,
     GetBranchNameFunc as GetBranchNameFunc,
     GetDateFunc as GetDateFuncDal,
     GetTodayFunc as GetTodayFuncDal
@@ -14,6 +16,14 @@ let GetIdWithTableFunc = async ({ inTable, inId }) => {
 let GetHomeFunc = () => {
     return GetHomeFuncDal();
 };
+
+let GetBranchDateFunc = () => {
+    return GetBranchDateFuncDal();
+};
+let GetBranchTodayFunc = () => {
+    return GetBranchTodayFuncDal();
+};
+
 let GetBranchNameFunc = () => {
     return GetBranchNameFuncDal();
 };
@@ -26,5 +36,6 @@ let GetTodayFunc = () => {
 
 export {
     GetIdWithTableFunc,
-    GetHomeFunc, GetBranchNameFunc, GetDateFunc, GetTodayFunc
+    GetHomeFunc,GetBranchDateFunc,GetBranchTodayFunc,
+GetBranchNameFunc, GetDateFunc, GetTodayFunc
 };

@@ -20,15 +20,22 @@ let GetHomeFunc = () => {
 
     return LocalFromLowDb;
 };
+
+let GetBranchDateFunc = () => {
+    return LocalFromLowDb;
+};
+
+
 let GetBranchNameFunc = () => {
     let LocalFromLowDb = Show();
 
     if (LocalFromLowDb === false) {
         return false;
     };
-
     return LocalFromLowDb;
 };
+
+  
 let GetDateFunc = () => {
     let LocalFromLowDb = Show();
 
@@ -48,8 +55,17 @@ let GetTodayFunc = () => {
     return LocalFromLowDb;
 };
 
+let GetBranchTodayFunc = () => {
+    let LocalFromLowDb = Show();
+
+    if (LocalFromLowDb === false) {
+        return false;
+    };
+
+    return LocalFromLowDb;
+};
 export {
     GetIdWithTableFunc,
-    GetHomeFunc, GetBranchNameFunc, GetDateFunc,
+    GetHomeFunc,GetBranchDateFunc,GetBranchTodayFunc, GetDateFunc,
     GetTodayFunc
 };
