@@ -4,7 +4,7 @@ import {
     GetHomeFunc as GetHomeFuncDal,
     GetBranchDateFunc as GetBranchDateFuncDal,
     GetBranchTodayFunc as GetBranchTodayFuncDal,
-    GetBranchNameFunc as GetBranchNameFunc,
+    GetBranchNameFunc as GetBranchNameFuncDal,
     GetDateFunc as GetDateFuncDal,
     GetTodayFunc as GetTodayFuncDal
 } from '../../dals/getFuncs/EntryFile.js';
