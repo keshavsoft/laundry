@@ -24,9 +24,9 @@ let GetBranchTodayFunc = ({ BranchToday }) => {
     return GetBranchTodayFuncDal({ BranchToday });
 };
 
-// let GetBranchNameFunc = ({ inBranchName }) => {
-//     return GetBranchNameFuncDal({ inBranchName });
-// };
+let GetBranchNameFunc = ({ inBranchName }) => {
+    return GetBranchNameFuncDal({ inBranchName });
+};
 let GetDateFunc = ({ inDate }) => {
     return GetDateFuncDal({ inDate });
 };
