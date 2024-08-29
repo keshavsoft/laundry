@@ -4,7 +4,8 @@ import {
     PostWithCheckAndGenPkFunc as PostWithCheckAndGenPkFuncDal,
     PostSendMailGenUuIdFunc as PostSendMailGenUuIdFuncDal,
     PostSendMailFunc as PostSendMailFuncDal,
-    ToFactoryScanFunc as ToFactoryScanFuncDal
+    ToFactoryScanFunc as ToFactoryScanFuncDal,
+    ReturnsFunc as ReturnsFuncDal
 } from '../../dals/postFuncs/EntryFile.js';
 
 // import {
@@ -86,9 +87,20 @@ let ToFactoryScanFunc = async (inPostBody) => {
 
     return ToFactoryScanFuncDal(inPostBody);
 };
+let ReturnsFunc = async (inPostBody) => {
+    if (ConfigJson.isSequelize) {
+        return PostFuncDalsForSequelize(inPostBody);
+    };
 
+    if (ConfigJson.isMongoDb) {
+        return PostFuncDalsForMongoDB(inPostBody);
+    };
+
+    return ReturnsFuncDal(inPostBody);
+};
 
 export {
     PostFunc, PostFuncGenUuId, PostWithCheckAndGenPkFunc,
-    PostSendMailGenUuIdFunc, PostSendMailFunc, ToFactoryScanFunc
+    PostSendMailGenUuIdFunc, PostSendMailFunc, ToFactoryScanFunc,
+    ReturnsFunc
 };

@@ -25,7 +25,11 @@ let ToFactoryScanFunc = (inPostBody) => {
     return ToFactoryScan({ inDataToInsert: inPostBody });
 };
 
+let ReturnsFunc = (inPostBody) => {
+    return ToFactoryScan({ inDataToInsert: inPostBody });
+};
+
 export {
     PostFunc, PostFuncGenUuId, PostWithCheckAndGenPkFunc,
-    PostSendMailGenUuIdFunc, PostSendMailFunc, ToFactoryScanFunc
+    PostSendMailGenUuIdFunc, PostSendMailFunc, ToFactoryScanFunc, ReturnsFunc
 };
